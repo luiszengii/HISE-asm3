@@ -1,0 +1,6 @@
+main.adb:154:26: error: missing argument for parameter "I" in call to "Push_Operation" declared at operations.ads:12
+main.adb:156:25: error: missing argument for parameter "I" in call to "Pop_Operation" declared at operations.ads:13
+main.adb:158:25: error: missing argument for parameter "DB" in call to "Load" declared at operations.ads:16
+main.adb:160:25: error: missing argument for parameter "DB" in call to "Store" declared at operations.ads:20
+main.adb:162:25: error: missing argument for parameter "DB" in call to "Remove" declared at operations.ads:23
+main.adb:164:31: error: "DB" is undefined

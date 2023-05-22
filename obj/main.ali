@@ -1,0 +1,184 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U main%b		main.adb		df4b0360 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.long_long_integer_text_io%s  a-llitio.ads	a-llitio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W mycommandline%s	mycommandline.adb	mycommandline.ali
+W mystring%s		mystring.adb		mystring.ali
+W mystringtokeniser%s	mystringtokeniser.adb	mystringtokeniser.ali
+W operations%s		operations.adb		operations.ali
+W pin%s			pin.adb			pin.ali
+W stack%s		stack.adb		stack.ali
+W stringtointeger%s	stringtointeger.adb	stringtointeger.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W variablestore%s	variablestore.adb	variablestore.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
+D a-chlat1.ads		20210520051128 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20210520051128 61e5e089 ada.containers%s
+D a-cforma.ads		20210520051128 8409a718 ada.containers.formal_ordered_maps%s
+D a-cofuba.ads		20210520051128 626278ab ada.containers.functional_base%s
+D a-cofuma.ads		20210520051128 28ab9b10 ada.containers.functional_maps%s
+D a-cofuve.ads		20210520051128 58444126 ada.containers.functional_vectors%s
+D a-conhel.ads		20210520051128 20298884 ada.containers.helpers%s
+D a-crbltr.ads		20210520051128 d3d16ba4 ada.containers.red_black_trees%s
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-finali.ads		20210520051128 bf4f806b ada.finalization%s
+D a-inteio.ads		20210520051128 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-llitio.ads		20210520051128 9aecf52b ada.long_long_integer_text_io%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D main.adb		20230522074444 f9f05c64 main%b
+D mycommandline.ads	20230517105214 dbf720e9 mycommandline%s
+D mystring.ads		20230517105216 ce083c8f mystring%s
+D mystring.adb		20230517105214 8198c1c4 mystring%b
+D mystringtokeniser.ads	20230517105214 9bc8f6ad mystringtokeniser%s
+D operations.ads	20230522075214 96768be8 operations%s
+D pin.ads		20230517105214 553c8633 pin%s
+D stack.ads		20230522063608 a6086384 stack%s
+D stack.adb		20230522045042 800e16f3 stack%b
+D stringtointeger.ads	20230517105214 37c4f5b6 stringtointeger%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+D variablestore.ads	20230517105214 385987c4 variablestore%s
+G a e
+G c Z b b [main standard 16 11 none]
+G r c none [main standard 16 11 none] [from_string variablestore 30 13 none]
+G r i none [main standard 16 11 none] [mystring standard 5 9 none]
+G r c none [main standard 16 11 none] [from_string pin 5 13 none]
+G r c none [main standard 16 11 none] [tokenise mystringtokeniser 16 14 none]
+G r c none [main standard 16 11 none] [plus operations 8 14 none]
+G r c none [main standard 16 11 none] [minus operations 9 14 none]
+G r c none [main standard 16 11 none] [multiply operations 10 14 none]
+G r c none [main standard 16 11 none] [divide operations 11 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 26|9r6 9r23 10r6 10r31 12r6
+X 5 a-cforma.ads
+61V19 "="{boolean} 6|43i19 7|42i19
+X 7 a-cofuma.ads
+42V19 "="{boolean} 6|43i19
+343V14 "="=345:48{boolean} 6|43i19
+X 8 a-cofuve.ads
+41V19 "="{boolean} 6|43i19
+X 13 a-inteio.ads
+18K13*Integer_Text_IO[22|46] 26|10w10 10r35
+X 15 a-llitio.ads
+18K13*Long_Long_Integer_Text_IO[22|46] 26|12w10
+X 21 a-textio.ads
+58K13*Text_IO 725e16 26|9w10 9r27
+463U14*Put 26|44s4 52s7 57s7 104s10
+506U14*Put_Line 26|66s13 92s13 96s10 115s16 165s13
+X 26 main.adb
+16U11*Main 16b11 172l5 172t9
+19r4 V1{55|13R9}
+21i4 MASTER_PIN{32|3I9} 50m7 89r21 139m13
+23i4 ENTER_PIN{32|3I9} 80m19 89r32 130m22 139r27
+24K12 Lines[28|5] 26r9 32r14 45r4 48r7 49r23 50r37 58r7 63r37 72r35 72r51
+. 76r30 87r10 87r30 105r10 112r40 122r38 122r54 126r33 138r13 138r33 144r16
+. 144r36 146r16 146r36 148r16 148r36 150r16 150r36
+26r4 P{28|6R9[24]} 45m19 48r23 49r39 50r53 58m22 63r53 72r67 105m25 112r56
+. 122r70
+28E9 State 28e36 30r19
+28n19 locked{28E9} 30r28 87r79 141r30
+28n27 unlocked{28E9} 90r30 103r29 138r80 144r80 146r80 148r80 150r80
+30e4 Current_State{28E9} 87r63 90m13 103r13 138r64 141m13 144r64 146r64 148r64
+. 150r64
+32r4 COMMAND{28|6R9[24]} 76m19 87r22 126m22 138r25 144r28 146r28 148r28 150r28
+37r4 OpStack{33|8R9[31|5]} 145m31 145r31 147m32 147r32 149m35 149r35 151m33
+. 151r33
+49e18 I=49:18{character} 49r45 49r58
+60a10 T{30|10A9} 63m56 63r56 72r69 72r80 72r91
+61i10 NumTokens{natural} 63m58 65r13 70r22
+70i14 I{integer} 72r71 72r82 72r93 74r19 78r19
+72a16 TokStr{string} 76r48 80r48
+107a13 T{30|10A9} 112m59 112r59 122r72 122r83 122r94
+108i13 NumTokens{natural} 112m61 114r16 120r25
+120i17 I{integer} 122r74 122r85 122r96 124r22 128r22
+122a19 TokStr{string} 126r51 130r51
+X 27 mycommandline.ads
+1K9*MyCommandLine 26|5w6 27|10e18
+X 28 mystring.ads
+2i4 Max_MyString_Length{positive} 26|24r34
+5k9*MyString 26|6w6 24r25 28|48e13
+6R9*MyString 26|26r15[24] 32r20[24]
+8V13 To_String{string} 26|48s13[24] 49s29[24] 50s43[24] 63s43[24] 72s41[24]
+. 112s46[24] 122s44[24]
+12V13 From_String{6R9[26|24]} 26|76s36[24] 87s36[24] 126s39[24] 138s39[24]
+. 144s42[24] 146s42[24] 148s42[24] 150s42[24]
+18V13 Equal{boolean} 26|87s16[24] 138s19[24] 144s22[24] 146s22[24] 148s22[24]
+. 150s22[24]
+26V13 Substring{6R9[26|24]} 26|72s57[24] 122s60[24]
+33U14 Get_Line 26|45s10[24] 58s13[24] 105s16[24]
+X 30 mystringtokeniser.ads
+3K9*MyStringTokeniser 26|7w6 60r14 63r10 107r17 112r13 30|25e22
+6i7*Start{positive} 26|60m64 72r74 72r85 107m67 122r77 122r88
+7i7*Length{natural} 26|60m76 72r96 107m79 122r99
+10A9*TokenArray(5R9)<integer> 26|60r32 107r35
+16U14*Tokenise 26|63s28 112s31
+X 31 operations.ads
+4K9*Operations 26|14w6 17r8 145r15 147r15 149r15 151r15 31|27e15
+5K12*OperandStack[33|6] 26|37r14
+8U14*Plus 26|145s26
+9U14*Minus 26|147s26
+10U14*Multiply 26|149s26
+11U14*Divide 26|151s26
+X 32 pin.ads
+1K9*PIN 26|8w6 21r18 23r17 50r21 80r32 89r13 130r35 32|13e8
+3I9*PIN<integer> 26|21r22 23r21
+5V13*From_String{3I9} 26|50s25 80s36 130s39
+X 33 stack.ads
+6k9*Stack 26|13w6 33|45e10
+8R9*Stack 26|37r27[31|5]
+X 35 stringtointeger.ads
+3K9*StringToInteger 26|3w6 35|8e20
+X 55 variablestore.ads
+7K9*VariableStore 26|4w6 19r9 19r35 55|73e18
+13R9*Variable<28|6R9[11]> 26|19r23
+30V13*From_String{13R9}<28|12p13> 26|19s49
+
