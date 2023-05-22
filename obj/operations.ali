@@ -34,11 +34,11 @@ D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
 D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
-D mystring.ads		20230517105216 ce083c8f mystring%s
-D operations.ads	20230522075214 96768be8 operations%s
-D operations.adb	20230522075214 0c145670 operations%b
-D stack.ads		20230522063608 a6086384 stack%s
-D stack.adb		20230522045042 800e16f3 stack%b
+D mystring.ads		20230522112844 ce083c8f mystring%s
+D operations.ads	20230522112844 96768be8 operations%s
+D operations.adb	20230522112844 0c145670 operations%b
+D stack.ads		20230522112844 a6086384 stack%s
+D stack.adb		20230522112844 800e16f3 stack%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
@@ -55,7 +55,7 @@ D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
-D variablestore.ads	20230517105214 385987c4 variablestore%s
+D variablestore.ads	20230522112844 385987c4 variablestore%s
 G a e
 G c s s s [s operations 4 1 none]
 G c Z s s [init operations__operandstack 10 14 5_4]

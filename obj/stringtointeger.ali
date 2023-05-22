@@ -13,8 +13,8 @@ U stringtointeger%b	stringtointeger.adb	f3a38af4 NE OO PK
 
 U stringtointeger%s	stringtointeger.ads	37c4f5b6 EE NE OO PK
 
-D stringtointeger.ads	20230517105214 37c4f5b6 stringtointeger%s
-D stringtointeger.adb	20230517105214 c4677f42 stringtointeger%b
+D stringtointeger.ads	20230522112844 37c4f5b6 stringtointeger%s
+D stringtointeger.adb	20230522112844 c4677f42 stringtointeger%b
 D system.ads		20210520051136 2ffa5114 system%s
 G a e
 G c Z s b [from_string stringtointeger 6 13 none]

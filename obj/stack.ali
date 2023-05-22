@@ -12,8 +12,8 @@ U stack%b		stack.adb		26067577 NE OO PK GE
 
 U stack%s		stack.ads		a6086384 BN EE NE OO PK GE
 
-D stack.ads		20230522063608 a6086384 stack%s
-D stack.adb		20230522045042 800e16f3 stack%b
+D stack.ads		20230522112844 a6086384 stack%s
+D stack.adb		20230522112844 800e16f3 stack%b
 D system.ads		20210520051136 2ffa5114 system%s
 G a e
 G c Z s b [stack standard 6 9 none]

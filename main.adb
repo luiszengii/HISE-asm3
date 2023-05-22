@@ -15,8 +15,9 @@ with Operations;
 
 procedure Main is
    use Operations;
-   --  DB : VariableStore.Database;
-   V1 : VariableStore.Variable := VariableStore.From_String("VAR1");
+   DB : VariableStore.Database;
+   --  V1 : VariableStore.Variable := VariableStore.From_String("VAR1");
+   VAR : VariableStore.Variable;
    -- check if the pin entered is equal to this master pin
    MASTER_PIN  : PIN.PIN;
    -- record the pin entered by the user
@@ -33,15 +34,15 @@ procedure Main is
    -- record the COMMAND of the user input like "+" "-" "*" "/"
    COMMAND : Lines.MyString;
    -- the value after command
-   VALUE : Integer := 0;
+   NUMBER : Integer := 0;
    
    -- stack with max of 512 integers, default integer is
    OpStack : OperandStack.Stack;
    
 begin
-   -- initialize stack
-   --Stack.Clear(STACK);
-   
+   -- initialize stack and database
+   Operations.OperandStack.Init(OpStack);
+   VariableStore.Init(DB);
    -- first thing is setting up a master pin
    Put("$ ./main ");
    Lines.Get_Line(P);
@@ -131,7 +132,9 @@ begin
                   end if;
                   if I=2 then
                      -- get the integer value after command
-                     VALUE := StringToInteger.From_String(TokStr);
+                     NUMBER := StringToInteger.From_String(TokStr);
+                     VAR := VariableStore.From_String(TokStr); -- will be used when COMMAND is load, store, remove
+                     ENTER_PIN := PIN.From_String(TokStr); -- will only be used when the COMMAND is lock
                   end if;
                end;
             end loop;
@@ -140,7 +143,6 @@ begin
          
         
          if Lines.Equal(COMMAND,Lines.From_String("lock")) and Current_State = unlocked then
-            ENTER_PIN := PIN.From_String(VALUE);
             MASTER_PIN := ENTER_PIN;
             Current_State := locked; -- exit the input command phase
             
@@ -154,15 +156,15 @@ begin
          elsif Lines.Equal(COMMAND,Lines.From_String("/")) and Current_State = unlocked then
               Operations.Divide(OpStack);
          elsif Lines.Equal(COMMAND,Lines.From_String("push")) and Current_State = unlocked then
-               Operations.Push_Operation(OpStack, VALUE);
+               Operations.Push_Operation(OpStack, NUMBER);
          elsif Lines.Equal(COMMAND,Lines.From_String("pop")) and Current_State = unlocked then
-              Operations.Pop_Operation(OpStack);
+              Operations.Pop_Operation(OpStack, NUMBER); -- although the pop in commandline does not need argument, we store the value into the NUMBER
          elsif Lines.Equal(COMMAND,Lines.From_String("load")) and Current_State = unlocked then
-              Operations.Load(OpStack);
+              Operations.Load(VAR, DB, OpStack);
          elsif Lines.Equal(COMMAND,Lines.From_String("store")) and Current_State = unlocked then
-              Operations.Store(OpStack);
+              Operations.Store(VAR, DB, OpStack);
          elsif Lines.Equal(COMMAND,Lines.From_String("remove")) and Current_State = unlocked then
-              Operations.Remove(OpStack);
+              Operations.Remove(VAR, DB);
          elsif Lines.Equal(COMMAND,Lines.From_String("list")) and Current_State = unlocked then
               Operations.List(DB);
          else

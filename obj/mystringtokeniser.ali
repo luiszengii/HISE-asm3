@@ -20,8 +20,8 @@ W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
 D ada.ads		20210520051132 76789da1 ada%s
 D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
 D a-chlat1.ads		20210520051128 66457d31 ada.characters.latin_1%s
-D mystringtokeniser.ads	20230517105214 9bc8f6ad mystringtokeniser%s
-D mystringtokeniser.adb	20230517105214 e91d0d1d mystringtokeniser%b
+D mystringtokeniser.ads	20230522112844 9bc8f6ad mystringtokeniser%s
+D mystringtokeniser.adb	20230522112844 e91d0d1d mystringtokeniser%b
 D system.ads		20210520051136 2ffa5114 system%s
 G a e
 G c Z s s [is_whitespace mystringtokeniser 12 13 none]
