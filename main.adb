@@ -16,14 +16,14 @@ with Operations;
 procedure Main is
    use Operations;
    DB : VariableStore.Database;
-   --  V1 : VariableStore.Variable := VariableStore.From_String("VAR1");
-   VAR : VariableStore.Variable;
+   VAR : VariableStore.Variable := VariableStore.From_String("");
    -- check if the pin entered is equal to this master pin
-   MASTER_PIN  : PIN.PIN;
+   MASTER_PIN : PIN.PIN;
+   
    -- record the pin entered by the user
-   -- standard.string-> string to integer
-   -- pin.fromstring
-   ENTER_PIN  : PIN.PIN;
+   ENTER_PIN : PIN.PIN;
+   ENTER_PIN_STR : String := "0000";
+   
    package Lines is new MyString(Max_MyString_Length => 2048);
    -- record user input
    P  : Lines.MyString;
@@ -32,7 +32,7 @@ procedure Main is
    -- record the current state of this system
    Current_State: State := locked;
    -- record the COMMAND of the user input like "+" "-" "*" "/"
-   COMMAND : Lines.MyString;
+   COMMAND : Lines.MyString := Lines.From_String("");
    -- the value after command
    NUMBER : Integer := 0;
    
@@ -81,15 +81,24 @@ begin
                   COMMAND := Lines.From_String(TokStr);
                end if;
                if I=2 then
-                  -- get the entered pin
-                  ENTER_PIN := PIN.From_String(TokStr);
+                  -- Check the length and format of the entered pin
+                  if(TokStr'Length = 4 and
+                       (for all I of TokStr => I >= '0' and I <= '9')) then
+                     -- get the entered pin
+                     ENTER_PIN_STR := TokStr;
+                  else
+                     Put("The length of the entered pin is not 4 OR the format is invalid!");
+                     return;
+                  end if;
                end if;
             end;      
          end loop; 
       end;
    
       -- only locked state can use 'unlock 1234' otherwise do nothing 
-      if Lines.Equal(COMMAND,Lines.From_String("unlock")) and Current_State = locked then
+      if Lines.Equal(COMMAND,Lines.From_String("unlock")) and Current_State = locked and 
+      (for all I of ENTER_PIN_STR => I >= '0' and I <= '9') then
+         ENTER_PIN := PIN.From_String(ENTER_PIN_STR);
          -- if the pin entered equals to the master pin, change the state to unlocked
          If PIN."="(MASTER_PIN,ENTER_PIN) then
             Current_State := unlocked;
@@ -131,10 +140,27 @@ begin
                      COMMAND := Lines.From_String(TokStr);
                   end if;
                   if I=2 then
-                     -- get the integer value after command
+                     -- get the integer value after command, will be used in push and pop
                      NUMBER := StringToInteger.From_String(TokStr);
-                     VAR := VariableStore.From_String(TokStr); -- will be used when COMMAND is load, store, remove
-                     ENTER_PIN := PIN.From_String(TokStr); -- will only be used when the COMMAND is lock
+                     
+                     -- parse the variable name to VAR, will be used when COMMAND is load, store, remove
+                     if TokStr'Length <= VariableStore.Max_Variable_Length then
+                        VAR := VariableStore.From_String(TokStr);
+                     else
+                        Put("The length of variable exceeds the max variable length(1024)");
+                        return;
+                     end if;
+                     
+                     -- Check the length and format of the entered pin, will only be used when the COMMAND is lock
+                     if(TokStr'Length = 4 and
+                          (for all I of TokStr => I >= '0' and I <= '9')) then
+                        -- get the entered pin
+                        ENTER_PIN := PIN.From_String(TokStr);
+                     else
+                        Put("The length of the entered pin is not 4 OR the format is invalid!");
+                        return;
+                     end if;
+                     
                   end if;
                end;
             end loop;

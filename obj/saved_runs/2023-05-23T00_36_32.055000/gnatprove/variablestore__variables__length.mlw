@@ -1,0 +1,560 @@
+module Variablestore__variables__mystring__T13s
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type t13s = <range 0 1024>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (1024 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = t13s,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type t13s__ref = { mutable t13s__content : t13s }
+  
+  function t13s__ref_t13s__content__projection (a: t13s__ref) : t13s =
+    a.t13s__content
+  
+  meta "model_projection" function t13s__ref_t13s__content__projection
+  
+  meta "inline:no" function t13s__ref_t13s__content__projection
+  
+  val t13s__havoc (x: t13s__ref) : unit
+    writes { x }
+end
+
+module Variablestore__variables__mystring__T13s__rep
+  use Variablestore__variables__mystring__T13s as Variablestore__variables__mystring__T13s
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Variablestore__variables__mystring__T13s.t13s) : int =
+    Variablestore__variables__mystring__T13s.t13s'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Variablestore__variables__mystring__T13s.t13s,
+    predicate in_range = Variablestore__variables__mystring__T13s.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type character
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (255 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = character,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type character__ref = { mutable character__content : character }
+  
+  function character__ref_character__content__projection (a: character__ref) : character =
+    a.character__content
+  
+  meta "model_projection" function character__ref_character__content__projection
+  
+  meta "inline:no" function character__ref_character__content__projection
+  
+  val character__havoc (x: character__ref) : unit
+    writes { x }
+end
+
+module Standard__character__rep
+  use Standard__character as Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__character.character,
+    predicate in_range = Standard__character.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Array__Int__Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  use Standard__character__rep as Standard__character__rep
+  
+  function index_I1_one : int = 1 : int
+  
+  type component_type = Standard__character.character
+  
+  clone export _gnatprove_standard.Array__1 with
+    axiom .,
+    type I1.t = int,
+    predicate I1.le = Int.( <= ),
+    predicate I1.lt = Int.( < ),
+    predicate I1.gt = Int.( > ),
+    function I1.add = Int.( + ),
+    function I1.sub = Int.( - ),
+    function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : bool =
+    ((if (a__first <= a__last) then
+        ((b__first <= b__last) /\
+           ((a__last - a__first) = (b__last - b__first)))
+      else (b__first > b__last)) /\
+       (forall temp___idx_98 : int.
+          if ((a__first <= temp___idx_98) /\ (temp___idx_98 <= a__last)) then
+            ((Standard__character__rep.to_rep ((get a) temp___idx_98))
+               = (Standard__character__rep.to_rep
+                    ((get b) ((b__first - a__first) + temp___idx_98))))
+          else true))
+  
+  val bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : 
+    bool
+    ensures { result
+      =
+      ((((((bool_eq (a : map)) (a__first : int)) (a__last : int)) (b : map))
+          (b__first : int))
+         (b__last : int)) }
+  
+  axiom bool_eq_rev:
+    forall a : map, b : map.
+      forall a__first : int, a__last : int, b__first : int, b__last : int.
+        ((((((((bool_eq b) b__first) b__last) a) a__first) a__last) = True) ->
+           ((if (a__first <= a__last) then
+               ((b__first <= b__last) /\
+                  ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              (forall temp___idx_98 : int.
+                 if ((a__first <= temp___idx_98) /\
+                       (temp___idx_98 <= a__last)) then
+                   ((Standard__character__rep.to_rep ((get a) temp___idx_98))
+                      = (Standard__character__rep.to_rep
+                           ((get b) ((b__first - a__first) + temp___idx_98))))
+                 else true)))
+end
+
+module Variablestore__variables__mystringstr
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  type component_type = Standard__character.character
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (1024 : int) }
+  
+  clone export ada__model.Constr_Array with
+    axiom .,
+    type map = Array__Int__Standard__character.map,
+    function array_bool_eq = Array__Int__Standard__character.bool_eq,
+    function first = first,
+    function last = last,
+    type index_rep_type = int
+end
+
+module Variablestore__variables__mystring__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use Variablestore__variables__mystring__T13s as Variablestore__variables__mystring__T13s
+  use Variablestore__variables__mystring__T13s__rep as Variablestore__variables__mystring__T13s__rep
+  use Variablestore__variables__mystringstr as Variablestore__variables__mystringstr
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  type __split_fields = {
+                       rec__variablestore__variables__mystring__length :
+                         Variablestore__variables__mystring__T13s.t13s;
+                       rec__variablestore__variables__mystring__str :
+                         Array__Int__Standard__character.map
+                       }
+  
+  function __split_fields_rec__variablestore__variables__mystring__length__projection (a: __split_fields) : 
+    Variablestore__variables__mystring__T13s.t13s =
+    a.rec__variablestore__variables__mystring__length
+  
+  meta "model_projection" function __split_fields_rec__variablestore__variables__mystring__length__projection
+  
+  meta "inline:no" function __split_fields_rec__variablestore__variables__mystring__length__projection
+  
+  function __split_fields_rec__variablestore__variables__mystring__str__projection (a: __split_fields) : 
+    Array__Int__Standard__character.map =
+    a.rec__variablestore__variables__mystring__str
+  
+  meta "model_projection" function __split_fields_rec__variablestore__variables__mystring__str__projection
+  
+  meta "inline:no" function __split_fields_rec__variablestore__variables__mystring__str__projection
+  
+  type __split_fields__ref = {
+                            mutable __split_fields__content : __split_fields
+                            }
+  
+  function __split_fields__ref___split_fields__content__projection (a: __split_fields__ref) : __split_fields =
+    __split_fields__content a
+  
+  meta "model_projection" function __split_fields__ref___split_fields__content__projection
+  
+  meta "inline:no" function __split_fields__ref___split_fields__content__projection
+  
+  val __split_fields__havoc (x: __split_fields__ref) : unit
+    writes { x }
+  
+  type __rep = { __split_fields : __split_fields }
+  
+  function __rep___split_fields__projection (a: __rep) : __split_fields =
+    __split_fields a
+  
+  meta "model_projection" function __rep___split_fields__projection
+  
+  meta "inline:no" function __rep___split_fields__projection
+  
+  function to_base (a: __rep) : __rep = a
+  
+  val to_base (a: __rep) : __rep
+    ensures { result = (to_base (a : __rep)) }
+  
+  function of_base (a: __rep) : __rep = a
+  
+  val of_base (a: __rep) : __rep
+    ensures { result = (of_base (a : __rep)) }
+  
+  predicate variablestore__variables__mystring__length__pred (a: __rep) =
+    true
+  
+  val variablestore__variables__mystring__length__pred (a: __rep) : bool
+    ensures { result
+                <->
+                (variablestore__variables__mystring__length__pred (a : __rep)) }
+  
+  val rec__variablestore__variables__mystring__length_ (a: __rep) : Variablestore__variables__mystring__T13s.t13s
+    requires { variablestore__variables__mystring__length__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__variablestore__variables__mystring__length)) }
+  
+  predicate variablestore__variables__mystring__str__pred (a: __rep) = true
+  
+  val variablestore__variables__mystring__str__pred (a: __rep) : bool
+    ensures { result
+                <->
+                (variablestore__variables__mystring__str__pred (a : __rep)) }
+  
+  val rec__variablestore__variables__mystring__str_ (a: __rep) : Array__Int__Standard__character.map
+    requires { variablestore__variables__mystring__str__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__variablestore__variables__mystring__str)) }
+  
+  function bool_eq (a: __rep) (b: __rep) : bool =
+    if (((Variablestore__variables__mystring__T13s__rep.to_rep
+            ((__split_fields a).rec__variablestore__variables__mystring__length))
+           = (Variablestore__variables__mystring__T13s__rep.to_rep
+                ((__split_fields b).rec__variablestore__variables__mystring__length))) /\
+          ((Variablestore__variables__mystringstr.bool_eq
+              ((__split_fields a).rec__variablestore__variables__mystring__str))
+             ((__split_fields b).rec__variablestore__variables__mystring__str))) then
+      True
+    else False
+  
+  val bool_eq (a: __rep) (b: __rep) : bool
+    ensures { result = ((bool_eq (a : __rep)) (b : __rep)) }
+end
+
+module Variablestore__variables__mystring
+  use export Variablestore__variables__mystring__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type mystring = __rep
+  
+  val function value__size : int
+  
+  val function object__size : int
+  
+  val function alignment : int
+  
+  axiom value__size_axiom: (value__size >= (0 : int))
+  
+  axiom object__size_axiom: (object__size >= (0 : int))
+  
+  axiom alignment_axiom: (alignment >= (0 : int))
+  
+  val function variablestore__variables__mystring__length__first__bit : 
+    int
+  
+  val function variablestore__variables__mystring__length__last__bit : 
+    int
+  
+  val function variablestore__variables__mystring__length__position : 
+    int
+  
+  axiom variablestore__variables__mystring__length__first__bit_axiom:
+    (variablestore__variables__mystring__length__first__bit >= (0 : int))
+  
+  axiom variablestore__variables__mystring__length__last__bit_axiom:
+    (variablestore__variables__mystring__length__last__bit
+       > variablestore__variables__mystring__length__first__bit)
+  
+  axiom variablestore__variables__mystring__length__position_axiom:
+    (variablestore__variables__mystring__length__position >= (0 : int))
+  
+  val function variablestore__variables__mystring__str__first__bit : 
+    int
+  
+  val function variablestore__variables__mystring__str__last__bit : int
+  
+  val function variablestore__variables__mystring__str__position : int
+  
+  axiom variablestore__variables__mystring__str__first__bit_axiom:
+    (variablestore__variables__mystring__str__first__bit >= (0 : int))
+  
+  axiom variablestore__variables__mystring__str__last__bit_axiom:
+    (variablestore__variables__mystring__str__last__bit
+       > variablestore__variables__mystring__str__first__bit)
+  
+  axiom variablestore__variables__mystring__str__position_axiom:
+    (variablestore__variables__mystring__str__position >= (0 : int))
+  
+  val function user_eq (a: mystring) (b: mystring) : bool
+  
+  val function dummy : mystring
+  
+  type mystring__ref = { mutable mystring__content : mystring }
+  
+  function mystring__ref_mystring__content__projection (a: mystring__ref) : mystring =
+    a.mystring__content
+  
+  meta "model_projection" function mystring__ref_mystring__content__projection
+  
+  meta "inline:no" function mystring__ref_mystring__content__projection
+  
+  val mystring__havoc (x: mystring__ref) : unit
+    writes { x }
+end
+
+module Variablestore__variables__length__m
+  use _gnatprove_standard.Main
+  use int.Int
+  use Variablestore__variables__mystring as Variablestore__variables__mystring
+  
+  val function m : Variablestore__variables__mystring.mystring
+end
+
+module Variablestore__variables__mystring___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Variablestore__variables__mystring as Variablestore__variables__mystring
+  
+  predicate dynamic_invariant (temp___expr_205: Variablestore__variables__mystring.mystring) (temp___is_init_201: bool) (temp___skip_constant_202: bool) (temp___do_toplevel_203: bool) (temp___do_typ_inv_204: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_205: Variablestore__variables__mystring.mystring) (temp___is_init_201: bool) (temp___skip_constant_202: bool) (temp___do_toplevel_203: bool) (temp___do_typ_inv_204: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_205 :
+                          Variablestore__variables__mystring.mystring))
+                      (temp___is_init_201 : bool))
+                     (temp___skip_constant_202 : bool))
+                    (temp___do_toplevel_203 : bool))
+                   (temp___do_typ_inv_204 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_207: Variablestore__variables__mystring.mystring) (temp___skip_top_level_208: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_207: Variablestore__variables__mystring.mystring) (temp___skip_top_level_208: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_207 :
+                       Variablestore__variables__mystring.mystring))
+                   (temp___skip_top_level_208 : bool)) }
+end
+
+module Standard__character___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  
+  predicate dynamic_invariant (temp___expr_81: int) (temp___is_init_77: bool) (temp___skip_constant_78: bool) (temp___do_toplevel_79: bool) (temp___do_typ_inv_80: bool) =
+    if ((temp___is_init_77 = True) \/
+          (Standard__character.first <= Standard__character.last)) then
+      (((Standard__character.dynamic_property Standard__character.first)
+          Standard__character.last)
+         temp___expr_81)
+    else true
+  
+  val dynamic_invariant (temp___expr_81: int) (temp___is_init_77: bool) (temp___skip_constant_78: bool) (temp___do_toplevel_79: bool) (temp___do_typ_inv_80: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_81 : int))
+                      (temp___is_init_77 : bool))
+                     (temp___skip_constant_78 : bool))
+                    (temp___do_toplevel_79 : bool))
+                   (temp___do_typ_inv_80 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_82: int) (temp___skip_top_level_83: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_82: int) (temp___skip_top_level_83: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_82 : int))
+                   (temp___skip_top_level_83 : bool)) }
+end
+
+module Variablestore__variables__mystringstr___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  predicate dynamic_invariant (temp___expr_195: Array__Int__Standard__character.map) (temp___is_init_191: bool) (temp___skip_constant_192: bool) (temp___do_toplevel_193: bool) (temp___do_typ_inv_194: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_195: Array__Int__Standard__character.map) (temp___is_init_191: bool) (temp___skip_constant_192: bool) (temp___do_toplevel_193: bool) (temp___do_typ_inv_194: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_195 : Array__Int__Standard__character.map))
+                      (temp___is_init_191 : bool))
+                     (temp___skip_constant_192 : bool))
+                    (temp___do_toplevel_193 : bool))
+                   (temp___do_typ_inv_194 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_197: Array__Int__Standard__character.map) (temp___skip_top_level_198: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_197: Array__Int__Standard__character.map) (temp___skip_top_level_198: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_197 : Array__Int__Standard__character.map))
+                   (temp___skip_top_level_198 : bool)) }
+end
+
+module Variablestore__variables__length__m___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Variablestore__variables__mystring__T13s___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Variablestore__variables__length__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Variablestore__variables__mystring as Variablestore__variables__mystring
+  use Variablestore__variables__length__m as Variablestore__variables__length__m
+  use Variablestore__variables__mystring___axiom as Variablestore__variables__mystring___axiom
+  use Variablestore__variables__mystring__T13s as Variablestore__variables__mystring__T13s
+  use Variablestore__variables__mystring__T13s__rep as Variablestore__variables__mystring__T13s__rep
+  use Standard__character___axiom as Standard__character___axiom
+  use Variablestore__variables__mystringstr___axiom as Variablestore__variables__mystringstr___axiom
+  use Variablestore__variables__mystring___axiom as Variablestore__variables__mystring___axiom
+  use Variablestore__variables__length__m___axiom as Variablestore__variables__length__m___axiom
+  use Variablestore__variables__mystring__T13s___axiom as Variablestore__variables__mystring__T13s___axiom
+  
+  val variablestore__variables__length__result : int__ref
+  
+  let def (__void_param : unit)
+    requires { [#"mystring.ads" 23 0 0] true }
+    ensures { [#"mystring.ads" 23 0 0]
+              [#"mystring.ads" 24 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@GP_Shape:pragargs__cmp]
+              [@comment:     Post => Length'Result <= Max_MyString_Length;              ^ mystring.ads:24:14:instantiated:variablestore.ads:11:4:VC_POSTCONDITION]
+              [@model_vc_post]
+              [@GP_Id:0]
+              [@GP_Sloc:mystring.ads:24:14:instantiated:variablestore.ads:11:4]
+              [@GP_Pretty_Ada:46235]
+              [@GP_Sloc:mystring.ads:24:14:instantiated:variablestore.ads:11:4]
+              ((variablestore__variables__length__result.int__content)
+                 <= (1024 : int)) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram mystring.ads:23 instantiated at variablestore.ads:11]
+      ());
+     assume {
+       ((((Variablestore__variables__mystring___axiom.dynamic_invariant
+             Variablestore__variables__length__m.m)
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram mystring.ads:23 instantiated at variablestore.ads:11]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram mystring.ads:23 instantiated at variablestore.ads:11]
+      ());
+     ([@GNAT-comment:Assume Pre of the subprogram mystring.ads:23 instantiated at variablestore.ads:11]
+      ());
+     (try
+        ([@GP_Sloc:mystring.ads:43:8:instantiated:variablestore.ads:11:4]
+         [#"mystring.ads" 43 0 0]
+         (([#"mystring.ads" 43 0 0]
+           (variablestore__variables__length__result.int__content <-
+              (Variablestore__variables__mystring__T13s__rep.to_rep
+                 ((Variablestore__variables__mystring.__split_fields
+                      Variablestore__variables__length__m.m).Variablestore__variables__mystring.rec__variablestore__variables__mystring__length))));
+          ([#"mystring.ads" 43 0 0] ((raise Return__exc) : unit))));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((variablestore__variables__length__result.int__content)
+               <= (1024 : int)) in
+          () in
+        ()
+      end);
+     (variablestore__variables__length__result.int__content))
+end

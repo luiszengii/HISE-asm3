@@ -1,0 +1,969 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type character
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (255 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = character,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type character__ref = { mutable character__content : character }
+  
+  function character__ref_character__content__projection (a: character__ref) : character =
+    a.character__content
+  
+  meta "model_projection" function character__ref_character__content__projection
+  
+  meta "inline:no" function character__ref_character__content__projection
+  
+  val character__havoc (x: character__ref) : unit
+    writes { x }
+end
+
+module Standard__character__rep
+  use Standard__character as Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__character.character,
+    predicate in_range = Standard__character.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Array__Int__Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  use Standard__character__rep as Standard__character__rep
+  
+  function index_I1_one : int = 1 : int
+  
+  type component_type = Standard__character.character
+  
+  clone export _gnatprove_standard.Array__1 with
+    axiom .,
+    type I1.t = int,
+    predicate I1.le = Int.( <= ),
+    predicate I1.lt = Int.( < ),
+    predicate I1.gt = Int.( > ),
+    function I1.add = Int.( + ),
+    function I1.sub = Int.( - ),
+    function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : bool =
+    ((if (a__first <= a__last) then
+        ((b__first <= b__last) /\
+           ((a__last - a__first) = (b__last - b__first)))
+      else (b__first > b__last)) /\
+       (forall temp___idx_98 : int.
+          if ((a__first <= temp___idx_98) /\ (temp___idx_98 <= a__last)) then
+            ((Standard__character__rep.to_rep ((get a) temp___idx_98))
+               = (Standard__character__rep.to_rep
+                    ((get b) ((b__first - a__first) + temp___idx_98))))
+          else true))
+  
+  val bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : 
+    bool
+    ensures { result
+      =
+      ((((((bool_eq (a : map)) (a__first : int)) (a__last : int)) (b : map))
+          (b__first : int))
+         (b__last : int)) }
+  
+  axiom bool_eq_rev:
+    forall a : map, b : map.
+      forall a__first : int, a__last : int, b__first : int, b__last : int.
+        ((((((((bool_eq b) b__first) b__last) a) a__first) a__last) = True) ->
+           ((if (a__first <= a__last) then
+               ((b__first <= b__last) /\
+                  ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              (forall temp___idx_98 : int.
+                 if ((a__first <= temp___idx_98) /\
+                       (temp___idx_98 <= a__last)) then
+                   ((Standard__character__rep.to_rep ((get a) temp___idx_98))
+                      = (Standard__character__rep.to_rep
+                           ((get b) ((b__first - a__first) + temp___idx_98))))
+                 else true)))
+end
+
+module Main__lines__mystring__T14b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type t14b = <range 0 2048>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2048 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = t14b,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type t14b__ref = { mutable t14b__content : t14b }
+  
+  function t14b__ref_t14b__content__projection (a: t14b__ref) : t14b =
+    a.t14b__content
+  
+  meta "model_projection" function t14b__ref_t14b__content__projection
+  
+  meta "inline:no" function t14b__ref_t14b__content__projection
+  
+  val t14b__havoc (x: t14b__ref) : unit
+    writes { x }
+end
+
+module Main__lines__mystring__T14b__rep
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Main__lines__mystring__T14b.t14b) : int =
+    Main__lines__mystring__T14b.t14b'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Main__lines__mystring__T14b.t14b,
+    predicate in_range = Main__lines__mystring__T14b.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Main__lines__mystringstr
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  type component_type = Standard__character.character
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2048 : int) }
+  
+  clone export ada__model.Constr_Array with
+    axiom .,
+    type map = Array__Int__Standard__character.map,
+    function array_bool_eq = Array__Int__Standard__character.bool_eq,
+    function first = first,
+    function last = last,
+    type index_rep_type = int
+end
+
+module Main__lines__mystring__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
+  use Main__lines__mystring__T14b__rep as Main__lines__mystring__T14b__rep
+  use Main__lines__mystringstr as Main__lines__mystringstr
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  type __split_fields = {
+                       rec__main__lines__mystring__length :
+                         Main__lines__mystring__T14b.t14b;
+                       rec__main__lines__mystring__str :
+                         Array__Int__Standard__character.map
+                       }
+  
+  function __split_fields_rec__main__lines__mystring__length__projection (a: __split_fields) : 
+    Main__lines__mystring__T14b.t14b =
+    a.rec__main__lines__mystring__length
+  
+  meta "model_projection" function __split_fields_rec__main__lines__mystring__length__projection
+  
+  meta "inline:no" function __split_fields_rec__main__lines__mystring__length__projection
+  
+  function __split_fields_rec__main__lines__mystring__str__projection (a: __split_fields) : 
+    Array__Int__Standard__character.map =
+    a.rec__main__lines__mystring__str
+  
+  meta "model_projection" function __split_fields_rec__main__lines__mystring__str__projection
+  
+  meta "inline:no" function __split_fields_rec__main__lines__mystring__str__projection
+  
+  type __split_fields__ref = {
+                            mutable __split_fields__content : __split_fields
+                            }
+  
+  function __split_fields__ref___split_fields__content__2__projection (a: __split_fields__ref) : __split_fields =
+    __split_fields__content a
+  
+  meta "model_projection" function __split_fields__ref___split_fields__content__2__projection
+  
+  meta "inline:no" function __split_fields__ref___split_fields__content__2__projection
+  
+  val __split_fields__havoc (x: __split_fields__ref) : unit
+    writes { x }
+  
+  type __rep = { __split_fields : __split_fields }
+  
+  function __rep___split_fields__2__projection (a: __rep) : __split_fields =
+    __split_fields a
+  
+  meta "model_projection" function __rep___split_fields__2__projection
+  
+  meta "inline:no" function __rep___split_fields__2__projection
+  
+  function to_base (a: __rep) : __rep = a
+  
+  val to_base (a: __rep) : __rep
+    ensures { result = (to_base (a : __rep)) }
+  
+  function of_base (a: __rep) : __rep = a
+  
+  val of_base (a: __rep) : __rep
+    ensures { result = (of_base (a : __rep)) }
+  
+  predicate main__lines__mystring__length__pred (a: __rep) = true
+  
+  val main__lines__mystring__length__pred (a: __rep) : bool
+    ensures { result <-> (main__lines__mystring__length__pred (a : __rep)) }
+  
+  val rec__main__lines__mystring__length_ (a: __rep) : Main__lines__mystring__T14b.t14b
+    requires { main__lines__mystring__length__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__main__lines__mystring__length)) }
+  
+  predicate main__lines__mystring__str__pred (a: __rep) = true
+  
+  val main__lines__mystring__str__pred (a: __rep) : bool
+    ensures { result <-> (main__lines__mystring__str__pred (a : __rep)) }
+  
+  val rec__main__lines__mystring__str_ (a: __rep) : Array__Int__Standard__character.map
+    requires { main__lines__mystring__str__pred a }
+    ensures { (result = ((__split_fields a).rec__main__lines__mystring__str)) }
+  
+  function bool_eq (a: __rep) (b: __rep) : bool =
+    if (((Main__lines__mystring__T14b__rep.to_rep
+            ((__split_fields a).rec__main__lines__mystring__length))
+           = (Main__lines__mystring__T14b__rep.to_rep
+                ((__split_fields b).rec__main__lines__mystring__length))) /\
+          ((Main__lines__mystringstr.bool_eq
+              ((__split_fields a).rec__main__lines__mystring__str))
+             ((__split_fields b).rec__main__lines__mystring__str))) then
+      True
+    else False
+  
+  val bool_eq (a: __rep) (b: __rep) : bool
+    ensures { result = ((bool_eq (a : __rep)) (b : __rep)) }
+end
+
+module Main__lines__mystring
+  use export Main__lines__mystring__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type mystring = __rep
+  
+  val function value__size : int
+  
+  val function object__size : int
+  
+  val function alignment : int
+  
+  axiom value__size_axiom: (value__size >= (0 : int))
+  
+  axiom object__size_axiom: (object__size >= (0 : int))
+  
+  axiom alignment_axiom: (alignment >= (0 : int))
+  
+  val function main__lines__mystring__length__first__bit : int
+  
+  val function main__lines__mystring__length__last__bit : int
+  
+  val function main__lines__mystring__length__position : int
+  
+  axiom main__lines__mystring__length__first__bit_axiom:
+    (main__lines__mystring__length__first__bit >= (0 : int))
+  
+  axiom main__lines__mystring__length__last__bit_axiom:
+    (main__lines__mystring__length__last__bit
+       > main__lines__mystring__length__first__bit)
+  
+  axiom main__lines__mystring__length__position_axiom:
+    (main__lines__mystring__length__position >= (0 : int))
+  
+  val function main__lines__mystring__str__first__bit : int
+  
+  val function main__lines__mystring__str__last__bit : int
+  
+  val function main__lines__mystring__str__position : int
+  
+  axiom main__lines__mystring__str__first__bit_axiom:
+    (main__lines__mystring__str__first__bit >= (0 : int))
+  
+  axiom main__lines__mystring__str__last__bit_axiom:
+    (main__lines__mystring__str__last__bit
+       > main__lines__mystring__str__first__bit)
+  
+  axiom main__lines__mystring__str__position_axiom:
+    (main__lines__mystring__str__position >= (0 : int))
+  
+  val function user_eq (a: mystring) (b: mystring) : bool
+  
+  val function dummy : mystring
+  
+  type mystring__ref = { mutable mystring__content : mystring }
+  
+  function mystring__ref_mystring__content__2__projection (a: mystring__ref) : mystring =
+    a.mystring__content
+  
+  meta "model_projection" function mystring__ref_mystring__content__2__projection
+  
+  meta "inline:no" function mystring__ref_mystring__content__2__projection
+  
+  val mystring__havoc (x: mystring__ref) : unit
+    writes { x }
+end
+
+module Main__lines__less__m1
+  use _gnatprove_standard.Main
+  use int.Int
+  use Main__lines__mystring as Main__lines__mystring
+  
+  val function m1 : Main__lines__mystring.mystring
+end
+
+module Main__lines__less__m2
+  use _gnatprove_standard.Main
+  use int.Int
+  use Main__lines__mystring as Main__lines__mystring
+  
+  val function m2 : Main__lines__mystring.mystring
+end
+
+module Main__lines__mystring___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Main__lines__mystring as Main__lines__mystring
+  
+  predicate dynamic_invariant (temp___expr_268: Main__lines__mystring.mystring) (temp___is_init_264: bool) (temp___skip_constant_265: bool) (temp___do_toplevel_266: bool) (temp___do_typ_inv_267: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_268: Main__lines__mystring.mystring) (temp___is_init_264: bool) (temp___skip_constant_265: bool) (temp___do_toplevel_266: bool) (temp___do_typ_inv_267: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_268 : Main__lines__mystring.mystring))
+                      (temp___is_init_264 : bool))
+                     (temp___skip_constant_265 : bool))
+                    (temp___do_toplevel_266 : bool))
+                   (temp___do_typ_inv_267 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_270: Main__lines__mystring.mystring) (temp___skip_top_level_271: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_270: Main__lines__mystring.mystring) (temp___skip_top_level_271: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_270 : Main__lines__mystring.mystring))
+                   (temp___skip_top_level_271 : bool)) }
+end
+
+module Main__lines__less__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Main__lines__TmystringstrD1
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type tmystringstrD1 = <range 1 2048>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2048 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = tmystringstrD1,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type tmystringstrD1__ref = {
+                            mutable tmystringstrD1__content : tmystringstrD1
+                            }
+  
+  function tmystringstrD1__ref_tmystringstrD1__content__2__projection (a: tmystringstrD1__ref) : tmystringstrD1 =
+    a.tmystringstrD1__content
+  
+  meta "model_projection" function tmystringstrD1__ref_tmystringstrD1__content__2__projection
+  
+  meta "inline:no" function tmystringstrD1__ref_tmystringstrD1__content__2__projection
+  
+  val tmystringstrD1__havoc (x: tmystringstrD1__ref) : unit
+    writes { x }
+end
+
+module Main__lines__less__L_2
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_2
+end
+
+module Standard__character___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  
+  predicate dynamic_invariant (temp___expr_81: int) (temp___is_init_77: bool) (temp___skip_constant_78: bool) (temp___do_toplevel_79: bool) (temp___do_typ_inv_80: bool) =
+    if ((temp___is_init_77 = True) \/
+          (Standard__character.first <= Standard__character.last)) then
+      (((Standard__character.dynamic_property Standard__character.first)
+          Standard__character.last)
+         temp___expr_81)
+    else true
+  
+  val dynamic_invariant (temp___expr_81: int) (temp___is_init_77: bool) (temp___skip_constant_78: bool) (temp___do_toplevel_79: bool) (temp___do_typ_inv_80: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_81 : int))
+                      (temp___is_init_77 : bool))
+                     (temp___skip_constant_78 : bool))
+                    (temp___do_toplevel_79 : bool))
+                   (temp___do_typ_inv_80 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_82: int) (temp___skip_top_level_83: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_82: int) (temp___skip_top_level_83: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_82 : int))
+                   (temp___skip_top_level_83 : bool)) }
+end
+
+module Main__lines__mystringstr___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  predicate dynamic_invariant (temp___expr_258: Array__Int__Standard__character.map) (temp___is_init_254: bool) (temp___skip_constant_255: bool) (temp___do_toplevel_256: bool) (temp___do_typ_inv_257: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_258: Array__Int__Standard__character.map) (temp___is_init_254: bool) (temp___skip_constant_255: bool) (temp___do_toplevel_256: bool) (temp___do_typ_inv_257: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_258 : Array__Int__Standard__character.map))
+                      (temp___is_init_254 : bool))
+                     (temp___skip_constant_255 : bool))
+                    (temp___do_toplevel_256 : bool))
+                   (temp___do_typ_inv_257 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_260: Array__Int__Standard__character.map) (temp___skip_top_level_261: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_260: Array__Int__Standard__character.map) (temp___skip_top_level_261: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_260 : Array__Int__Standard__character.map))
+                   (temp___skip_top_level_261 : bool)) }
+end
+
+module Main__lines__less__m1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Main__lines__less__m2___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Main__lines__TmystringstrD1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Main__lines__mystring__T14b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Main__lines__less__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Main__lines__less__L_2___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Main__lines__less__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__character as Standard__character
+  use Standard__character__rep as Standard__character__rep
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Main__lines__mystring as Main__lines__mystring
+  use Main__lines__less__m1 as Main__lines__less__m1
+  use Main__lines__less__m2 as Main__lines__less__m2
+  use Main__lines__mystring___axiom as Main__lines__mystring___axiom
+  use Main__lines__less__i as Main__lines__less__i
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
+  use Main__lines__mystring__T14b__rep as Main__lines__mystring__T14b__rep
+  use Main__lines__TmystringstrD1 as Main__lines__TmystringstrD1
+  use Main__lines__less__L_2 as Main__lines__less__L_2
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__character___axiom as Standard__character___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Main__lines__mystringstr___axiom as Main__lines__mystringstr___axiom
+  use Main__lines__mystring___axiom as Main__lines__mystring___axiom
+  use Main__lines__less__m1___axiom as Main__lines__less__m1___axiom
+  use Main__lines__less__m2___axiom as Main__lines__less__m2___axiom
+  use Main__lines__TmystringstrD1___axiom as Main__lines__TmystringstrD1___axiom
+  use Main__lines__mystring__T14b___axiom as Main__lines__mystring__T14b___axiom
+  use Main__lines__less__i___axiom as Main__lines__less__i___axiom
+  use Main__lines__less__L_2___axiom as Main__lines__less__L_2___axiom
+  
+  val main__lines__less__result : bool__ref
+  
+  let def (__void_param : unit)
+    requires { [#"mystring.ads" 16 0 0] true }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram mystring.ads:16 instantiated at main.adb:24]
+      ());
+     ([#"mystring.ads" 16 0 0]
+      assume {
+        [#"mystring.ads" 16 0 0]
+        (((((Main__lines__mystring___axiom.dynamic_invariant
+               Main__lines__less__m1.m1)
+              True)
+             False)
+            True)
+           True) });
+     ([#"mystring.ads" 16 0 0]
+      assume {
+        [#"mystring.ads" 16 0 0]
+        (((((Main__lines__mystring___axiom.dynamic_invariant
+               Main__lines__less__m2.m2)
+              True)
+             False)
+            True)
+           True) });
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram mystring.ads:16 instantiated at main.adb:24]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram mystring.ads:16 instantiated at main.adb:24]
+      ());
+     ([#"mystring.ads" 16 0 0] ());
+     ([@GNAT-comment:Assume Pre of the subprogram mystring.ads:16 instantiated at main.adb:24]
+      ());
+     ([#"mystring.ads" 16 0 0]
+      (try
+         ([#"mystring.adb" 29 0 0]
+          (([#"mystring.adb" 29 0 0]
+            (Main__lines__less__i.i.int__content <- (1 : int)));
+           ([#"mystring.adb" 29 0 0]
+            assume {
+              [#"mystring.adb" 29 0 0]
+              (((((Standard__integer___axiom.dynamic_invariant
+                     (Main__lines__less__i.i.int__content))
+                    True)
+                   False)
+                  True)
+                 True) })));
+         ([#"mystring.adb" 36 0 0] ());
+         ([@GP_Sloc:mystring.adb:31:7:instantiated:main.adb:24:4]
+          [#"mystring.adb" 31 0 0]
+          (if (([#"mystring.adb" 31 0 0]
+                [#"mystring.adb" 31 0 0]
+                (([@branch_id=71478] Main.spark__branch).bool__content <-
+                   ((Main__lines__mystring__T14b__rep.to_rep
+                       ((Main__lines__mystring.__split_fields
+                            Main__lines__less__m1.m1).Main__lines__mystring.rec__main__lines__mystring__length))
+                      < (Main__lines__mystring__T14b__rep.to_rep
+                           ((Main__lines__mystring.__split_fields
+                                Main__lines__less__m2.m2).Main__lines__mystring.rec__main__lines__mystring__length)))));
+               (([@branch_id=71478] Main.spark__branch).bool__content)) then
+             ([@GP_Sloc:mystring.adb:32:10:instantiated:main.adb:24:4]
+              [#"mystring.adb" 32 0 0]
+              (([#"mystring.adb" 32 0 0]
+                (main__lines__less__result.bool__content <-
+                   (Boolean.of_int (1 : int))));
+               ([#"mystring.adb" 32 0 0] ((raise Return__exc) : unit))))
+           else
+             ([@GP_Sloc:mystring.adb:33:7:instantiated:main.adb:24:4]
+              (if (([#"mystring.adb" 33 0 0]
+                    [#"mystring.adb" 33 0 0]
+                    (([@branch_id=71540] Main.spark__branch).bool__content <-
+                       ((Main__lines__mystring__T14b__rep.to_rep
+                           ((Main__lines__mystring.__split_fields
+                                Main__lines__less__m1.m1).Main__lines__mystring.rec__main__lines__mystring__length))
+                          > (Main__lines__mystring__T14b__rep.to_rep
+                               ((Main__lines__mystring.__split_fields
+                                    Main__lines__less__m2.m2).Main__lines__mystring.rec__main__lines__mystring__length)))));
+                   (([@branch_id=71540] Main.spark__branch).bool__content)) then
+                 ([@GP_Sloc:mystring.adb:34:10:instantiated:main.adb:24:4]
+                  [#"mystring.adb" 34 0 0]
+                  (([#"mystring.adb" 34 0 0]
+                    (main__lines__less__result.bool__content <-
+                       (Boolean.of_int (0 : int))));
+                   ([#"mystring.adb" 34 0 0] ((raise Return__exc) : unit))))
+               else
+                 (([@GP_Sloc:mystring.adb:36:35:instantiated:main.adb:24:4]
+                   [#"mystring.adb" 36 0 0]
+                   (([@GNAT-comment:Translation of an Ada loop from mystring.adb:36 instantiated at main.adb:24]
+                     ());
+                    (if ((Main__lines__less__i.i.int__content)
+                           <= (2048 : int)) then
+                       ([#"mystring.adb" 36 0 0]
+                        (try
+                           ([@GNAT-comment:While loop translating the Ada loop from mystring.adb:36 instantiated at main.adb:24]
+                            ());
+                           ([#"'@Loop 71496@'mystring.adb" 37 0 0]
+                            [#"'@Loop 71496@'mystring.adb" 37 0 0]
+                            ((([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                               ());
+                              (let temp___inv_589 =
+                                 ((Main__lines__less__i.i.int__content)
+                                    >= (1 : int)) in
+                               ()));
+                             while True do
+                               invariant LoopInvariant {
+                                 [#"mystring.adb" 37 0 0]
+                                 [@GP_Id:58]
+                                 [@GP_Reason:VC_LOOP_INVARIANT]
+                                 [@comment:            pragma Loop_Invariant (I >= M1.Str'First);                                    ^ mystring.adb:37:36:instantiated:main.adb:24:4:VC_LOOP_INVARIANT]
+                                 [@vc:annotation]
+                                 [@GP_Sloc:mystring.adb:37:36:instantiated:main.adb:24:4]
+                                 [@GP_Shape:if__L_2_while__pragargs__cmp]
+                                 [@GP_Pretty_Ada:71498]
+                                 [@GP_Sloc:mystring.adb:37:36:instantiated:main.adb:24:4]
+                                 ((Main__lines__less__i.i.int__content)
+                                    >= (1 : int)) }
+                               ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                                (([@GNAT-comment:Assume implicit invariants from the loop mystring.adb:36 instantiated at main.adb:24]
+                                  ());
+                                 assume {
+                                   (Boolean.andb
+                                      ((true /\
+                                          (((((Standard__integer___axiom.dynamic_invariant
+                                                 (Main__lines__less__i.i.int__content))
+                                                True)
+                                               True)
+                                              True)
+                                             True)) /\
+                                         (true /\ true)))
+                                     ((Main__lines__less__i.i.int__content)
+                                        <= (2048 : int)) };
+                                 ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                                  ());
+                                 ([@GP_Sloc:mystring.adb:38:23:instantiated:main.adb:24:4]
+                                  [#"mystring.adb" 38 0 0] ());
+                                 ([@GP_Sloc:mystring.adb:38:35:instantiated:main.adb:24:4]
+                                  [#"mystring.adb" 38 0 0] ());
+                                 ([@GP_Sloc:mystring.adb:38:13:instantiated:main.adb:24:4]
+                                  [#"mystring.adb" 38 0 0]
+                                  (if (([#"mystring.adb" 38 0 0]
+                                        [#"mystring.adb" 38 0 0]
+                                        (([@branch_id=71505]
+                                          Main.spark__branch).bool__content <-
+                                           ((Standard__character__rep.to_rep
+                                               (let temp___587 =
+                                                  (Main__lines__mystring.__split_fields
+                                                      Main__lines__less__m1.m1).
+                                                    Main__lines__mystring.rec__main__lines__mystring__str in
+                                                (Array__Int__Standard__character.get
+                                                   temp___587)
+                                                  (([#"mystring.adb" 38 0 0]
+                                                    assert {
+                                                      [#"mystring.adb" 38 0 0]
+                                                      [#"mystring.adb" 38 0 0]
+                                                      [@GP_Id:56]
+                                                      [@GP_Shape:if__L_2_while__if__cmp__ixdcomp]
+                                                      [@vc:annotation]
+                                                      [@comment:            if M1.Str(I) < M2.Str(I) then                       ^ mystring.adb:38:23:instantiated:main.adb:24:4:VC_INDEX_CHECK]
+                                                      [@GP_Reason:VC_INDEX_CHECK]
+                                                      [@GP_Sloc:mystring.adb:38:23:instantiated:main.adb:24:4]
+                                                      ((Main__lines__TmystringstrD1.first
+                                                          <= (Main__lines__less__i.i.int__content)) /\
+                                                         ((Main__lines__less__i.i.int__content)
+                                                            <= Main__lines__TmystringstrD1.last)) });
+                                                   (Main__lines__less__i.i.int__content))))
+                                              < (Standard__character__rep.to_rep
+                                                   (let temp___588 =
+                                                      (Main__lines__mystring.__split_fields
+                                                          Main__lines__less__m2.m2).
+                                                        Main__lines__mystring.rec__main__lines__mystring__str in
+                                                    (Array__Int__Standard__character.get
+                                                       temp___588)
+                                                      (assert {
+                                                         [#"mystring.adb" 38 0 0]
+                                                         [@GP_Id:57]
+                                                         [@GP_Sloc:mystring.adb:38:35:instantiated:main.adb:24:4]
+                                                         [@GP_Shape:if__L_2_while__if__cmp__ixdcomp]
+                                                         [@vc:annotation]
+                                                         [@comment:            if M1.Str(I) < M2.Str(I) then                                   ^ mystring.adb:38:35:instantiated:main.adb:24:4:VC_INDEX_CHECK]
+                                                         [@GP_Reason:VC_INDEX_CHECK]
+                                                         ((Main__lines__TmystringstrD1.first
+                                                             <= (Main__lines__less__i.i.int__content)) /\
+                                                            ((Main__lines__less__i.i.int__content)
+                                                               <= Main__lines__TmystringstrD1.last)) };
+                                                       (Main__lines__less__i.i.int__content)))))));
+                                       (([@branch_id=71505]
+                                         Main.spark__branch).bool__content)) then
+                                     ([@GP_Sloc:mystring.adb:39:16:instantiated:main.adb:24:4]
+                                      [#"mystring.adb" 39 0 0]
+                                      (([#"mystring.adb" 39 0 0]
+                                        (main__lines__less__result.bool__content <-
+                                           (Boolean.of_int (1 : int))));
+                                       ([#"mystring.adb" 39 0 0]
+                                        ((raise Return__exc) : unit))))
+                                   else
+                                     ([@GP_Sloc:mystring.adb:40:13:instantiated:main.adb:24:4]
+                                      (if (([#"mystring.adb" 40 0 0]
+                                            [#"mystring.adb" 40 0 0]
+                                            (([@branch_id=71522]
+                                              Main.spark__branch).bool__content <-
+                                               ((Standard__character__rep.to_rep
+                                                   (let temp___585 =
+                                                      (Main__lines__mystring.__split_fields
+                                                          Main__lines__less__m1.m1).
+                                                        Main__lines__mystring.rec__main__lines__mystring__str in
+                                                    (Array__Int__Standard__character.get
+                                                       temp___585)
+                                                      (([#"mystring.adb" 40 0 0]
+                                                        assert {
+                                                          [#"mystring.adb" 40 0 0]
+                                                          [#"mystring.adb" 40 0 0]
+                                                          [@GP_Shape:if__L_2_while__if__cmp__ixdcomp]
+                                                          [@vc:annotation]
+                                                          [@comment:            elsif M1.Str(I) > M2.Str(I) then                          ^ mystring.adb:40:26:instantiated:main.adb:24:4:VC_INDEX_CHECK]
+                                                          [@GP_Reason:VC_INDEX_CHECK]
+                                                          [@GP_Sloc:mystring.adb:40:26:instantiated:main.adb:24:4]
+                                                          [@GP_Id:54]
+                                                          ((Main__lines__TmystringstrD1.first
+                                                              <= (Main__lines__less__i.i.int__content)) /\
+                                                             ((Main__lines__less__i.i.int__content)
+                                                                <= Main__lines__TmystringstrD1.last)) });
+                                                       (Main__lines__less__i.i.int__content))))
+                                                  > (Standard__character__rep.to_rep
+                                                       (let temp___586 =
+                                                          (Main__lines__mystring.__split_fields
+                                                              Main__lines__less__m2.m2).
+                                                            Main__lines__mystring.rec__main__lines__mystring__str in
+                                                        (Array__Int__Standard__character.get
+                                                           temp___586)
+                                                          (assert {
+                                                             [#"mystring.adb" 40 0 0]
+                                                             [@GP_Sloc:mystring.adb:40:38:instantiated:main.adb:24:4]
+                                                             [@GP_Shape:if__L_2_while__if__cmp__ixdcomp]
+                                                             [@vc:annotation]
+                                                             [@comment:            elsif M1.Str(I) > M2.Str(I) then                                      ^ mystring.adb:40:38:instantiated:main.adb:24:4:VC_INDEX_CHECK]
+                                                             [@GP_Reason:VC_INDEX_CHECK]
+                                                             [@GP_Id:55]
+                                                             ((Main__lines__TmystringstrD1.first
+                                                                 <= (Main__lines__less__i.i.int__content)) /\
+                                                                ((Main__lines__less__i.i.int__content)
+                                                                   <= 
+                                                                   Main__lines__TmystringstrD1.last)) };
+                                                           (Main__lines__less__i.i.int__content)))))));
+                                           (([@branch_id=71522]
+                                             Main.spark__branch).bool__content)) then
+                                         ([@GP_Sloc:mystring.adb:41:16:instantiated:main.adb:24:4]
+                                          [#"mystring.adb" 41 0 0]
+                                          (([#"mystring.adb" 41 0 0]
+                                            (main__lines__less__result.bool__content <-
+                                               (Boolean.of_int (0 : int))));
+                                           ([#"mystring.adb" 41 0 0]
+                                            ((raise Return__exc) : unit))))
+                                       else
+                                         (([@GP_Sloc:mystring.adb:43:16:instantiated:main.adb:24:4]
+                                           [#"mystring.adb" 43 0 0] ());
+                                          ([@GP_Sloc:mystring.adb:43:21:instantiated:main.adb:24:4]
+                                           [#"mystring.adb" 43 0 0] ());
+                                          ([@GP_Sloc:mystring.adb:43:18:instantiated:main.adb:24:4]
+                                           [#"mystring.adb" 43 0 0]
+                                           [#"mystring.adb" 43 0 0]
+                                           (Main__lines__less__i.i.int__content <-
+                                              ([#"mystring.adb" 43 0 0]
+                                               [@comment:               I := I + 1;                       ^ mystring.adb:43:23:instantiated:main.adb:24:4:VC_OVERFLOW_CHECK]
+                                               [@vc:annotation]
+                                               [@GP_Reason:VC_OVERFLOW_CHECK]
+                                               [@GP_Sloc:mystring.adb:43:23:instantiated:main.adb:24:4]
+                                               [@GP_Shape:if__L_2_while__if__i_assign__add]
+                                               [@GP_Id:53]
+                                               (Standard__integer.range_check_
+                                                  ((Main__lines__less__i.i.int__content)
+                                                     + (1 : int)))))))))));
+                                 ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop mystring.adb:36 instantiated at main.adb:24]
+                                  ());
+                                 (if (not ((Main__lines__less__i.i.int__content)
+                                             <= (2048 : int))) then
+                                    (raise Main__lines__less__L_2.L_2)
+                                  else ())));
+                               ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                                (([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                                  ());
+                                 (let temp___inv_589 =
+                                    ((Main__lines__less__i.i.int__content)
+                                       >= (1 : int)) in
+                                  ())));
+                               ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                                ())
+                             done))
+                         with Main__lines__less__L_2.L_2 -> ()
+                         end))
+                     else ())));
+                  ([@GP_Sloc:mystring.adb:47:10:instantiated:main.adb:24:4]
+                   [#"mystring.adb" 47 0 0]
+                   (([#"mystring.adb" 47 0 0]
+                     (main__lines__less__result.bool__content <-
+                        (Boolean.of_int (0 : int))));
+                    ([#"mystring.adb" 47 0 0] ((raise Return__exc) : unit)))))))));
+         (raise Return__exc)
+       with Return__exc -> ()
+       end));
+     (main__lines__less__result.bool__content))
+end

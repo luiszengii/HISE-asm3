@@ -1,0 +1,1541 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__positive
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type positive = <range 1 2147483647>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = positive,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type positive__ref = { mutable positive__content : positive }
+  
+  function positive__ref_positive__content__projection (a: positive__ref) : positive =
+    a.positive__content
+  
+  meta "model_projection" function positive__ref_positive__content__projection
+  
+  meta "inline:no" function positive__ref_positive__content__projection
+  
+  val positive__havoc (x: positive__ref) : unit
+    writes { x }
+end
+
+module Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type character
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (255 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = character,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type character__ref = { mutable character__content : character }
+  
+  function character__ref_character__content__projection (a: character__ref) : character =
+    a.character__content
+  
+  meta "model_projection" function character__ref_character__content__projection
+  
+  meta "inline:no" function character__ref_character__content__projection
+  
+  val character__havoc (x: character__ref) : unit
+    writes { x }
+end
+
+module Standard__character__rep
+  use Standard__character as Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__character.character,
+    predicate in_range = Standard__character.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Array__Int__Standard__character
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  use Standard__character__rep as Standard__character__rep
+  
+  function index_I1_one : int = 1 : int
+  
+  type component_type = Standard__character.character
+  
+  clone export _gnatprove_standard.Array__1 with
+    axiom .,
+    type I1.t = int,
+    predicate I1.le = Int.( <= ),
+    predicate I1.lt = Int.( < ),
+    predicate I1.gt = Int.( > ),
+    function I1.add = Int.( + ),
+    function I1.sub = Int.( - ),
+    function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : bool =
+    ((if (a__first <= a__last) then
+        ((b__first <= b__last) /\
+           ((a__last - a__first) = (b__last - b__first)))
+      else (b__first > b__last)) /\
+       (forall temp___idx_98 : int.
+          if ((a__first <= temp___idx_98) /\ (temp___idx_98 <= a__last)) then
+            ((Standard__character__rep.to_rep ((get a) temp___idx_98))
+               = (Standard__character__rep.to_rep
+                    ((get b) ((b__first - a__first) + temp___idx_98))))
+          else true))
+  
+  val bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : 
+    bool
+    ensures { result
+      =
+      ((((((bool_eq (a : map)) (a__first : int)) (a__last : int)) (b : map))
+          (b__first : int))
+         (b__last : int)) }
+  
+  axiom bool_eq_rev:
+    forall a : map, b : map.
+      forall a__first : int, a__last : int, b__first : int, b__last : int.
+        ((((((((bool_eq b) b__first) b__last) a) a__first) a__last) = True) ->
+           ((if (a__first <= a__last) then
+               ((b__first <= b__last) /\
+                  ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              (forall temp___idx_98 : int.
+                 if ((a__first <= temp___idx_98) /\
+                       (temp___idx_98 <= a__last)) then
+                   ((Standard__character__rep.to_rep ((get a) temp___idx_98))
+                      = (Standard__character__rep.to_rep
+                           ((get b) ((b__first - a__first) + temp___idx_98))))
+                 else true)))
+end
+
+module Standard__integer__rep
+  use Standard__integer as Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Standard__integer.integer) : int =
+    Standard__integer.integer'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Standard__string
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__positive as Standard__positive
+  use Standard__character as Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Standard__integer__rep as Standard__integer__rep
+  
+  type component_type = Standard__character.character
+  
+  function index_1_id (x: int) : int = x
+  
+  clone export ada__model.Unconstr_Array with
+    axiom .,
+    type map = Array__Int__Standard__character.map,
+    function array_bool_eq = Array__Int__Standard__character.bool_eq,
+    type index_base_type = Standard__integer.integer,
+    type index_rep_type = int,
+    function to_rep = Standard__integer__rep.to_rep,
+    function rep_to_int = index_1_id,
+    predicate in_range_base = Standard__integer.in_range,
+    predicate index_dynamic_property = Standard__positive.dynamic_property,
+    predicate index_rep_le = Int.( <= )
+  
+  type string__ = __t
+  
+  meta "model_projection" function to_array
+  
+  meta "inline:no" function to_array
+  
+  meta "model_projection" function first
+  
+  meta "inline:no" function first
+  
+  meta "model_projection" function last
+  
+  meta "inline:no" function last
+  
+  type string____ref = { mutable string____content : string__ }
+  
+  function string____ref_string____content__projection (a: string____ref) : string__ =
+    a.string____content
+  
+  meta "model_projection" function string____ref_string____content__projection
+  
+  meta "inline:no" function string____ref_string____content__projection
+  
+  val string____havoc (x: string____ref) : unit
+    writes { x }
+end
+
+module Variablestore__variables__mystring__T13s
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type t13s = <range 0 1024>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (1024 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = t13s,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type t13s__ref = { mutable t13s__content : t13s }
+  
+  function t13s__ref_t13s__content__projection (a: t13s__ref) : t13s =
+    a.t13s__content
+  
+  meta "model_projection" function t13s__ref_t13s__content__projection
+  
+  meta "inline:no" function t13s__ref_t13s__content__projection
+  
+  val t13s__havoc (x: t13s__ref) : unit
+    writes { x }
+end
+
+module Variablestore__variables__mystring__T13s__rep
+  use Variablestore__variables__mystring__T13s as Variablestore__variables__mystring__T13s
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Variablestore__variables__mystring__T13s.t13s) : int =
+    Variablestore__variables__mystring__T13s.t13s'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Variablestore__variables__mystring__T13s.t13s,
+    predicate in_range = Variablestore__variables__mystring__T13s.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Variablestore__variables__mystringstr
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  type component_type = Standard__character.character
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (1024 : int) }
+  
+  clone export ada__model.Constr_Array with
+    axiom .,
+    type map = Array__Int__Standard__character.map,
+    function array_bool_eq = Array__Int__Standard__character.bool_eq,
+    function first = first,
+    function last = last,
+    type index_rep_type = int
+end
+
+module Variablestore__variables__mystring__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use Variablestore__variables__mystring__T13s as Variablestore__variables__mystring__T13s
+  use Variablestore__variables__mystring__T13s__rep as Variablestore__variables__mystring__T13s__rep
+  use Variablestore__variables__mystringstr as Variablestore__variables__mystringstr
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  type __split_fields = {
+                       rec__variablestore__variables__mystring__length :
+                         Variablestore__variables__mystring__T13s.t13s;
+                       rec__variablestore__variables__mystring__str :
+                         Array__Int__Standard__character.map
+                       }
+  
+  function __split_fields_rec__variablestore__variables__mystring__length__projection (a: __split_fields) : 
+    Variablestore__variables__mystring__T13s.t13s =
+    a.rec__variablestore__variables__mystring__length
+  
+  meta "model_projection" function __split_fields_rec__variablestore__variables__mystring__length__projection
+  
+  meta "inline:no" function __split_fields_rec__variablestore__variables__mystring__length__projection
+  
+  function __split_fields_rec__variablestore__variables__mystring__str__projection (a: __split_fields) : 
+    Array__Int__Standard__character.map =
+    a.rec__variablestore__variables__mystring__str
+  
+  meta "model_projection" function __split_fields_rec__variablestore__variables__mystring__str__projection
+  
+  meta "inline:no" function __split_fields_rec__variablestore__variables__mystring__str__projection
+  
+  type __split_fields__ref = {
+                            mutable __split_fields__content : __split_fields
+                            }
+  
+  function __split_fields__ref___split_fields__content__projection (a: __split_fields__ref) : __split_fields =
+    __split_fields__content a
+  
+  meta "model_projection" function __split_fields__ref___split_fields__content__projection
+  
+  meta "inline:no" function __split_fields__ref___split_fields__content__projection
+  
+  val __split_fields__havoc (x: __split_fields__ref) : unit
+    writes { x }
+  
+  type __rep = { __split_fields : __split_fields }
+  
+  function __rep___split_fields__projection (a: __rep) : __split_fields =
+    __split_fields a
+  
+  meta "model_projection" function __rep___split_fields__projection
+  
+  meta "inline:no" function __rep___split_fields__projection
+  
+  function to_base (a: __rep) : __rep = a
+  
+  val to_base (a: __rep) : __rep
+    ensures { result = (to_base (a : __rep)) }
+  
+  function of_base (a: __rep) : __rep = a
+  
+  val of_base (a: __rep) : __rep
+    ensures { result = (of_base (a : __rep)) }
+  
+  predicate variablestore__variables__mystring__length__pred (a: __rep) =
+    true
+  
+  val variablestore__variables__mystring__length__pred (a: __rep) : bool
+    ensures { result
+                <->
+                (variablestore__variables__mystring__length__pred (a : __rep)) }
+  
+  val rec__variablestore__variables__mystring__length_ (a: __rep) : Variablestore__variables__mystring__T13s.t13s
+    requires { variablestore__variables__mystring__length__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__variablestore__variables__mystring__length)) }
+  
+  predicate variablestore__variables__mystring__str__pred (a: __rep) = true
+  
+  val variablestore__variables__mystring__str__pred (a: __rep) : bool
+    ensures { result
+                <->
+                (variablestore__variables__mystring__str__pred (a : __rep)) }
+  
+  val rec__variablestore__variables__mystring__str_ (a: __rep) : Array__Int__Standard__character.map
+    requires { variablestore__variables__mystring__str__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__variablestore__variables__mystring__str)) }
+  
+  function bool_eq (a: __rep) (b: __rep) : bool =
+    if (((Variablestore__variables__mystring__T13s__rep.to_rep
+            ((__split_fields a).rec__variablestore__variables__mystring__length))
+           = (Variablestore__variables__mystring__T13s__rep.to_rep
+                ((__split_fields b).rec__variablestore__variables__mystring__length))) /\
+          ((Variablestore__variables__mystringstr.bool_eq
+              ((__split_fields a).rec__variablestore__variables__mystring__str))
+             ((__split_fields b).rec__variablestore__variables__mystring__str))) then
+      True
+    else False
+  
+  val bool_eq (a: __rep) (b: __rep) : bool
+    ensures { result = ((bool_eq (a : __rep)) (b : __rep)) }
+end
+
+module Variablestore__variables__mystring
+  use export Variablestore__variables__mystring__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type mystring = __rep
+  
+  val function value__size : int
+  
+  val function object__size : int
+  
+  val function alignment : int
+  
+  axiom value__size_axiom: (value__size >= (0 : int))
+  
+  axiom object__size_axiom: (object__size >= (0 : int))
+  
+  axiom alignment_axiom: (alignment >= (0 : int))
+  
+  val function variablestore__variables__mystring__length__first__bit : 
+    int
+  
+  val function variablestore__variables__mystring__length__last__bit : 
+    int
+  
+  val function variablestore__variables__mystring__length__position : 
+    int
+  
+  axiom variablestore__variables__mystring__length__first__bit_axiom:
+    (variablestore__variables__mystring__length__first__bit >= (0 : int))
+  
+  axiom variablestore__variables__mystring__length__last__bit_axiom:
+    (variablestore__variables__mystring__length__last__bit
+       > variablestore__variables__mystring__length__first__bit)
+  
+  axiom variablestore__variables__mystring__length__position_axiom:
+    (variablestore__variables__mystring__length__position >= (0 : int))
+  
+  val function variablestore__variables__mystring__str__first__bit : 
+    int
+  
+  val function variablestore__variables__mystring__str__last__bit : int
+  
+  val function variablestore__variables__mystring__str__position : int
+  
+  axiom variablestore__variables__mystring__str__first__bit_axiom:
+    (variablestore__variables__mystring__str__first__bit >= (0 : int))
+  
+  axiom variablestore__variables__mystring__str__last__bit_axiom:
+    (variablestore__variables__mystring__str__last__bit
+       > variablestore__variables__mystring__str__first__bit)
+  
+  axiom variablestore__variables__mystring__str__position_axiom:
+    (variablestore__variables__mystring__str__position >= (0 : int))
+  
+  val function user_eq (a: mystring) (b: mystring) : bool
+  
+  val function dummy : mystring
+  
+  type mystring__ref = { mutable mystring__content : mystring }
+  
+  function mystring__ref_mystring__content__projection (a: mystring__ref) : mystring =
+    a.mystring__content
+  
+  meta "model_projection" function mystring__ref_mystring__content__projection
+  
+  meta "inline:no" function mystring__ref_mystring__content__projection
+  
+  val mystring__havoc (x: mystring__ref) : unit
+    writes { x }
+end
+
+module Variablestore__variables__get_line__m
+  use _gnatprove_standard.Main
+  use int.Int
+  use Variablestore__variables__mystring as Variablestore__variables__mystring
+  
+  val m__split_fields : Variablestore__variables__mystring.__split_fields__ref
+end
+
+module Variablestore__variables__mystring___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Variablestore__variables__mystring as Variablestore__variables__mystring
+  
+  predicate dynamic_invariant (temp___expr_205: Variablestore__variables__mystring.mystring) (temp___is_init_201: bool) (temp___skip_constant_202: bool) (temp___do_toplevel_203: bool) (temp___do_typ_inv_204: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_205: Variablestore__variables__mystring.mystring) (temp___is_init_201: bool) (temp___skip_constant_202: bool) (temp___do_toplevel_203: bool) (temp___do_typ_inv_204: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_205 :
+                          Variablestore__variables__mystring.mystring))
+                      (temp___is_init_201 : bool))
+                     (temp___skip_constant_202 : bool))
+                    (temp___do_toplevel_203 : bool))
+                   (temp___do_typ_inv_204 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_207: Variablestore__variables__mystring.mystring) (temp___skip_top_level_208: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_207: Variablestore__variables__mystring.mystring) (temp___skip_top_level_208: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_207 :
+                       Variablestore__variables__mystring.mystring))
+                   (temp___skip_top_level_208 : bool)) }
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Standard__string___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Standard__positive as Standard__positive
+  use Standard__string as Standard__string
+  
+  predicate dynamic_invariant (temp___expr_103: Standard__string.string__) (temp___is_init_99: bool) (temp___skip_constant_100: bool) (temp___do_toplevel_101: bool) (temp___do_typ_inv_102: bool) =
+    if temp___skip_constant_100 then true
+    else
+      ((((Standard__string.dynamic_property Standard__positive.first)
+           Standard__positive.last)
+          (Standard__string.first temp___expr_103))
+         (Standard__string.last temp___expr_103))
+  
+  val dynamic_invariant (temp___expr_103: Standard__string.string__) (temp___is_init_99: bool) (temp___skip_constant_100: bool) (temp___do_toplevel_101: bool) (temp___do_typ_inv_102: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_103 : Standard__string.string__))
+                      (temp___is_init_99 : bool))
+                     (temp___skip_constant_100 : bool))
+                    (temp___do_toplevel_101 : bool))
+                   (temp___do_typ_inv_102 : bool)) }
+end
+
+module Ada___ada__text_io__line_length__2
+  use _gnatprove_standard.Main
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  
+  val function line_length (Ada___ada__text_io__file_system___file_system___: 
+    Main.__private) (Ada___ada__text_io__standard_in___standard_in___: 
+    Main.__private) (Ada___ada__text_io__standard_out___standard_out___: 
+    Main.__private) (Ada___ada__text_io__standard_err___standard_err___: 
+    Main.__private) (Ada___ada__text_io__current_in___current_in___: 
+    Main.__private) (Ada___ada__text_io__current_out___current_out___: 
+    Main.__private) (Ada___ada__text_io__current_err___current_err___: 
+    Main.__private) : int
+  
+  val predicate line_length__function_guard (temp___result_161: int) (Ada___ada__text_io__file_system___file_system___: 
+    Main.__private) (Ada___ada__text_io__standard_in___standard_in___: 
+    Main.__private) (Ada___ada__text_io__standard_out___standard_out___: 
+    Main.__private) (Ada___ada__text_io__standard_err___standard_err___: 
+    Main.__private) (Ada___ada__text_io__current_in___current_in___: 
+    Main.__private) (Ada___ada__text_io__current_out___current_out___: 
+    Main.__private) (Ada___ada__text_io__current_err___current_err___: 
+    Main.__private)
+end
+
+module Ada___ada__text_io__page_length__2
+  use _gnatprove_standard.Main
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  
+  val function page_length (Ada___ada__text_io__file_system___file_system___: 
+    Main.__private) (Ada___ada__text_io__standard_in___standard_in___: 
+    Main.__private) (Ada___ada__text_io__standard_out___standard_out___: 
+    Main.__private) (Ada___ada__text_io__standard_err___standard_err___: 
+    Main.__private) (Ada___ada__text_io__current_in___current_in___: 
+    Main.__private) (Ada___ada__text_io__current_out___current_out___: 
+    Main.__private) (Ada___ada__text_io__current_err___current_err___: 
+    Main.__private) : int
+  
+  val predicate page_length__function_guard (temp___result_162: int) (Ada___ada__text_io__file_system___file_system___: 
+    Main.__private) (Ada___ada__text_io__standard_in___standard_in___: 
+    Main.__private) (Ada___ada__text_io__standard_out___standard_out___: 
+    Main.__private) (Ada___ada__text_io__standard_err___standard_err___: 
+    Main.__private) (Ada___ada__text_io__current_in___current_in___: 
+    Main.__private) (Ada___ada__text_io__current_out___current_out___: 
+    Main.__private) (Ada___ada__text_io__current_err___current_err___: 
+    Main.__private)
+end
+
+module Ada___ada__text_io__file_system
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val file_system : Main.__private__ref
+end
+
+module Ada___ada__text_io__standard_in
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val standard_in : Main.__private__ref
+end
+
+module Ada___ada__text_io__standard_out
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val standard_out : Main.__private__ref
+end
+
+module Ada___ada__text_io__standard_err
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val standard_err : Main.__private__ref
+end
+
+module Ada___ada__text_io__current_in
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val current_in : Main.__private__ref
+end
+
+module Ada___ada__text_io__current_out
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val current_out : Main.__private__ref
+end
+
+module Ada___ada__text_io__current_err
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val current_err : Main.__private__ref
+end
+
+module Ada___ada__text_io__get_line__2___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Integer as Integer
+  use Standard__integer as Standard__integer
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__string as Standard__string
+  use Standard__integer__rep as Standard__integer__rep
+  use Standard__string___axiom as Standard__string___axiom
+  use Ada___ada__text_io__line_length__2 as Ada___ada__text_io__line_length__2
+  use Ada___ada__text_io__page_length__2 as Ada___ada__text_io__page_length__2
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  
+  val get_line (item: Array__Int__Standard__character.map__ref) (item__first: 
+    Standard__integer.integer) (item__last: Standard__integer.integer) (last: int__ref) : 
+    unit
+    reads { Ada___ada__text_io__file_system.file_system,
+      Ada___ada__text_io__standard_in.standard_in,
+      Ada___ada__text_io__standard_out.standard_out,
+      Ada___ada__text_io__standard_err.standard_err,
+      Ada___ada__text_io__current_in.current_in,
+      Ada___ada__text_io__current_out.current_out,
+      Ada___ada__text_io__current_err.current_err }
+    requires { true }
+    writes { Ada___ada__text_io__file_system.file_system, Ada___ada__text_io__standard_in.standard_in, Ada___ada__text_io__standard_out.standard_out, Ada___ada__text_io__standard_err.standard_err, Ada___ada__text_io__current_in.current_in, Ada___ada__text_io__current_out.current_out, Ada___ada__text_io__current_err.current_err, item, last }
+    ensures { (((([@GP_Pretty_Ada:12165]
+                  ((old (((((((Ada___ada__text_io__line_length__2.line_length
+                                 (Main.__private__content
+                                     Ada___ada__text_io__file_system.file_system))
+                                (Main.__private__content
+                                    Ada___ada__text_io__standard_in.standard_in))
+                               (Main.__private__content
+                                   Ada___ada__text_io__standard_out.standard_out))
+                              (Main.__private__content
+                                  Ada___ada__text_io__standard_err.standard_err))
+                             (Main.__private__content
+                                 Ada___ada__text_io__current_in.current_in))
+                            (Main.__private__content
+                                Ada___ada__text_io__current_out.current_out))
+                           (Main.__private__content
+                               Ada___ada__text_io__current_err.current_err)))
+                     = (((((((Ada___ada__text_io__line_length__2.line_length
+                                (Main.__private__content
+                                    Ada___ada__text_io__file_system.file_system))
+                               (Main.__private__content
+                                   Ada___ada__text_io__standard_in.standard_in))
+                              (Main.__private__content
+                                  Ada___ada__text_io__standard_out.standard_out))
+                             (Main.__private__content
+                                 Ada___ada__text_io__standard_err.standard_err))
+                            (Main.__private__content
+                                Ada___ada__text_io__current_in.current_in))
+                           (Main.__private__content
+                               Ada___ada__text_io__current_out.current_out))
+                          (Main.__private__content
+                              Ada___ada__text_io__current_err.current_err)))) /\
+                   ([@GP_Pretty_Ada:12171]
+                    ((old (((((((Ada___ada__text_io__page_length__2.page_length
+                                   (Main.__private__content
+                                       Ada___ada__text_io__file_system.file_system))
+                                  (Main.__private__content
+                                      Ada___ada__text_io__standard_in.standard_in))
+                                 (Main.__private__content
+                                     Ada___ada__text_io__standard_out.standard_out))
+                                (Main.__private__content
+                                    Ada___ada__text_io__standard_err.standard_err))
+                               (Main.__private__content
+                                   Ada___ada__text_io__current_in.current_in))
+                              (Main.__private__content
+                                  Ada___ada__text_io__current_out.current_out))
+                             (Main.__private__content
+                                 Ada___ada__text_io__current_err.current_err)))
+                       = (((((((Ada___ada__text_io__page_length__2.page_length
+                                  (Main.__private__content
+                                      Ada___ada__text_io__file_system.file_system))
+                                 (Main.__private__content
+                                     Ada___ada__text_io__standard_in.standard_in))
+                                (Main.__private__content
+                                    Ada___ada__text_io__standard_out.standard_out))
+                               (Main.__private__content
+                                   Ada___ada__text_io__standard_err.standard_err))
+                              (Main.__private__content
+                                  Ada___ada__text_io__current_in.current_in))
+                             (Main.__private__content
+                                 Ada___ada__text_io__current_out.current_out))
+                            (Main.__private__content
+                                Ada___ada__text_io__current_err.current_err))))) /\
+                  (if (((Integer.length
+                           (Standard__integer__rep.to_rep item__first))
+                          (Standard__integer__rep.to_rep item__last))
+                         > (0 : int)) then
+                     ([@GP_Pretty_Ada:12180]
+                      ((((Standard__integer__rep.to_rep item__first)
+                           - (1 : int))
+                          <= (last.int__content)) /\
+                         ((last.int__content)
+                            <= (Standard__integer__rep.to_rep item__last))))
+                   else
+                     ([@GP_Pretty_Ada:12191]
+                      ((last.int__content)
+                         = ((Standard__integer__rep.to_rep item__first)
+                              - (1 : int)))))) /\
+                 ((((((Standard__string___axiom.dynamic_invariant
+                         (((Standard__string.of_array
+                              (item.Array__Int__Standard__character.map__content))
+                             (Standard__integer__rep.to_rep item__first))
+                            (Standard__integer__rep.to_rep item__last)))
+                        True)
+                       True)
+                      True)
+                     True) /\
+                    (((((Standard__natural___axiom.dynamic_invariant
+                           (last.int__content))
+                          True)
+                         True)
+                        True)
+                       True))) }
+end
+
+module Variablestore__variables__TmystringstrD1
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type tmystringstrD1 = <range 1 1024>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (1024 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = tmystringstrD1,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type tmystringstrD1__ref = {
+                            mutable tmystringstrD1__content : tmystringstrD1
+                            }
+  
+  function tmystringstrD1__ref_tmystringstrD1__content__projection (a: tmystringstrD1__ref) : tmystringstrD1 =
+    a.tmystringstrD1__content
+  
+  meta "model_projection" function tmystringstrD1__ref_tmystringstrD1__content__projection
+  
+  meta "inline:no" function tmystringstrD1__ref_tmystringstrD1__content__projection
+  
+  val tmystringstrD1__havoc (x: tmystringstrD1__ref) : unit
+    writes { x }
+end
+
+module Standard__positive___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__positive as Standard__positive
+  
+  predicate dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) =
+    if ((temp___is_init_49 = True) \/
+          (Standard__positive.first <= Standard__positive.last)) then
+      (((Standard__positive.dynamic_property Standard__positive.first)
+          Standard__positive.last)
+         temp___expr_53)
+    else true
+  
+  val dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_53 : int))
+                      (temp___is_init_49 : bool))
+                     (temp___skip_constant_50 : bool))
+                    (temp___do_toplevel_51 : bool))
+                   (temp___do_typ_inv_52 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_54 : int))
+                   (temp___skip_top_level_55 : bool)) }
+end
+
+module Standard__character___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__character as Standard__character
+  
+  predicate dynamic_invariant (temp___expr_81: int) (temp___is_init_77: bool) (temp___skip_constant_78: bool) (temp___do_toplevel_79: bool) (temp___do_typ_inv_80: bool) =
+    if ((temp___is_init_77 = True) \/
+          (Standard__character.first <= Standard__character.last)) then
+      (((Standard__character.dynamic_property Standard__character.first)
+          Standard__character.last)
+         temp___expr_81)
+    else true
+  
+  val dynamic_invariant (temp___expr_81: int) (temp___is_init_77: bool) (temp___skip_constant_78: bool) (temp___do_toplevel_79: bool) (temp___do_typ_inv_80: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_81 : int))
+                      (temp___is_init_77 : bool))
+                     (temp___skip_constant_78 : bool))
+                    (temp___do_toplevel_79 : bool))
+                   (temp___do_typ_inv_80 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_82: int) (temp___skip_top_level_83: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_82: int) (temp___skip_top_level_83: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_82 : int))
+                   (temp___skip_top_level_83 : bool)) }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Ada___ada__text_io__count
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type count = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = count,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type count__ref = { mutable count__content : count }
+  
+  function count__ref_count__content__projection (a: count__ref) : count =
+    a.count__content
+  
+  meta "model_projection" function count__ref_count__content__projection
+  
+  meta "inline:no" function count__ref_count__content__projection
+  
+  val count__havoc (x: count__ref) : unit
+    writes { x }
+end
+
+module Ada___ada__text_io__count___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Ada___ada__text_io__count as Ada___ada__text_io__count
+  
+  predicate dynamic_invariant (temp___expr_181: int) (temp___is_init_177: bool) (temp___skip_constant_178: bool) (temp___do_toplevel_179: bool) (temp___do_typ_inv_180: bool) =
+    if ((temp___is_init_177 = True) \/
+          (Ada___ada__text_io__count.first <= Ada___ada__text_io__count.last)) then
+      (((Ada___ada__text_io__count.dynamic_property
+           Ada___ada__text_io__count.first)
+          Ada___ada__text_io__count.last)
+         temp___expr_181)
+    else true
+  
+  val dynamic_invariant (temp___expr_181: int) (temp___is_init_177: bool) (temp___skip_constant_178: bool) (temp___do_toplevel_179: bool) (temp___do_typ_inv_180: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_181 : int))
+                      (temp___is_init_177 : bool))
+                     (temp___skip_constant_178 : bool))
+                    (temp___do_toplevel_179 : bool))
+                   (temp___do_typ_inv_180 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_182: int) (temp___skip_top_level_183: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_182: int) (temp___skip_top_level_183: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_182 : int))
+                   (temp___skip_top_level_183 : bool)) }
+end
+
+module Ada___ada__text_io__line_length__2___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use Ada___ada__text_io__line_length__2 as Ada___ada__text_io__line_length__2
+  use Ada___ada__text_io__count___axiom as Ada___ada__text_io__count___axiom
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  
+  val line_length (__void_param: unit) : int
+    reads { Ada___ada__text_io__file_system.file_system,
+      Ada___ada__text_io__standard_in.standard_in,
+      Ada___ada__text_io__standard_out.standard_out,
+      Ada___ada__text_io__standard_err.standard_err,
+      Ada___ada__text_io__current_in.current_in,
+      Ada___ada__text_io__current_out.current_out,
+      Ada___ada__text_io__current_err.current_err }
+    requires { true }
+    writes {  }
+    ensures { (((result
+                   = (((((((Ada___ada__text_io__line_length__2.line_length
+                              (Main.__private__content
+                                  Ada___ada__text_io__file_system.file_system))
+                             (Main.__private__content
+                                 Ada___ada__text_io__standard_in.standard_in))
+                            (Main.__private__content
+                                Ada___ada__text_io__standard_out.standard_out))
+                           (Main.__private__content
+                               Ada___ada__text_io__standard_err.standard_err))
+                          (Main.__private__content
+                              Ada___ada__text_io__current_in.current_in))
+                         (Main.__private__content
+                             Ada___ada__text_io__current_out.current_out))
+                        (Main.__private__content
+                            Ada___ada__text_io__current_err.current_err))) /\
+                  true) /\
+                 (((((Ada___ada__text_io__count___axiom.dynamic_invariant
+                        result)
+                       True)
+                      False)
+                     True)
+                    True)) }
+  
+  axiom line_length__post_axiom:
+    forall Ada___ada__text_io__file_system___file_system___ : Main.__private, Ada___ada__text_io__standard_in___standard_in___ : 
+          Main.__private, Ada___ada__text_io__standard_out___standard_out___ : 
+          Main.__private, Ada___ada__text_io__standard_err___standard_err___ : 
+          Main.__private, Ada___ada__text_io__current_in___current_in___ : 
+          Main.__private, Ada___ada__text_io__current_out___current_out___ : 
+          Main.__private, Ada___ada__text_io__current_err___current_err___ : 
+          Main.__private
+          [((((((Ada___ada__text_io__line_length__2.line_length
+                   Ada___ada__text_io__file_system___file_system___)
+                  Ada___ada__text_io__standard_in___standard_in___)
+                 Ada___ada__text_io__standard_out___standard_out___)
+                Ada___ada__text_io__standard_err___standard_err___)
+               Ada___ada__text_io__current_in___current_in___)
+              Ada___ada__text_io__current_out___current_out___)
+             Ada___ada__text_io__current_err___current_err___].
+      let result =
+        ((((((Ada___ada__text_io__line_length__2.line_length
+                Ada___ada__text_io__file_system___file_system___)
+               Ada___ada__text_io__standard_in___standard_in___)
+              Ada___ada__text_io__standard_out___standard_out___)
+             Ada___ada__text_io__standard_err___standard_err___)
+            Ada___ada__text_io__current_in___current_in___)
+           Ada___ada__text_io__current_out___current_out___)
+          Ada___ada__text_io__current_err___current_err___ in
+      ((true /\
+          (((((Ada___ada__text_io__count___axiom.dynamic_invariant result)
+                True)
+               False)
+              True)
+             True)) /\
+         true)
+end
+
+module Ada___ada__text_io__page_length__2___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use Ada___ada__text_io__page_length__2 as Ada___ada__text_io__page_length__2
+  use Ada___ada__text_io__count___axiom as Ada___ada__text_io__count___axiom
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  use Ada___ada__text_io__file_system as Ada___ada__text_io__file_system
+  use Ada___ada__text_io__standard_in as Ada___ada__text_io__standard_in
+  use Ada___ada__text_io__standard_out as Ada___ada__text_io__standard_out
+  use Ada___ada__text_io__standard_err as Ada___ada__text_io__standard_err
+  use Ada___ada__text_io__current_in as Ada___ada__text_io__current_in
+  use Ada___ada__text_io__current_out as Ada___ada__text_io__current_out
+  use Ada___ada__text_io__current_err as Ada___ada__text_io__current_err
+  
+  val page_length (__void_param: unit) : int
+    reads { Ada___ada__text_io__file_system.file_system,
+      Ada___ada__text_io__standard_in.standard_in,
+      Ada___ada__text_io__standard_out.standard_out,
+      Ada___ada__text_io__standard_err.standard_err,
+      Ada___ada__text_io__current_in.current_in,
+      Ada___ada__text_io__current_out.current_out,
+      Ada___ada__text_io__current_err.current_err }
+    requires { true }
+    writes {  }
+    ensures { (((result
+                   = (((((((Ada___ada__text_io__page_length__2.page_length
+                              (Main.__private__content
+                                  Ada___ada__text_io__file_system.file_system))
+                             (Main.__private__content
+                                 Ada___ada__text_io__standard_in.standard_in))
+                            (Main.__private__content
+                                Ada___ada__text_io__standard_out.standard_out))
+                           (Main.__private__content
+                               Ada___ada__text_io__standard_err.standard_err))
+                          (Main.__private__content
+                              Ada___ada__text_io__current_in.current_in))
+                         (Main.__private__content
+                             Ada___ada__text_io__current_out.current_out))
+                        (Main.__private__content
+                            Ada___ada__text_io__current_err.current_err))) /\
+                  true) /\
+                 (((((Ada___ada__text_io__count___axiom.dynamic_invariant
+                        result)
+                       True)
+                      False)
+                     True)
+                    True)) }
+  
+  axiom page_length__post_axiom:
+    forall Ada___ada__text_io__file_system___file_system___ : Main.__private, Ada___ada__text_io__standard_in___standard_in___ : 
+          Main.__private, Ada___ada__text_io__standard_out___standard_out___ : 
+          Main.__private, Ada___ada__text_io__standard_err___standard_err___ : 
+          Main.__private, Ada___ada__text_io__current_in___current_in___ : 
+          Main.__private, Ada___ada__text_io__current_out___current_out___ : 
+          Main.__private, Ada___ada__text_io__current_err___current_err___ : 
+          Main.__private
+          [((((((Ada___ada__text_io__page_length__2.page_length
+                   Ada___ada__text_io__file_system___file_system___)
+                  Ada___ada__text_io__standard_in___standard_in___)
+                 Ada___ada__text_io__standard_out___standard_out___)
+                Ada___ada__text_io__standard_err___standard_err___)
+               Ada___ada__text_io__current_in___current_in___)
+              Ada___ada__text_io__current_out___current_out___)
+             Ada___ada__text_io__current_err___current_err___].
+      let result =
+        ((((((Ada___ada__text_io__page_length__2.page_length
+                Ada___ada__text_io__file_system___file_system___)
+               Ada___ada__text_io__standard_in___standard_in___)
+              Ada___ada__text_io__standard_out___standard_out___)
+             Ada___ada__text_io__standard_err___standard_err___)
+            Ada___ada__text_io__current_in___current_in___)
+           Ada___ada__text_io__current_out___current_out___)
+          Ada___ada__text_io__current_err___current_err___ in
+      ((true /\
+          (((((Ada___ada__text_io__count___axiom.dynamic_invariant result)
+                True)
+               False)
+              True)
+             True)) /\
+         true)
+end
+
+module Variablestore__variables__mystringstr___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  
+  predicate dynamic_invariant (temp___expr_195: Array__Int__Standard__character.map) (temp___is_init_191: bool) (temp___skip_constant_192: bool) (temp___do_toplevel_193: bool) (temp___do_typ_inv_194: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_195: Array__Int__Standard__character.map) (temp___is_init_191: bool) (temp___skip_constant_192: bool) (temp___do_toplevel_193: bool) (temp___do_typ_inv_194: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_195 : Array__Int__Standard__character.map))
+                      (temp___is_init_191 : bool))
+                     (temp___skip_constant_192 : bool))
+                    (temp___do_toplevel_193 : bool))
+                   (temp___do_typ_inv_194 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_197: Array__Int__Standard__character.map) (temp___skip_top_level_198: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_197: Array__Int__Standard__character.map) (temp___skip_top_level_198: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_197 : Array__Int__Standard__character.map))
+                   (temp___skip_top_level_198 : bool)) }
+end
+
+module Variablestore__variables__get_line__m___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Variablestore__variables__TmystringstrD1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Variablestore__variables__mystring__T13s___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Variablestore__variables__get_line__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__positive as Standard__positive
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Standard__string as Standard__string
+  use Standard__integer__rep as Standard__integer__rep
+  use Variablestore__variables__mystring as Variablestore__variables__mystring
+  use Variablestore__variables__get_line__m as Variablestore__variables__get_line__m
+  use Variablestore__variables__mystring___axiom as Variablestore__variables__mystring___axiom
+  use Ada___ada__text_io__get_line__2___axiom as Ada___ada__text_io__get_line__2___axiom
+  use Variablestore__variables__mystring__T13s as Variablestore__variables__mystring__T13s
+  use Variablestore__variables__mystring__T13s__rep as Variablestore__variables__mystring__T13s__rep
+  use Variablestore__variables__TmystringstrD1 as Variablestore__variables__TmystringstrD1
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Array__Int__Standard__character as Array__Int__Standard__character
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__positive___axiom as Standard__positive___axiom
+  use Standard__character___axiom as Standard__character___axiom
+  use Standard__string___axiom as Standard__string___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Ada___ada__text_io__count___axiom as Ada___ada__text_io__count___axiom
+  use Ada___ada__text_io__line_length__2___axiom as Ada___ada__text_io__line_length__2___axiom
+  use Ada___ada__text_io__page_length__2___axiom as Ada___ada__text_io__page_length__2___axiom
+  use Ada___ada__text_io__get_line__2___axiom as Ada___ada__text_io__get_line__2___axiom
+  use Variablestore__variables__mystringstr___axiom as Variablestore__variables__mystringstr___axiom
+  use Variablestore__variables__mystring___axiom as Variablestore__variables__mystring___axiom
+  use Variablestore__variables__get_line__m___axiom as Variablestore__variables__get_line__m___axiom
+  use Variablestore__variables__TmystringstrD1___axiom as Variablestore__variables__TmystringstrD1___axiom
+  use Variablestore__variables__mystring__T13s___axiom as Variablestore__variables__mystring__T13s___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"mystring.ads" 33 0 0] true }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram mystring.ads:33 instantiated at variablestore.ads:11]
+      ());
+     ([#"mystring.ads" 33 0 0]
+      assume {
+        [#"mystring.ads" 33 0 0]
+        (((((Variablestore__variables__mystring___axiom.dynamic_invariant
+               { Variablestore__variables__mystring.__split_fields =
+                   (Variablestore__variables__mystring.__split_fields__content
+                       Variablestore__variables__get_line__m.m__split_fields) })
+              False)
+             False)
+            True)
+           True) });
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram mystring.ads:33 instantiated at variablestore.ads:11]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram mystring.ads:33 instantiated at variablestore.ads:11]
+      ());
+     ([#"mystring.ads" 33 0 0] ());
+     ([@GNAT-comment:Assume Pre of the subprogram mystring.ads:33 instantiated at variablestore.ads:11]
+      ());
+     ([#"mystring.ads" 33 0 0]
+      (try
+         ([@GP_Sloc:mystring.adb:85:18:instantiated:variablestore.ads:11:4]
+          [#"mystring.adb" 85 0 0] ());
+         ([@GP_Sloc:mystring.adb:85:18:instantiated:variablestore.ads:11:4]
+          [#"mystring.adb" 85 0 0]
+          (let temp___compl_403 =
+             let temp___402 =
+               (Variablestore__variables__mystring.__split_fields
+                   { Variablestore__variables__mystring.__split_fields =
+                       (Variablestore__variables__mystring.__split_fields__content
+                           Variablestore__variables__get_line__m.m__split_fields) }).
+                 Variablestore__variables__mystring.rec__variablestore__variables__mystring__str in
+             ([#"mystring.adb" 85 0 0]
+              assert {
+                [#"mystring.adb" 85 0 0]
+                [#"mystring.adb" 85 0 0]
+                [@GP_Sloc:mystring.adb:85:44:instantiated:variablestore.ads:11:4]
+                [@GP_Shape:call_get_line__typeconv__selectcomp]
+                [@GP_Id:46]
+                [@vc:annotation]
+                [@comment:      Ada.Text_IO.Get_Line(Item => String(M.Str), Last => M.Length);                                            ^ mystring.adb:85:44:instantiated:variablestore.ads:11:4:VC_RANGE_CHECK]
+                [@GP_Reason:VC_RANGE_CHECK]
+                ((((Standard__string.dynamic_property
+                      Standard__positive.first)
+                     Standard__positive.last)
+                    Variablestore__variables__TmystringstrD1.first)
+                   Variablestore__variables__TmystringstrD1.last) });
+             (((Standard__string.of_array temp___402)
+                 Variablestore__variables__TmystringstrD1.first)
+                Variablestore__variables__TmystringstrD1.last) in
+           let item =
+             { Array__Int__Standard__character.map__content =
+                 (Standard__string.to_array temp___compl_403) } in
+           let temp___compl_408 =
+             Variablestore__variables__mystring__T13s__rep.to_rep
+               ((Variablestore__variables__mystring.__split_fields
+                    { Variablestore__variables__mystring.__split_fields =
+                        (Variablestore__variables__mystring.__split_fields__content
+                            Variablestore__variables__get_line__m.m__split_fields) }).
+                  Variablestore__variables__mystring.rec__variablestore__variables__mystring__length) in
+           let last = { int__content = temp___compl_408 } in
+           (val _f : unit in
+            _f);
+           ((((Ada___ada__text_io__get_line__2___axiom.get_line item)
+                (Standard__integer__rep.of_rep
+                   (Standard__string.first temp___compl_403)))
+               (Standard__integer__rep.of_rep
+                  (Standard__string.last temp___compl_403)))
+              last);
+           (let temp___407 =
+              let temp___406 =
+                { Variablestore__variables__mystring.__split_fields =
+                    (Variablestore__variables__mystring.__split_fields__content
+                        Variablestore__variables__get_line__m.m__split_fields) } in
+              (begin
+                 ensures { true }
+                 let _ =
+                   let _ =
+                     (Variablestore__variables__mystring.__split_fields
+                         temp___406).Variablestore__variables__mystring.rec__variablestore__variables__mystring__str in
+                   () in
+                 ()
+               end);
+              ({ temp___406 with
+                 Variablestore__variables__mystring.__split_fields =
+                   ({ (Variablestore__variables__mystring.__split_fields
+                          temp___406) with
+                      Variablestore__variables__mystring.rec__variablestore__variables__mystring__str =
+                        (let temp___404 =
+                           ((Standard__string.of_array
+                               (item.Array__Int__Standard__character.map__content))
+                              (Standard__string.first temp___compl_403))
+                             (Standard__string.last temp___compl_403) in
+                         let temp___405 =
+                           ((Array__Int__Standard__character.slide
+                               (Standard__string.to_array temp___404))
+                              (Standard__string.first temp___404))
+                             Variablestore__variables__TmystringstrD1.first in
+                         temp___405) }) }) in
+            Variablestore__variables__get_line__m.m__split_fields.Variablestore__variables__mystring.__split_fields__content <-
+              (Variablestore__variables__mystring.__split_fields temp___407));
+           (let temp___410 =
+              let temp___409 =
+                { Variablestore__variables__mystring.__split_fields =
+                    (Variablestore__variables__mystring.__split_fields__content
+                        Variablestore__variables__get_line__m.m__split_fields) } in
+              (begin
+                 ensures { true }
+                 let _ =
+                   let _ =
+                     (Variablestore__variables__mystring.__split_fields
+                         temp___409).Variablestore__variables__mystring.rec__variablestore__variables__mystring__length in
+                   () in
+                 ()
+               end);
+              ({ temp___409 with
+                 Variablestore__variables__mystring.__split_fields =
+                   ({ (Variablestore__variables__mystring.__split_fields
+                          temp___409) with
+                      Variablestore__variables__mystring.rec__variablestore__variables__mystring__length =
+                        (Variablestore__variables__mystring__T13s__rep.of_rep
+                           ([#"mystring.adb" 85 0 0]
+                            [@comment:      Ada.Text_IO.Get_Line(Item => String(M.Str), Last => M.Length);                                                            ^ mystring.adb:85:60:instantiated:variablestore.ads:11:4:VC_RANGE_CHECK]
+                            [@GP_Id:47]
+                            [@vc:annotation]
+                            [@GP_Shape:call_get_line__selectcomp]
+                            [@GP_Reason:VC_RANGE_CHECK]
+                            [@GP_Sloc:mystring.adb:85:60:instantiated:variablestore.ads:11:4]
+                            (Variablestore__variables__mystring__T13s.range_check_
+                               (last.int__content)))) }) }) in
+            Variablestore__variables__get_line__m.m__split_fields.Variablestore__variables__mystring.__split_fields__content <-
+              (Variablestore__variables__mystring.__split_fields temp___410))));
+         (raise Return__exc)
+       with Return__exc -> ()
+       end)))
+end

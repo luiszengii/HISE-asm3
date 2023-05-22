@@ -1,0 +1,2 @@
+main.adb:88:39: medium: length check might fail [reason for check: array must be of the appropriate length] [possible fix: call at line 63 should mention M (for argument P) in a postcondition][#0]
+main.adb:100:26: medium: precondition might fail, cannot prove S' Length = 4 [possible fix: loop at line 59 should mention ENTER_PIN_STR in a loop invariant][#1]
