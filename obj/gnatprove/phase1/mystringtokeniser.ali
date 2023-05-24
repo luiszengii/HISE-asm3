@@ -1,4 +1,4 @@
-V "GNAT Lib v2019"
+V "GNAT Lib v2021"
 A -x
 A ada
 A -gnatA
@@ -10,7 +10,6 @@ RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
-RV SPARK_05
 
 U mystringtokeniser%b	mystringtokeniser.adb	72d5fbb0 OO PK
 
@@ -19,12 +18,12 @@ W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
 
-D ada.ads		20190518041256 76789da1 ada%s
-D a-charac.ads		20190518041256 2d3ec45b ada.characters%s
-D a-chlat1.ads		20190518041256 66457d31 ada.characters.latin_1%s
-D mystringtokeniser.ads	20230517105214 9bc8f6ad mystringtokeniser%s
-D mystringtokeniser.adb	20230517105214 e91d0d1d mystringtokeniser%b
-D system.ads		20190518041256 32a08138 system%s
+D ada.ads		20210520051130 76789da1 ada%s
+D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
+D a-chlat1.ads		20210520051128 66457d31 ada.characters.latin_1%s
+D mystringtokeniser.ads	20230524090544 9bc8f6ad mystringtokeniser%s
+D mystringtokeniser.adb	20230524090544 e91d0d1d mystringtokeniser%b
+D system.ads		20210520051134 2ffa5114 system%s
 G a Z
 X 1 ada.ads
 16K9*Ada 20e8 4|1r6 13r24 14r14
@@ -58,17 +57,17 @@ X 5 mystringtokeniser.adb
 9i7 OutIndex{integer} 16r13 18r40 23r33 39r20 43r17 46m16 46r28
 18i21 J{integer} 19r23 20r27 21r20 21r51
 
-QQ SPARKVERSION 2019 (20190517)
+QQ SPARKVERSION SPARK Community 2021 (20210519)
 GG EK_DIRECT_CALLS mystringtokeniser__is_whitespace 0
-GG EK_GLOBALS mystringtokeniser__is_whitespace local FALSE E_FUNCTION FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_GLOBALS mystringtokeniser__is_whitespace local FALSE E_FUNCTION FALSE ORIGIN_FLOW 1 mystringtokeniser proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_DIRECT_CALLS mystringtokeniser__tokenise 1 mystringtokeniser__is_whitespace
-GG EK_GLOBALS mystringtokeniser__tokenise local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE TRUE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_GLOBALS mystringtokeniser__tokenise local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 mystringtokeniser proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_DIRECT_CALLS mystringtokeniser 0
-GG EK_GLOBALS mystringtokeniser local FALSE E_PACKAGE TRUE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
-GG EK_FLOW_SCOPE ada__characters TRUE FALSE FALSE FALSE FALSE ada
+GG EK_GLOBALS mystringtokeniser local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 refined_initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_FLOW_SCOPE mystringtokeniser__tokenise FALSE FALSE FALSE FALSE TRUE mystringtokeniser VISIBLE_PART
-GG EK_FLOW_SCOPE mystringtokeniser TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE ada___ada__characters TRUE FALSE FALSE FALSE FALSE ada
 GG EK_FLOW_SCOPE mystringtokeniser__is_whitespace FALSE FALSE FALSE FALSE TRUE mystringtokeniser VISIBLE_PART
-GG EK_FLOW_SCOPE ada__characters__latin_1 TRUE FALSE FALSE FALSE FALSE ada__characters
+GG EK_FLOW_SCOPE ada___ada___ada__characters__latin_1 TRUE FALSE FALSE FALSE FALSE ada___ada__characters
 GG EK_FLOW_SCOPE ada TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE mystringtokeniser TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_END_MARKER

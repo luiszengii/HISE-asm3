@@ -58,16 +58,16 @@ D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D main.adb		20230524081706 b7e694e4 main%b
-D mycommandline.ads	20230517105214 dbf720e9 mycommandline%s
-D mystring.ads		20230517105216 ce083c8f mystring%s
-D mystring.adb		20230517105214 8198c1c4 mystring%b
-D mystringtokeniser.ads	20230517105214 9bc8f6ad mystringtokeniser%s
-D operations.ads	20230524081526 da8c8bb9 operations%s
-D pin.ads		20230517105214 553c8633 pin%s
-D stack.ads		20230523105110 a6086384 stack%s
-D stack.adb		20230523105110 800e16f3 stack%b
-D stringtointeger.ads	20230517105214 37c4f5b6 stringtointeger%s
+D main.adb		20230524101044 b7e694e4 main%b
+D mycommandline.ads	20230524090544 dbf720e9 mycommandline%s
+D mystring.ads		20230524090544 ce083c8f mystring%s
+D mystring.adb		20230524090544 8198c1c4 mystring%b
+D mystringtokeniser.ads	20230524090544 9bc8f6ad mystringtokeniser%s
+D operations.ads	20230524095458 da8c8bb9 operations%s
+D pin.ads		20230524090544 553c8633 pin%s
+D stack.ads		20230524090544 a6086384 stack%s
+D stack.adb		20230524090544 800e16f3 stack%b
+D stringtointeger.ads	20230524090544 37c4f5b6 stringtointeger%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
 D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
@@ -87,19 +87,19 @@ D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
-D variablestore.ads	20230517105214 385987c4 variablestore%s
+D variablestore.ads	20230524090544 385987c4 variablestore%s
 G a e
 G c Z b b [main standard 16 11 none]
 G r s database [main standard 16 11 none] [databaseIP variablestore 51 9 none]
 G r c none [main standard 16 11 none] [from_string variablestore 30 13 none]
 G r c none [main standard 16 11 none] [from_string pin 5 13 none]
 G r i none [main standard 16 11 none] [mystring standard 5 9 none]
-G r c none [main standard 16 11 none] [init operations__operandstack 11 14 5_4]
+G r c none [main standard 16 11 none] [init operations__operandstack 10 14 5_4]
 G r c none [main standard 16 11 none] [init variablestore 17 14 none]
 G r c none [main standard 16 11 none] [tokenise mystringtokeniser 16 14 none]
 G r c none [main standard 16 11 none] [from_string stringtointeger 6 13 none]
-G r c none [main standard 16 11 none] [size operations__operandstack 14 13 5_4]
-G r c none [main standard 16 11 none] [plus operations 8 14 none]
+G r c none [main standard 16 11 none] [size operations__operandstack 13 13 5_4]
+G r c none [main standard 16 11 none] [plus operations 8 17 none]
 G r c none [main standard 16 11 none] [minus operations 12 14 none]
 G r c none [main standard 16 11 none] [multiply operations 16 14 none]
 G r c none [main standard 16 11 none] [divide operations 20 14 none]
@@ -146,7 +146,7 @@ X 26 main.adb
 36r4 COMMAND{28|6R9[27]} 84m22 102r25 143m22 158r37 174r25 177r28 183r28
 . 189r28 195r28 201r28 203r28 205r28 207r28 209r28 211r28
 39i4 NUMBER{integer} 147m22 202r51 204m49
-42r4 OpStack{33|9R9[31|5]} 46m33 178r34 179m32 179r32 184r34 185m33 185r33
+42r4 OpStack{33|8R9[31|5]} 46m33 178r34 179m32 179r32 184r34 185m33 185r33
 . 190r34 191m36 191r36 196r34 197m34 197r34 202m42 202r42 204m40 204r40 206m40
 . 206r40 208m41 208r41
 54e18 I=54:18{character} 54r45 54r58
@@ -186,8 +186,8 @@ X 30 mystringtokeniser.ads
 X 31 operations.ads
 4K9*Operations 26|14w6 17r8 46r4 179r16 185r16 191r16 197r16 202r16 204r15
 . 206r15 208r15 210r15 212r15 31|50e15
-5K12*OperandStack[33|7] 26|42r14 46r15 178r16 184r16 190r16 196r16
-8U14*Plus 26|179s27
+5K12*OperandStack[33|6] 26|42r14 46r15 178r16 184r16 190r16 196r16
+8U17*Plus 26|179s27
 12U14*Minus 26|185s27
 16U14*Multiply 26|191s27
 20U14*Divide 26|197s27
@@ -202,10 +202,10 @@ X 32 pin.ads
 3I9*PIN<integer> 26|21r21 24r20
 5V13*From_String{3I9} 26|24s31 55s25 104s30 162s45
 X 33 stack.ads
-7k9*Stack 26|13w6 33|46e10
-9R9*Stack 26|42r27[31|5]
-11U14*Init 26|46s28[31|5]
-14V13*Size{integer} 26|178s29[31|5] 184s29[31|5] 190s29[31|5] 196s29[31|5]
+6k9*Stack 26|13w6 33|45e10
+8R9*Stack 26|42r27[31|5]
+10U14*Init 26|46s28[31|5]
+13V13*Size{integer} 26|178s29[31|5] 184s29[31|5] 190s29[31|5] 196s29[31|5]
 X 35 stringtointeger.ads
 3K9*StringToInteger 26|3w6 147r32 35|8e20
 6V13*From_String{integer} 26|147s48

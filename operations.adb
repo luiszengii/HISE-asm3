@@ -1,7 +1,7 @@
 with VariableStore;
+with Stack;
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
-with Stack;
 
 package body Operations is
 

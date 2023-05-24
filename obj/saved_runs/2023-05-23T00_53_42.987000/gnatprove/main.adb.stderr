@@ -1,1 +1,0 @@
-main.adb:100:26: medium: precondition might fail, cannot prove S(I) >= '0' [possible fix: loop at line 59 should mention ENTER_PIN_STR in a loop invariant][#0]

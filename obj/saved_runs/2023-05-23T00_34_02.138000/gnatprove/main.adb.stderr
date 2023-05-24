@@ -1,4 +1,0 @@
-main.adb:85:38: medium: precondition might fail, cannot prove S' Length = 4 [possible fix: call at line 60 should mention M (for argument P) in a postcondition][#2]
-main.adb:98:32: medium: "ENTER_PIN" might not be initialized[#0]
-main.adb:147:38: medium: precondition might fail, cannot prove S' Length = 4 [possible fix: call at line 114 should mention M (for argument P) in a postcondition][#3]
-main.adb:156:27: medium: "ENTER_PIN" might not be initialized[#1]

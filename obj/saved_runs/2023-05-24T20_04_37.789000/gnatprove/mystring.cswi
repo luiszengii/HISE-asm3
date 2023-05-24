@@ -1,0 +1,7 @@
+              
+-c
+-x
+ada
+-gnatA
+-gnatc
+-gnates=D:\assignment3\obj\gnatprove\bf8c4dfc.tmp

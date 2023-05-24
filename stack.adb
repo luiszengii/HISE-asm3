@@ -1,4 +1,3 @@
--- reference: Lecture 14 and 15 example
 package body Stack with SPARK_Mode is
 
    procedure Init(S : out Stack) is

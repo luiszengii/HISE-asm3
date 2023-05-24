@@ -5,7 +5,7 @@ package Operations is
    package OperandStack is new Stack(Max_Size => 512, Item => Integer, Default_Item => 0);
    -- Instantiate the Stack package with the desired parameters
 
-   procedure Plus(S: in out OperandStack.Stack; IsLocked: in Boolean) with
+      procedure Plus(S: in out OperandStack.Stack; IsLocked: in Boolean) with
      Pre => OperandStack.Size(S) >= 2 and IsLocked = False,
      Post => OperandStack.Size(S) = OperandStack.Size(S'Old) - 1;
 

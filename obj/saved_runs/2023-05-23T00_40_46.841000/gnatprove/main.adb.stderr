@@ -1,2 +1,0 @@
-main.adb:98:32: medium: "ENTER_PIN" might not be initialized[#0]
-main.adb:167:27: medium: "ENTER_PIN" might not be initialized[#1]

@@ -1,6 +1,0 @@
-main.adb:21:04: warning: initialization of "MASTER_PIN" has no effect[#0]
-main.adb:21:32: medium: precondition might fail, cannot prove S' Length = 4[#1]
-main.adb:25:31: medium: precondition might fail, cannot prove S' Length = 4[#2]
-main.adb:84:35: medium: precondition might fail, cannot prove S' Length = 4 [possible fix: call at line 62 should mention M (for argument P) in a postcondition][#3]
-main.adb:135:42: medium: precondition might fail, cannot prove S'Length <= Max_Variable_Length[#4]
-main.adb:136:38: medium: precondition might fail, cannot prove S' Length = 4 [possible fix: call at line 109 should mention M (for argument P) in a postcondition][#5]

@@ -269,17 +269,17 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\mycommandline.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\mystring.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\mystringtokeniser.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\pin.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\stack.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\stringtointeger.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\variablestore.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\operations.o
-   --   C:\Users\linzzz\Desktop\HISE-asm3\obj\main.o
-   --   -LC:\Users\linzzz\Desktop\HISE-asm3\obj\
-   --   -LC:\Users\linzzz\Desktop\HISE-asm3\obj\
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\mycommandline.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\mystring.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\mystringtokeniser.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\pin.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\stack.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\stringtointeger.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\variablestore.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\operations.o
+   --   C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\main.o
+   --   -LC:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\
+   --   -LC:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\
    --   -LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
    --   -static
    --   -lgnat

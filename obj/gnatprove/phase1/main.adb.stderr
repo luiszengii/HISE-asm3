@@ -1,2 +1,0 @@
-main.adb:26:20: unconstrained subtype not allowed (need initialization)
-main.adb:26:20: provide initial value or explicit array bounds
