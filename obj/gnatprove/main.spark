@@ -150,7 +150,7 @@
   "flow": [
     {
       "file": "main.adb",
-      "line": 122,
+      "line": 69,
       "col": 13,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -188,8 +188,8 @@
     },
     {
       "file": "main.adb",
-      "line": 66,
-      "col": 10,
+      "line": 126,
+      "col": 13,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
@@ -207,45 +207,7 @@
     },
     {
       "file": "main.adb",
-      "line": 40,
-      "col": 4,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "main.adb",
-      "line": 21,
-      "col": 4,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "main.adb",
-      "line": 24,
+      "line": 42,
       "col": 4,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -265,6 +227,25 @@
     {
       "file": "main.adb",
       "line": 29,
+      "col": 4,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "main.adb",
+      "line": 21,
       "col": 4,
       "rule": "UNINITIALIZED",
       "severity": "info",
@@ -351,18 +332,2334 @@
       "how_proved": "flow"
     }
   ],
-  "session_map": {
-    " 1": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__length",
-    " 2": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__to_string",
-    " 3": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__less",
-    " 4": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__from_string",
-    " 5": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__get",
-    " 6": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__equal",
-    " 7": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__get_line",
-    " 8": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main__lines__substring",
-    " 9": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\main"
-  },
   "proof": [
+    {
+      "file": "main.adb",
+      "line": 19,
+      "col": 49,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 35,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 19,
+      "check_col": 49,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 24,
+      "col": 30,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 304,
+              "time": 5.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 304,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 84,
+              "time": 5.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 24,
+      "check_col": 30,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 36,
+      "col": 37,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 58,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 36,
+      "check_col": 37,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 55,
+      "col": 24,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 104,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 104,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 14,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 55,
+      "check_col": 24,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 71,
+      "col": 30,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 21,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 21,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 71,
+      "check_col": 30,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 80,
+      "col": 74,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 80,
+      "check_col": 74,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 80,
+      "col": 85,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 80,
+      "check_col": 85,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 80,
+      "col": 96,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 21,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 80,
+      "check_col": 96,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 80,
+      "col": 93,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 475,
+              "time": 1.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 80,
+      "check_col": 93,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.09999999403954E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 80,
+      "col": 105,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 467,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 80,
+      "check_col": 105,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 80,
+      "col": 59,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 467,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 462,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 80,
+      "check_col": 59,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 84,
+      "col": 38,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 501,
+              "time": 1.40000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 84,
+      "check_col": 38,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.40000000596046E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 91,
+      "col": 42,
+      "rule": "VC_LENGTH_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 91,
+      "check_col": 42,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 4,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 104,
+      "col": 29,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 288,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 288,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 491,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 104,
+      "check_col": 29,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 102,
+      "col": 38,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 277,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 102,
+      "check_col": 38,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 129,
+      "col": 30,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 21,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 21,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 129,
+      "check_col": 30,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 139,
+      "col": 74,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 139,
+      "check_col": 74,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 139,
+      "col": 85,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 139,
+      "check_col": 85,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 139,
+      "col": 96,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 21,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 139,
+      "check_col": 96,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 139,
+      "col": 93,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 1022,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 139,
+      "check_col": 93,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 139,
+      "col": 105,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 1017,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 139,
+      "check_col": 105,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 139,
+      "col": 59,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 1016,
+              "time": 1.40000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 1012,
+              "time": 1.60000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 139,
+      "check_col": 59,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.59999996423721E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 143,
+      "col": 38,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 927,
+              "time": 1.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 143,
+      "check_col": 38,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.09999999403954E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 151,
+      "col": 45,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 935,
+              "time": 1.90000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 151,
+      "check_col": 45,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.89999997615814E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 150,
+      "col": 31,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 46,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 150,
+      "check_col": 31,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 162,
+      "col": 44,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 391,
+              "time": 1.60000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 391,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 403,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 162,
+      "check_col": 44,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 1.59999996423721E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 158,
+      "col": 50,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 379,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 158,
+      "check_col": 50,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 212,
+      "col": 25,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 212,
+      "check_col": 25,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 211,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 519,
+              "time": 1.90000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 211,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.89999997615814E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 210,
+      "col": 25,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 210,
+      "check_col": 25,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 209,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 514,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 209,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 208,
+      "col": 25,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 208,
+      "check_col": 25,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 207,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 509,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 207,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 206,
+      "col": 25,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 1.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 206,
+      "check_col": 25,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.09999999403954E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 205,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 489,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 205,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 204,
+      "col": 25,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 204,
+      "check_col": 25,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 203,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 484,
+              "time": 1.60000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 203,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.59999996423721E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 202,
+      "col": 26,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 202,
+      "check_col": 26,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 201,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 464,
+              "time": 1.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 201,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.09999999403954E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 197,
+      "col": 26,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 197,
+      "check_col": 26,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 195,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 454,
+              "time": 1.60000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 195,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.59999996423721E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 191,
+      "col": 26,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 191,
+      "check_col": 26,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 189,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 449,
+              "time": 1.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 189,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.09999999403954E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 185,
+      "col": 26,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 185,
+      "check_col": 26,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 183,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 444,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 183,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 179,
+      "col": 26,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 179,
+      "check_col": 26,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 3,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 177,
+      "col": 41,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 439,
+              "time": 2.00000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 177,
+      "check_col": 41,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 2.00000002980232E-01
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 174,
+      "col": 38,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 16
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 419,
+              "time": 1.30000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "main.adb",
+      "check_line": 174,
+      "check_col": 38,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.29999995231628E-01
+        }
+      }
+    },
     {
       "file": "mystring.ads",
       "line": 24,
@@ -387,7 +2684,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 35,
               "time": 0
             }
           },
@@ -398,7 +2695,6 @@
       "check_file": "mystring.ads",
       "check_line": 24,
       "check_col": 14,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -432,7 +2728,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 42,
               "time": 0
             }
           },
@@ -443,7 +2739,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -454,7 +2750,6 @@
       "check_file": "mystring.adb",
       "check_line": 6,
       "check_col": 7,
-      "session_dir": 2,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -488,7 +2783,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 59,
               "time": 0
             }
           },
@@ -499,7 +2794,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -510,7 +2805,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -521,7 +2816,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -532,7 +2827,6 @@
       "check_file": "mystring.adb",
       "check_line": 8,
       "check_col": 25,
-      "session_dir": 2,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -566,7 +2860,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 127,
               "time": 0
             }
           },
@@ -577,7 +2871,6 @@
       "check_file": "mystring.adb",
       "check_line": 8,
       "check_col": 25,
-      "session_dir": 2,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -611,7 +2904,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 158,
               "time": 0
             }
           },
@@ -622,7 +2915,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 180,
               "time": 0
             }
           },
@@ -633,7 +2926,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 142,
               "time": 0
             }
           },
@@ -642,27 +2935,24 @@
         },
         {
           "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
           },
           "transformations": {
-            "trivial_true": [
-            ]
           }
         }
       ],
       "check_file": "mystring.adb",
       "check_line": 8,
       "check_col": 17,
-      "session_dir": 2,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
-          "count": 3,
+          "count": 4,
           "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        },
-        "Trivial": {
-          "count": 1,
-          "max_steps": 0,
           "max_time": 0.00000000000000E+00
         }
       }
@@ -691,7 +2981,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -702,7 +2992,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 51,
               "time": 0
             }
           },
@@ -713,7 +3003,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -722,27 +3012,24 @@
         },
         {
           "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
           },
           "transformations": {
-            "trivial_true": [
-            ]
           }
         }
       ],
       "check_file": "mystring.adb",
       "check_line": 8,
       "check_col": 14,
-      "session_dir": 2,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
-          "count": 3,
+          "count": 4,
           "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        },
-        "Trivial": {
-          "count": 1,
-          "max_steps": 0,
           "max_time": 0.00000000000000E+00
         }
       }
@@ -771,7 +3058,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 45,
               "time": 0
             }
           },
@@ -782,7 +3069,6 @@
       "check_file": "mystring.ads",
       "check_line": 9,
       "check_col": 30,
-      "session_dir": 2,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -816,7 +3102,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 64,
               "time": 0
             }
           },
@@ -827,7 +3113,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -838,7 +3124,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 163,
               "time": 0
             }
           },
@@ -849,370 +3135,10 @@
       "check_file": "mystring.ads",
       "check_line": 9,
       "check_col": 14,
-      "session_dir": 2,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 3,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 43,
-      "col": 23,
-      "rule": "VC_OVERFLOW_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Less",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 16
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 43,
-      "check_col": 23,
-      "session_dir": 3,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 40,
-      "col": 26,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Less",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 16
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 40,
-      "check_col": 26,
-      "session_dir": 3,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 40,
-      "col": 38,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Less",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 16
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 40,
-      "check_col": 38,
-      "session_dir": 3,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 38,
-      "col": 23,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Less",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 16
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 38,
-      "check_col": 23,
-      "session_dir": 3,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 38,
-      "col": 35,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Less",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 16
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 38,
-      "check_col": 35,
-      "session_dir": 3,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 37,
-      "col": 36,
-      "rule": "VC_LOOP_INVARIANT_INIT",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Less",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 16
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 37,
-      "check_col": 36,
-      "session_dir": 3,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 37,
-      "col": 36,
-      "rule": "VC_LOOP_INVARIANT_PRESERV",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Less",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 16
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 37,
-      "check_col": 36,
-      "session_dir": 3,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
           "max_steps": 1,
           "max_time": 0.00000000000000E+00
         }
@@ -1242,7 +3168,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1253,7 +3179,6 @@
       "check_file": "mystring.adb",
       "check_line": 17,
       "check_col": 10,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1287,7 +3212,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -1298,7 +3223,6 @@
       "check_file": "mystring.adb",
       "check_line": 16,
       "check_col": 11,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1332,7 +3256,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -1343,7 +3267,6 @@
       "check_file": "mystring.adb",
       "check_line": 19,
       "check_col": 20,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1377,7 +3300,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 21,
               "time": 0
             }
           },
@@ -1388,7 +3311,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1399,7 +3322,6 @@
       "check_file": "mystring.adb",
       "check_line": 22,
       "check_col": 16,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1433,7 +3355,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 16,
               "time": 0
             }
           },
@@ -1444,7 +3366,6 @@
       "check_file": "mystring.adb",
       "check_line": 23,
       "check_col": 17,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1478,7 +3399,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -1489,7 +3410,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1500,7 +3421,6 @@
       "check_file": "mystring.adb",
       "check_line": 21,
       "check_col": 39,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1534,7 +3454,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -1545,7 +3465,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1556,56 +3476,10 @@
       "check_file": "mystring.adb",
       "check_line": 21,
       "check_col": 49,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 21,
-      "col": 33,
-      "rule": "VC_LOOP_INVARIANT_PRESERV",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.From_String",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 12
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 21,
-      "check_col": 33,
-      "session_dir": 4,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
           "max_steps": 1,
           "max_time": 0.00000000000000E+00
         }
@@ -1635,7 +3509,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1646,7 +3520,50 @@
       "check_file": "mystring.adb",
       "check_line": 21,
       "check_col": 33,
-      "session_dir": 4,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 21,
+      "col": 33,
+      "rule": "VC_LOOP_INVARIANT_PRESERV",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.From_String",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 12
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 21,
+      "check_col": 33,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1680,7 +3597,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1691,7 +3608,6 @@
       "check_file": "mystring.ads",
       "check_line": 14,
       "check_col": 45,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1725,7 +3641,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 16,
               "time": 0
             }
           },
@@ -1736,7 +3652,6 @@
       "check_file": "mystring.ads",
       "check_line": 13,
       "check_col": 15,
-      "session_dir": 4,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1770,7 +3685,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 146,
               "time": 0
             }
           },
@@ -1781,7 +3696,358 @@
       "check_file": "mystring.ads",
       "check_line": 14,
       "check_col": 15,
-      "session_dir": 4,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 43,
+      "col": 23,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Less",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 16
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 17,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 43,
+      "check_col": 23,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 40,
+      "col": 26,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Less",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 16
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 40,
+      "check_col": 26,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 40,
+      "col": 38,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Less",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 16
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 40,
+      "check_col": 38,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 38,
+      "col": 23,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Less",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 16
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 38,
+      "check_col": 23,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 38,
+      "col": 35,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Less",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 16
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 38,
+      "check_col": 35,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 37,
+      "col": 36,
+      "rule": "VC_LOOP_INVARIANT_INIT",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Less",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 16
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 37,
+      "check_col": 36,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 37,
+      "col": 36,
+      "rule": "VC_LOOP_INVARIANT_PRESERV",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Less",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 16
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 20,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 37,
+      "check_col": 36,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1815,7 +4081,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 29,
               "time": 0
             }
           },
@@ -1826,7 +4092,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1837,7 +4103,6 @@
       "check_file": "mystring.ads",
       "check_line": 46,
       "check_col": 13,
-      "session_dir": 5,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1871,7 +4136,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 16,
               "time": 0
             }
           },
@@ -1882,7 +4147,6 @@
       "check_file": "mystring.adb",
       "check_line": 64,
       "check_col": 23,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1916,7 +4180,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1927,7 +4191,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1938,7 +4202,6 @@
       "check_file": "mystring.adb",
       "check_line": 61,
       "check_col": 23,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -1972,7 +4235,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1983,7 +4246,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -1994,7 +4257,6 @@
       "check_file": "mystring.adb",
       "check_line": 61,
       "check_col": 36,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2028,7 +4290,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -2039,7 +4301,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2050,7 +4312,6 @@
       "check_file": "mystring.adb",
       "check_line": 60,
       "check_col": 54,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2084,7 +4345,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2095,7 +4356,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2106,7 +4367,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2117,7 +4378,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2128,7 +4389,6 @@
       "check_file": "mystring.adb",
       "check_line": 60,
       "check_col": 67,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2162,7 +4422,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 21,
               "time": 0
             }
           },
@@ -2173,7 +4433,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2184,7 +4444,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2195,7 +4455,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2206,67 +4466,10 @@
       "check_file": "mystring.adb",
       "check_line": 60,
       "check_col": 79,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 4,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 59,
-      "col": 36,
-      "rule": "VC_LOOP_INVARIANT_INIT",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Equal",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 18
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 59,
-      "check_col": 36,
-      "session_dir": 6,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
           "max_steps": 1,
           "max_time": 0.00000000000000E+00
         }
@@ -2296,7 +4499,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 101,
               "time": 0
             }
           },
@@ -2307,7 +4510,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 21,
               "time": 0
             }
           },
@@ -2318,7 +4521,61 @@
       "check_file": "mystring.adb",
       "check_line": 59,
       "check_col": 36,
-      "session_dir": 6,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "mystring.adb",
+      "line": 59,
+      "col": 36,
+      "rule": "VC_LOOP_INVARIANT_INIT",
+      "severity": "info",
+      "entity": {
+        "name": "Main.Lines.Equal",
+        "sloc": [
+          {
+            "file": "mystring.ads",
+            "line": 18
+          },
+          {
+            "file": "main.adb",
+            "line": 27
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "mystring.adb",
+      "check_line": 59,
+      "check_col": 36,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2352,7 +4609,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2363,7 +4620,6 @@
       "check_file": "mystring.ads",
       "check_line": 21,
       "check_col": 40,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2397,7 +4653,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 88,
               "time": 0
             }
           },
@@ -2408,7 +4664,6 @@
       "check_file": "mystring.ads",
       "check_line": 21,
       "check_col": 52,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2440,17 +4695,9 @@
       "check_tree": [
         {
           "proof_attempts": {
-          },
-          "transformations": {
-            "trivial_true": [
-            ]
-          }
-        },
-        {
-          "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2461,7 +4708,18 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 305,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 40,
               "time": 0
             }
           },
@@ -2472,106 +4730,10 @@
       "check_file": "mystring.ads",
       "check_line": 19,
       "check_col": 15,
-      "session_dir": 6,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        },
-        "Trivial": {
-          "count": 1,
-          "max_steps": 0,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 85,
-      "col": 44,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Get_Line",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 33
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 85,
-      "check_col": 44,
-      "session_dir": 7,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "mystring.adb",
-      "line": 85,
-      "col": 60,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main.Lines.Get_Line",
-        "sloc": [
-          {
-            "file": "mystring.ads",
-            "line": 33
-          },
-          {
-            "file": "main.adb",
-            "line": 27
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "mystring.adb",
-      "check_line": 85,
-      "check_col": 60,
-      "session_dir": 7,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
+          "count": 3,
           "max_steps": 1,
           "max_time": 0.00000000000000E+00
         }
@@ -2601,7 +4763,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -2612,7 +4774,6 @@
       "check_file": "mystring.adb",
       "check_line": 72,
       "check_col": 44,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2646,7 +4807,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 29,
               "time": 0
             }
           },
@@ -2657,7 +4818,6 @@
       "check_file": "mystring.adb",
       "check_line": 72,
       "check_col": 44,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2691,7 +4851,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 69,
               "time": 0
             }
           },
@@ -2702,7 +4862,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 20,
               "time": 0
             }
           },
@@ -2713,7 +4873,6 @@
       "check_file": "mystring.adb",
       "check_line": 77,
       "check_col": 28,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2747,7 +4906,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 21,
               "time": 0
             }
           },
@@ -2758,7 +4917,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2769,7 +4928,6 @@
       "check_file": "mystring.adb",
       "check_line": 77,
       "check_col": 16,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2803,7 +4961,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 16,
               "time": 0
             }
           },
@@ -2814,7 +4972,6 @@
       "check_file": "mystring.adb",
       "check_line": 78,
       "check_col": 17,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2848,7 +5005,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 21,
               "time": 0
             }
           },
@@ -2859,7 +5016,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2870,7 +5027,6 @@
       "check_file": "mystring.adb",
       "check_line": 76,
       "check_col": 39,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2904,7 +5060,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 14,
               "time": 0
             }
           },
@@ -2915,7 +5071,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2926,7 +5082,6 @@
       "check_file": "mystring.adb",
       "check_line": 76,
       "check_col": 46,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -2960,7 +5115,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -2971,7 +5126,6 @@
       "check_file": "mystring.adb",
       "check_line": 76,
       "check_col": 33,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -3005,7 +5159,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -3016,7 +5170,6 @@
       "check_file": "mystring.adb",
       "check_line": 76,
       "check_col": 33,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -3050,7 +5203,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -3061,7 +5214,6 @@
       "check_file": "mystring.ads",
       "check_line": 28,
       "check_col": 51,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -3095,7 +5247,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 102,
               "time": 0
             }
           },
@@ -3106,7 +5258,6 @@
       "check_file": "mystring.ads",
       "check_line": 28,
       "check_col": 14,
-      "session_dir": 8,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -3117,424 +5268,21 @@
       }
     },
     {
-      "file": "main.adb",
-      "line": 19,
-      "col": 49,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 19,
-      "check_col": 49,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 35,
-      "col": 37,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 35,
-      "check_col": 37,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 53,
-      "col": 24,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 53,
-      "check_col": 24,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 3,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 68,
-      "col": 27,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-          },
-          "transformations": {
-            "trivial_true": [
-            ]
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 68,
-      "check_col": 27,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        },
-        "Trivial": {
-          "count": 1,
-          "max_steps": 0,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 77,
-      "col": 71,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 77,
-      "check_col": 71,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 77,
-      "col": 82,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 77,
-      "check_col": 82,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 77,
-      "col": 93,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 77,
-      "check_col": 93,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 77,
-      "col": 90,
-      "rule": "VC_OVERFLOW_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 77,
-      "check_col": 90,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 77,
-      "col": 102,
+      "file": "mystring.adb",
+      "line": 85,
+      "col": 44,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
       "entity": {
-        "name": "Main",
+        "name": "Main.Lines.Get_Line",
         "sloc": [
           {
+            "file": "mystring.ads",
+            "line": 33
+          },
+          {
             "file": "main.adb",
-            "line": 16
+            "line": 27
           }
         ]
       },
@@ -3543,7 +5291,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -3551,10 +5299,9 @@
           }
         }
       ],
-      "check_file": "main.adb",
-      "check_line": 77,
-      "check_col": 102,
-      "session_dir": 9,
+      "check_file": "mystring.adb",
+      "check_line": 85,
+      "check_col": 44,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -3565,552 +5312,21 @@
       }
     },
     {
-      "file": "main.adb",
-      "line": 77,
-      "col": 56,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 77,
-      "check_col": 56,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 81,
-      "col": 35,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 81,
-      "check_col": 35,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 88,
-      "col": 39,
-      "rule": "VC_LENGTH_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-          },
-          "transformations": {
-            "trivial_true": [
-            ]
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 88,
-      "check_col": 39,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 3,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        },
-        "Trivial": {
-          "count": 1,
-          "max_steps": 0,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 101,
-      "col": 26,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.20000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.70000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 101,
-      "check_col": 26,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 3,
-          "max_steps": 1,
-          "max_time": 2.00000002980232E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 99,
-      "col": 35,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 99,
-      "check_col": 35,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 126,
-      "col": 30,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.50000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-          },
-          "transformations": {
-            "trivial_true": [
-            ]
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 126,
-      "check_col": 30,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 2.50000000000000E-01
-        },
-        "Trivial": {
-          "count": 1,
-          "max_steps": 0,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 136,
-      "col": 74,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 136,
-      "check_col": 74,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 136,
-      "col": 85,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 136,
-      "check_col": 85,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 136,
-      "col": 96,
-      "rule": "VC_INDEX_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.10000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 136,
-      "check_col": 96,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 1.09999999403954E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 136,
-      "col": 93,
-      "rule": "VC_OVERFLOW_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 136,
-      "check_col": 93,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 136,
-      "col": 105,
+      "file": "mystring.adb",
+      "line": 85,
+      "col": 60,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
       "entity": {
-        "name": "Main",
+        "name": "Main.Lines.Get_Line",
         "sloc": [
           {
+            "file": "mystring.ads",
+            "line": 33
+          },
+          {
             "file": "main.adb",
-            "line": 16
+            "line": 27
           }
         ]
       },
@@ -4119,141 +5335,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 136,
-      "check_col": 105,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.00000002980232E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 136,
-      "col": 59,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.50000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.90000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 136,
-      "check_col": 59,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 2.50000000000000E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 140,
-      "col": 38,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 140,
-      "check_col": 38,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.00000002980232E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 148,
-      "col": 45,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
+              "steps": 67,
               "time": 0
             }
           },
@@ -4261,571 +5343,15 @@
           }
         }
       ],
-      "check_file": "main.adb",
-      "check_line": 148,
-      "check_col": 45,
-      "session_dir": 9,
+      "check_file": "mystring.adb",
+      "check_line": 85,
+      "check_col": 60,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
           "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 147,
-      "col": 31,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 147,
-      "check_col": 31,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.00000002980232E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 158,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.40000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.60000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 158,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 3,
-          "max_steps": 1,
-          "max_time": 2.00000002980232E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 194,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.70000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 194,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.70000010728836E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 192,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.90000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 192,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 1.89999997615814E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 190,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.20000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 190,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 1.19999997317791E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 188,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 3.40000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 188,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 3.40000003576279E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 186,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.50000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 186,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.50000000000000E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 184,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.50000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 184,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.50000000000000E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 182,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 182,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 3.00000011920929E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 180,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.70000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 180,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 1.70000001788139E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 178,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 1.60000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 178,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 1.59999996423721E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 176,
-      "col": 41,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.80000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 176,
-      "check_col": 41,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.80000001192093E-01
-        }
-      }
-    },
-    {
-      "file": "main.adb",
-      "line": 171,
-      "col": 38,
-      "rule": "VC_PRECONDITION",
-      "severity": "info",
-      "entity": {
-        "name": "Main",
-        "sloc": [
-          {
-            "file": "main.adb",
-            "line": 16
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
-              "time": 2.30000000000000E-01
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "main.adb",
-      "check_line": 171,
-      "check_col": 38,
-      "session_dir": 9,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 1,
-          "max_steps": 1,
-          "max_time": 2.30000004172325E-01
         }
       }
     }
@@ -4833,422 +5359,6 @@
   "assumptions": [
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Get",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 30
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Get",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 30
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Main.Lines.Equal",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 18
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Main.Lines.Less",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 16
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Main.Lines.Get",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 30
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Main.Lines.Get",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 30
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Main.Lines.Less",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 16
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Get",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 30
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Main.Lines.Equal",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 18
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Get",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 30
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Get",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 30
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Main.Lines.Equal",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 18
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Main.Lines.Length",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 23
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
       ],
       "claim": {
         "predicate": "CLAIM_EFFECTS",
@@ -5278,350 +5388,6 @@
             {
               "file": "mystring.ads",
               "line": 23
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Main.Lines.From_String",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 12
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Main.Lines.Substring",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 26
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Main.Lines.From_String",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 12
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Main.Lines.From_String",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 12
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Main.Lines.Substring",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 26
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_POST",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Main.Lines.Length",
-            "sloc": [
-              {
-                "file": "mystring.ads",
-                "line": 23
-              },
-              {
-                "file": "main.adb",
-                "line": 27
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Main.Lines.Substring",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 26
             },
             {
               "file": "main.adb",
@@ -5650,45 +5416,17 @@
     {
       "assumptions": [
         {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Ada.Text_IO.Get_Line",
-            "sloc": [
-              {
-                "file": "a-textio.ads",
-                "line": 479
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Main.Lines.Get_Line",
-          "sloc": [
-            {
-              "file": "mystring.ads",
-              "line": 33
-            },
-            {
-              "file": "main.adb",
-              "line": 27
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
           "predicate": "CLAIM_POST",
           "arg": {
-            "name": "Ada.Text_IO.Get_Line",
+            "name": "Main.Lines.Length",
             "sloc": [
               {
-                "file": "a-textio.ads",
-                "line": 479
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
               }
             ]
           }
@@ -5696,11 +5434,15 @@
         {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
-            "name": "Ada.Text_IO.Get_Line",
+            "name": "Main.Lines.Length",
             "sloc": [
               {
-                "file": "a-textio.ads",
-                "line": 479
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
               }
             ]
           }
@@ -5708,24 +5450,28 @@
         {
           "predicate": "CLAIM_AORTE",
           "arg": {
-            "name": "Ada.Text_IO.Get_Line",
+            "name": "Main.Lines.Length",
             "sloc": [
               {
-                "file": "a-textio.ads",
-                "line": 479
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
               }
             ]
           }
         }
       ],
       "claim": {
-        "predicate": "CLAIM_AORTE",
+        "predicate": "CLAIM_POST",
         "arg": {
-          "name": "Main.Lines.Get_Line",
+          "name": "Main.Lines.Substring",
           "sloc": [
             {
               "file": "mystring.ads",
-              "line": 33
+              "line": 26
             },
             {
               "file": "main.adb",
@@ -5789,11 +5535,11 @@
       "claim": {
         "predicate": "CLAIM_POST",
         "arg": {
-          "name": "Main.Lines.To_String",
+          "name": "Main.Lines.From_String",
           "sloc": [
             {
               "file": "mystring.ads",
-              "line": 8
+              "line": 12
             },
             {
               "file": "main.adb",
@@ -5825,11 +5571,47 @@
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "Main.Lines.To_String",
+          "name": "Main.Lines.From_String",
           "sloc": [
             {
               "file": "mystring.ads",
-              "line": 8
+              "line": 12
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Main.Lines.Substring",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 26
             },
             {
               "file": "main.adb",
@@ -5893,11 +5675,79 @@
       "claim": {
         "predicate": "CLAIM_AORTE",
         "arg": {
-          "name": "Main.Lines.To_String",
+          "name": "Main.Lines.Substring",
           "sloc": [
             {
               "file": "mystring.ads",
-              "line": 8
+              "line": 26
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Main.Lines.From_String",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 12
             },
             {
               "file": "main.adb",
@@ -5930,13 +5780,369 @@
     {
       "assumptions": [
         {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Get",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 30
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Get",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 30
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Main.Lines.Equal",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 18
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Get",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 30
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Main.Lines.Equal",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 18
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Get",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 30
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Get",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 30
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Main.Lines.Equal",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 18
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Main.Lines.Get",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 30
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Main.Lines.Get",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 30
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
             "name": "Ada.Text_IO.Put",
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 463
+                "line": 465
               }
             ]
           }
@@ -5948,7 +6154,7 @@
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 506
+                "line": 508
               }
             ]
           }
@@ -6064,7 +6270,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 11
+                "line": 21
               }
             ]
           }
@@ -6076,7 +6282,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 25
+                "line": 48
               }
             ]
           }
@@ -6088,7 +6294,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 16
+                "line": 34
               }
             ]
           }
@@ -6100,7 +6306,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 9
+                "line": 13
               }
             ]
           }
@@ -6112,7 +6318,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 10
+                "line": 17
               }
             ]
           }
@@ -6124,7 +6330,23 @@
             "sloc": [
               {
                 "file": "stack.ads",
-                "line": 10
+                "line": 11
+              },
+              {
+                "file": "operations.ads",
+                "line": 5
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Operations.OperandStack.Size",
+            "sloc": [
+              {
+                "file": "stack.ads",
+                "line": 14
               },
               {
                 "file": "operations.ads",
@@ -6152,7 +6374,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 13
+                "line": 29
               }
             ]
           }
@@ -6164,7 +6386,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 12
+                "line": 25
               }
             ]
           }
@@ -6176,7 +6398,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 23
+                "line": 45
               }
             ]
           }
@@ -6188,7 +6410,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 20
+                "line": 40
               }
             ]
           }
@@ -6264,7 +6486,7 @@
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 463
+                "line": 465
               }
             ]
           }
@@ -6276,7 +6498,7 @@
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 506
+                "line": 508
               }
             ]
           }
@@ -6360,15 +6582,111 @@
         {
           "predicate": "CLAIM_POST",
           "arg": {
+            "name": "Operations.Divide",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 21
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Operations.Load",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 34
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Operations.Minus",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 13
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Operations.Multiply",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 17
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
             "name": "Operations.OperandStack.Init",
             "sloc": [
               {
                 "file": "stack.ads",
-                "line": 10
+                "line": 11
               },
               {
                 "file": "operations.ads",
                 "line": 5
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Operations.Plus",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 8
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Operations.Pop_Operation",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 29
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Operations.Push_Operation",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Operations.Store",
+            "sloc": [
+              {
+                "file": "operations.ads",
+                "line": 40
               }
             ]
           }
@@ -6380,7 +6698,7 @@
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 463
+                "line": 465
               }
             ]
           }
@@ -6392,7 +6710,7 @@
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 506
+                "line": 508
               }
             ]
           }
@@ -6508,7 +6826,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 11
+                "line": 21
               }
             ]
           }
@@ -6520,7 +6838,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 25
+                "line": 48
               }
             ]
           }
@@ -6532,7 +6850,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 16
+                "line": 34
               }
             ]
           }
@@ -6544,7 +6862,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 9
+                "line": 13
               }
             ]
           }
@@ -6556,7 +6874,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 10
+                "line": 17
               }
             ]
           }
@@ -6568,7 +6886,23 @@
             "sloc": [
               {
                 "file": "stack.ads",
-                "line": 10
+                "line": 11
+              },
+              {
+                "file": "operations.ads",
+                "line": 5
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Operations.OperandStack.Size",
+            "sloc": [
+              {
+                "file": "stack.ads",
+                "line": 14
               },
               {
                 "file": "operations.ads",
@@ -6596,7 +6930,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 13
+                "line": 29
               }
             ]
           }
@@ -6608,7 +6942,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 12
+                "line": 25
               }
             ]
           }
@@ -6620,7 +6954,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 23
+                "line": 45
               }
             ]
           }
@@ -6632,7 +6966,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 20
+                "line": 40
               }
             ]
           }
@@ -6692,7 +7026,7 @@
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 463
+                "line": 465
               }
             ]
           }
@@ -6704,7 +7038,7 @@
             "sloc": [
               {
                 "file": "a-textio.ads",
-                "line": 506
+                "line": 508
               }
             ]
           }
@@ -6820,7 +7154,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 11
+                "line": 21
               }
             ]
           }
@@ -6832,7 +7166,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 25
+                "line": 48
               }
             ]
           }
@@ -6844,7 +7178,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 16
+                "line": 34
               }
             ]
           }
@@ -6856,7 +7190,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 9
+                "line": 13
               }
             ]
           }
@@ -6868,7 +7202,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 10
+                "line": 17
               }
             ]
           }
@@ -6880,7 +7214,23 @@
             "sloc": [
               {
                 "file": "stack.ads",
-                "line": 10
+                "line": 11
+              },
+              {
+                "file": "operations.ads",
+                "line": 5
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Operations.OperandStack.Size",
+            "sloc": [
+              {
+                "file": "stack.ads",
+                "line": 14
               },
               {
                 "file": "operations.ads",
@@ -6908,7 +7258,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 13
+                "line": 29
               }
             ]
           }
@@ -6920,7 +7270,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 12
+                "line": 25
               }
             ]
           }
@@ -6932,7 +7282,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 23
+                "line": 45
               }
             ]
           }
@@ -6944,7 +7294,7 @@
             "sloc": [
               {
                 "file": "operations.ads",
-                "line": 20
+                "line": 40
               }
             ]
           }
@@ -7010,34 +7360,337 @@
           ]
         }
       }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Main.Lines.To_String",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 8
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Main.Lines.To_String",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 8
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Main.Lines.Less",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 16
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Ada.Text_IO.Get_Line",
+            "sloc": [
+              {
+                "file": "a-textio.ads",
+                "line": 481
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Main.Lines.Get_Line",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 33
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Ada.Text_IO.Get_Line",
+            "sloc": [
+              {
+                "file": "a-textio.ads",
+                "line": 481
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Ada.Text_IO.Get_Line",
+            "sloc": [
+              {
+                "file": "a-textio.ads",
+                "line": 481
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Ada.Text_IO.Get_Line",
+            "sloc": [
+              {
+                "file": "a-textio.ads",
+                "line": 481
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Main.Lines.Get_Line",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 33
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Main.Lines.Less",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 16
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Main.Lines.Length",
+            "sloc": [
+              {
+                "file": "mystring.ads",
+                "line": 23
+              },
+              {
+                "file": "main.adb",
+                "line": 27
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Main.Lines.To_String",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 8
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Main.Lines.Length",
+          "sloc": [
+            {
+              "file": "mystring.ads",
+              "line": 23
+            },
+            {
+              "file": "main.adb",
+              "line": 27
+            }
+          ]
+        }
+      }
     }
   ],
   "timings": {
-    "gnatwhy3.transformations.inline_trivial": 2.18750000000000E-01,
-    "codepeer results": 7.35800014808774E-04,
-    "init_why_sections": 4.11199987865984E-04,
-    "gnatwhy3.transformations.detect_polymorphism": 3.12500000000000E-02,
-    "gnatwhy3.transformations.eliminate_literal": 3.12500000000000E-02,
-    "gnatwhy3.run_vcs": 2.34375000000000E-01,
-    "globals (advanced)": 2.97803003340960E-02,
-    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 3.12500000000000E-02,
-    "gnatwhy3.transformations.eliminate_definition_if_poly": 0.00000000000000E+00,
-    "flow analysis": 1.43780000507832E-02,
-    "gnatwhy3.transformations.simplify_formula": 1.56250000000000E-02,
-    "marking": 4.17500006733462E-04,
-    "translation of standard": 2.34490004368126E-03,
-    "properties (advanced)": 1.67399994097650E-04,
-    "gnatwhy3.register_vcs": 9.37500000000000E-02,
-    "gnatwhy3.transformations.eliminate_epsilon": 3.12500000000000E-02,
-    "globals (basic)": 2.04758998006582E-02,
-    "gnatwhy3.schedule_vcs": 1.56250000000000E-02,
-    "gnatwhy3.transformations.prepare_for_counterexmp": 0.00000000000000E+00,
-    "gnatwhy3.save_session": 7.81250000000000E-02,
-    "gnatwhy3.transformations.eliminate_inductive": 1.56250000000000E-02,
-    "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_unused_hypo": 3.12500000000000E-01,
-    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
-    "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.init": 2.14062500000000E+00
+    "marking": 3.00540006719530E-03,
+    "globals (basic)": 1.04139996692538E-02,
+    "globals/properties (advanced)": 2.03140005469322E-02,
+    "flow analysis": 6.64959996938705E-02,
+    "codepeer results": 6.49999992674566E-06,
+    "init_why_sections": 3.39499994879588E-04,
+    "translation of standard": 1.63830001838505E-03,
+    "translation of compilation unit": 8.83224010467529E-02,
+    "proof": 5.13278961181641E+00
   }
 }

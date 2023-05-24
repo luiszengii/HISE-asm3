@@ -33,9 +33,6 @@
   ],
   "flow": [
   ],
-  "session_map": {
-    " 1": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\pin__from_string"
-  },
   "proof": [
     {
       "file": "pin.adb",
@@ -57,8 +54,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 14,
+              "time": 0
             }
           },
           "transformations": {
@@ -68,13 +65,12 @@
       "check_file": "pin.adb",
       "check_line": 13,
       "check_col": 28,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -98,8 +94,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.90000000000000E-01
+              "steps": 1240,
+              "time": 0
             }
           },
           "transformations": {
@@ -109,13 +105,52 @@
       "check_file": "pin.adb",
       "check_line": 14,
       "check_col": 30,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 3.89999985694885E-01
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "pin.adb",
+      "line": 14,
+      "col": 30,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "PIN.From_String",
+        "sloc": [
+          {
+            "file": "pin.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 13,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pin.adb",
+      "check_line": 14,
+      "check_col": 30,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -139,8 +174,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.70000000000000E-01
+              "steps": 1218,
+              "time": 0
             }
           },
           "transformations": {
@@ -150,13 +185,12 @@
       "check_file": "pin.adb",
       "check_line": 15,
       "check_col": 30,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.70000010728836E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -180,8 +214,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 19,
+              "time": 0
             }
           },
           "transformations": {
@@ -191,13 +225,12 @@
       "check_file": "pin.adb",
       "check_line": 15,
       "check_col": 30,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -221,8 +254,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 13,
+              "time": 0
             }
           },
           "transformations": {
@@ -232,8 +265,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -243,13 +276,12 @@
       "check_file": "pin.adb",
       "check_line": 12,
       "check_col": 73,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -273,8 +305,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 1.90000000000000E-01
+              "steps": 1278,
+              "time": 0
             }
           },
           "transformations": {
@@ -284,8 +316,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 30,
+              "time": 0
             }
           },
           "transformations": {
@@ -295,13 +327,12 @@
       "check_file": "pin.adb",
       "check_line": 12,
       "check_col": 114,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 1.89999997615814E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -325,8 +356,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 27,
+              "time": 0
             }
           },
           "transformations": {
@@ -336,8 +367,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -347,8 +378,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -358,8 +389,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 6.00000000000000E-02
+              "steps": 52,
+              "time": 0
             }
           },
           "transformations": {
@@ -369,8 +400,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 6.00000000000000E-02
+              "steps": 52,
+              "time": 0
             }
           },
           "transformations": {
@@ -380,13 +411,12 @@
       "check_file": "pin.adb",
       "check_line": 12,
       "check_col": 36,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 5,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -410,8 +440,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 88,
+              "time": 0
             }
           },
           "transformations": {
@@ -421,8 +451,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 8.00000000000000E-02
+              "steps": 19,
+              "time": 0
             }
           },
           "transformations": {
@@ -432,8 +462,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -443,8 +473,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 8.00000000000000E-02
+              "steps": 119,
+              "time": 0
             }
           },
           "transformations": {
@@ -454,8 +484,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 6.00000000000000E-02
+              "steps": 119,
+              "time": 0
             }
           },
           "transformations": {
@@ -465,13 +495,12 @@
       "check_file": "pin.adb",
       "check_line": 12,
       "check_col": 36,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 5,
           "max_steps": 1,
-          "max_time": 7.99999982118607E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -495,8 +524,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 1.70000000000000E-01
+              "steps": 603,
+              "time": 0
             }
           },
           "transformations": {
@@ -506,13 +535,12 @@
       "check_file": "pin.adb",
       "check_line": 18,
       "check_col": 18,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 1.70000001788139E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -536,8 +564,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -547,8 +575,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -558,13 +586,12 @@
       "check_file": "pin.ads",
       "check_line": 7,
       "check_col": 43,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -588,8 +615,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -599,8 +626,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -610,34 +637,17 @@
       "check_file": "pin.ads",
       "check_line": 7,
       "check_col": 59,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 1.99999995529652E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     }
   ],
   "assumptions": [
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "PIN.PIN",
-          "sloc": [
-            {
-              "file": "pin.ads",
-              "line": 3
-            }
-          ]
-        }
-      }
-    },
     {
       "assumptions": [
       ],
@@ -676,6 +686,22 @@
       "claim": {
         "predicate": "CLAIM_AORTE",
         "arg": {
+          "name": "PIN.PIN",
+          "sloc": [
+            {
+              "file": "pin.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
           "name": "PIN",
           "sloc": [
             {
@@ -688,31 +714,14 @@
     }
   ],
   "timings": {
-    "gnatwhy3.transformations.inline_trivial": 1.25000000000000E-01,
-    "codepeer results": 6.15000026300550E-05,
-    "init_why_sections": 6.92499976139516E-04,
-    "gnatwhy3.transformations.detect_polymorphism": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
-    "gnatwhy3.run_vcs": 1.21875000000000E+00,
-    "globals (advanced)": 3.56500007910654E-04,
-    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_definition_if_poly": 0.00000000000000E+00,
-    "flow analysis": 1.81229994632304E-03,
-    "gnatwhy3.transformations.simplify_formula": 1.56250000000000E-02,
-    "marking": 1.11100001959130E-04,
-    "translation of standard": 4.29549999535084E-03,
-    "properties (advanced)": 1.59999999596039E-05,
-    "gnatwhy3.register_vcs": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
-    "globals (basic)": 3.32299998262897E-04,
-    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.transformations.prepare_for_counterexmp": 0.00000000000000E+00,
-    "gnatwhy3.save_session": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
-    "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_unused_hypo": 1.09375000000000E-01,
-    "gnatwhy3.transformations.eliminate_builtin": 1.56250000000000E-02,
-    "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.init": 9.37500000000000E-02
+    "marking": 2.11399994441308E-04,
+    "globals (basic)": 3.06900008581579E-04,
+    "globals/properties (advanced)": 3.37200006470084E-04,
+    "flow analysis": 1.59370002802461E-03,
+    "codepeer results": 6.70000008540228E-06,
+    "init_why_sections": 5.17099979333580E-04,
+    "translation of standard": 2.94380006380379E-03,
+    "translation of compilation unit": 2.66010011546314E-03,
+    "proof": 5.20817220211029E-01
   }
 }

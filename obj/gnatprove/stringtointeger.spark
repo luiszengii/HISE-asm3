@@ -61,9 +61,6 @@
       "how_proved": "flow"
     }
   ],
-  "session_map": {
-    " 1": "C:\\Users\\linzzz\\Desktop\\HISE-asm3\\obj\\gnatprove\\stringtointeger__from_string"
-  },
   "proof": [
     {
       "file": "stringtointeger.adb",
@@ -85,8 +82,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 14,
+              "time": 0
             }
           },
           "transformations": {
@@ -96,13 +93,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 18,
       "check_col": 25,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 1.99999995529652E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -126,8 +122,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -137,8 +133,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -148,13 +144,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 13,
       "check_col": 12,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 1.99999995529652E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -178,8 +173,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 13,
+              "time": 0
             }
           },
           "transformations": {
@@ -189,13 +184,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 32,
       "check_col": 27,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -219,8 +213,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -230,8 +224,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 6.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -241,13 +235,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 34,
       "check_col": 34,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -271,8 +264,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 20,
+              "time": 0
             }
           },
           "transformations": {
@@ -282,13 +275,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 39,
       "check_col": 36,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -312,8 +304,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 20,
+              "time": 0
             }
           },
           "transformations": {
@@ -323,13 +315,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 36,
       "check_col": 33,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -353,8 +344,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 20,
+              "time": 0
             }
           },
           "transformations": {
@@ -364,13 +355,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 45,
       "check_col": 36,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -394,8 +384,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 1.10000000000000E-01
+              "steps": 20,
+              "time": 0
             }
           },
           "transformations": {
@@ -405,13 +395,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 42,
       "check_col": 32,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 1.09999999403954E-01
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -435,8 +424,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -446,8 +435,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -457,13 +446,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 33,
       "check_col": 15,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -487,8 +475,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -498,8 +486,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -509,13 +497,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 33,
       "check_col": 33,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 2,
           "max_steps": 1,
-          "max_time": 1.99999995529652E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -539,8 +526,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 5.00000000000000E-02
+              "steps": 25,
+              "time": 0
             }
           },
           "transformations": {
@@ -550,13 +537,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 52,
       "check_col": 24,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 5.00000007450581E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -580,7 +566,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -591,18 +577,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 2.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 1,
+              "steps": 5,
               "time": 0
             }
           },
@@ -613,8 +588,19 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 5,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 14,
+              "time": 0
             }
           },
           "transformations": {
@@ -624,13 +610,12 @@
       "check_file": "stringtointeger.adb",
       "check_line": 23,
       "check_col": 33,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 2.99999993294477E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -654,8 +639,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 20,
+              "time": 0
             }
           },
           "transformations": {
@@ -665,8 +650,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 6.00000000000000E-02
+              "steps": 20,
+              "time": 0
             }
           },
           "transformations": {
@@ -676,8 +661,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 3.00000000000000E-02
+              "steps": 5,
+              "time": 0
             }
           },
           "transformations": {
@@ -687,8 +672,8 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 1,
-              "time": 6.00000000000000E-02
+              "steps": 19,
+              "time": 0
             }
           },
           "transformations": {
@@ -698,34 +683,17 @@
       "check_file": "stringtointeger.adb",
       "check_line": 23,
       "check_col": 33,
-      "session_dir": 1,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
           "count": 4,
           "max_steps": 1,
-          "max_time": 5.99999986588955E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     }
   ],
   "assumptions": [
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "StringToInteger",
-          "sloc": [
-            {
-              "file": "stringtointeger.ads",
-              "line": 3
-            }
-          ]
-        }
-      }
-    },
     {
       "assumptions": [
       ],
@@ -757,34 +725,33 @@
           ]
         }
       }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "StringToInteger",
+          "sloc": [
+            {
+              "file": "stringtointeger.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "timings": {
-    "gnatwhy3.transformations.inline_trivial": 4.68750000000000E-02,
-    "codepeer results": 5.76999991608318E-05,
-    "init_why_sections": 6.28200010396540E-04,
-    "gnatwhy3.transformations.detect_polymorphism": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
-    "gnatwhy3.run_vcs": 9.21875000000000E-01,
-    "globals (advanced)": 2.80700012808666E-04,
-    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_definition_if_poly": 0.00000000000000E+00,
-    "flow analysis": 1.92569999489933E-03,
-    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
-    "marking": 5.80000014451798E-05,
-    "translation of standard": 2.85100005567074E-03,
-    "properties (advanced)": 1.10000000859145E-05,
-    "gnatwhy3.register_vcs": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
-    "globals (basic)": 3.39899997925386E-04,
-    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.transformations.prepare_for_counterexmp": 0.00000000000000E+00,
-    "gnatwhy3.save_session": 1.56250000000000E-02,
-    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
-    "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_unused_hypo": 1.09375000000000E-01,
-    "gnatwhy3.transformations.eliminate_builtin": 1.56250000000000E-02,
-    "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.init": 9.37500000000000E-02
+    "marking": 2.41200003074482E-04,
+    "globals (basic)": 2.84700014162809E-04,
+    "globals/properties (advanced)": 2.90399999357760E-04,
+    "flow analysis": 2.56290007382631E-03,
+    "codepeer results": 5.40000019100262E-06,
+    "init_why_sections": 5.53200021386147E-04,
+    "translation of standard": 2.67559988424182E-03,
+    "translation of compilation unit": 1.95579999126494E-03,
+    "proof": 5.23025572299957E-01
   }
 }

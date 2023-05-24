@@ -1,3 +1,4 @@
+-- reference: Lecture 14 and 15 example
 generic
    Max_Size : Positive;
    type Item is private;

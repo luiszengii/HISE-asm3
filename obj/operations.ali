@@ -5,14 +5,19 @@ A -march=x86-64
 P SS ZX
 
 RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U operations%b		operations.adb		043339d8 NE OO PK
+U operations%b		operations.adb		f55a73bf NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
 W stack%s		stack.adb		stack.ali  ED
 W variablestore%s	variablestore.adb	variablestore.ali
 
-U operations%s		operations.ads		08276fa8 EE NE OO PK
+U operations%s		operations.ads		44dd6ff9 EE NE OO PK
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W stack%s		stack.adb		stack.ali
 W variablestore%s	variablestore.adb	variablestore.ali
@@ -27,21 +32,28 @@ D a-conhel.ads		20210520051128 20298884 ada.containers.helpers%s
 D a-crbltr.ads		20210520051128 d3d16ba4 ada.containers.red_black_trees%s
 D a-except.ads		20210520051128 946f3014 ada.exceptions%s
 D a-finali.ads		20210520051128 bf4f806b ada.finalization%s
+D a-inteio.ads		20210520051128 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
 D a-string.ads		20210520051130 90ac6797 ada.strings%s
 D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
 D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
 D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
-D mystring.ads		20230522112844 ce083c8f mystring%s
-D operations.ads	20230522112844 96768be8 operations%s
-D operations.adb	20230522112844 0c145670 operations%b
-D stack.ads		20230522112844 a6086384 stack%s
-D stack.adb		20230522112844 800e16f3 stack%b
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D mystring.ads		20230517105216 ce083c8f mystring%s
+D operations.ads	20230524081526 da8c8bb9 operations%s
+D operations.adb	20230523120744 e938408f operations%b
+D stack.ads		20230523105110 a6086384 stack%s
+D stack.adb		20230523105110 800e16f3 stack%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
 D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
 D s-parame.ads		20210520051134 4752c4cb system.parameters%s
 D s-putima.ads		20210520051134 4e095881 system.put_images%s
@@ -54,32 +66,35 @@ D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
 D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
-D variablestore.ads	20230522112844 385987c4 variablestore%s
+D variablestore.ads	20230517105214 385987c4 variablestore%s
 G a e
 G c s s s [s operations 4 1 none]
-G c Z s s [init operations__operandstack 10 14 5_4]
-G c Z s s [size operations__operandstack 13 13 5_4]
-G c Z s s [storage operations__operandstack 15 13 5_4]
-G c Z s s [push operations__operandstack 18 14 5_4]
-G c Z s s [pop operations__operandstack 24 14 5_4]
-G c Z s s [TstoragearrayBIP operations__operandstack 32 4 5_4]
-G c Z s s [stackIP operations__operandstack 34 9 5_4]
+G c Z s s [init operations__operandstack 11 14 5_4]
+G c Z s s [size operations__operandstack 14 13 5_4]
+G c Z s s [storage operations__operandstack 16 13 5_4]
+G c Z s s [push operations__operandstack 19 14 5_4]
+G c Z s s [pop operations__operandstack 25 14 5_4]
+G c Z s s [TstoragearrayBIP operations__operandstack 33 4 5_4]
+G c Z s s [stackIP operations__operandstack 35 9 5_4]
 G c Z s b [plus operations 8 14 none]
-G c Z s b [minus operations 9 14 none]
-G c Z s b [multiply operations 10 14 none]
-G c Z s b [divide operations 11 14 none]
-G c Z s b [push_operation operations 12 14 none]
-G c Z s b [pop_operation operations 13 14 none]
-G c Z s b [load operations 16 14 none]
-G c Z s b [store operations 20 14 none]
-G c Z s b [remove operations 23 14 none]
-G c Z s b [list operations 25 14 none]
-G r i none [s operations 4 1 none] [stack standard 6 9 none]
-G r c none [load operations 16 14 none] [get variablestore 21 13 none]
-G r c none [store operations 20 14 none] [put variablestore 24 14 none]
-G r c none [remove operations 23 14 none] [remove variablestore 27 14 none]
-G r c none [list operations 25 14 none] [print variablestore 39 14 none]
+G c Z s b [minus operations 12 14 none]
+G c Z s b [multiply operations 16 14 none]
+G c Z s b [divide operations 20 14 none]
+G c Z s b [push_operation operations 24 14 none]
+G c Z s b [pop_operation operations 28 14 none]
+G c Z s b [load operations 33 14 none]
+G c Z s b [store operations 39 14 none]
+G c Z s b [remove operations 44 14 none]
+G c Z s b [list operations 47 14 none]
+G r i none [s operations 4 1 none] [stack standard 7 9 none]
+G r c none [load operations 33 14 none] [get variablestore 21 13 none]
+G r c none [store operations 39 14 none] [put variablestore 24 14 none]
+G r c none [remove operations 44 14 none] [remove variablestore 27 14 none]
+G r c none [list operations 47 14 none] [print variablestore 39 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 25|2r6 2r23 3r6 3r31
 X 3 a-cforma.ads
 61V19 "="{boolean} 4|43i19 5|42i19
 X 5 a-cofuma.ads
@@ -87,74 +102,94 @@ X 5 a-cofuma.ads
 343V14 "="=345:48{boolean} 4|43i19
 X 6 a-cofuve.ads
 41V19 "="{boolean} 4|43i19
-X 18 mystring.ads
+X 11 a-inteio.ads
+18K13*Integer_Text_IO[19|46] 25|3w10 3r35
+X 18 a-textio.ads
+58K13*Text_IO 725e16 25|2w10 2r27
+463U14*Put 25|55s10
+X 23 mystring.ads
 6R9*MyString
-X 19 operations.ads
-4K9*Operations 27l5 27e15 20|4b14 91l5 91t15
-5K12*OperandStack[21|6] 8r29 9r30 10r33 11r31 12r39 13r38 16r90 20r98 20|6r29
-. 12r7 13r7 17r7 20r30 25r7 26r7 28r7 31r33 36r7 37r7 39r7 42r31 47r7 48r7
-. 50r7 53r39 55r7 58r38 60r7 64r90 68r7 73r99 76r7
-8U14*Plus 8=19 20|6b14 18l8 18t12
-8r19 S{21|8R9[5]} 20|6b19 12m24 13m24 17m25
-9U14*Minus 9=20 20|20b14 29l8 29t13
-9r20 S{21|8R9[5]} 20|20b20 25m24 26m24 28m25
-10U14*Multiply 10=23 20|31b14 40l8 40t16
-10r23 S{21|8R9[5]} 20|31b23 36m24 37m24 39m25
-11U14*Divide 11=21 20|42b14 51l8 51t14
-11r21 S{21|8R9[5]} 20|42b21 47m24 48m24 50m25
-12U14*Push_Operation 12=29 12>59 20|53b14 56l8 56t22
-12r29 S{21|8R9[5]} 20|53b29 55m25
-12i59 I{integer} 20|53b59 55r28
-13U14*Pop_Operation 13=28 13<58 20|58b14 61l8 61t21
-13r28 S{21|8R9[5]} 20|58b28 60m24
-13i58 I{integer} 20|58b58 60m27
-16U14*Load 16>19 16>49 16=80 20|64b14 69l8 69t12
-16r19 V{39|13R9} 20|64b19 67r38
-16r49 DB{39|15R9} 20|64b49 67r34
-16r80 S{21|8R9[5]} 20|64b80 68m25
-20U14*Store 20=20 20=54 20=88 20|73b14 78l8 78t13
-20r20 V{39|13R9} 20|73b20 77r29
-20r54 DB{39|15R9} 20|73b54 77m25
-20r88 S{21|8R9[5]} 20|73b89 76m24
-23U14*Remove 23=21 23=55 20|81b14 84l8 84t14
-23r21 V{39|13R9} 20|81b21 83r32
-23r55 DB{39|15R9} 20|81b55 83m28
-25U14*List 25>19 20|86b14 89l8 89t12
-25r19 DB{39|15R9} 20|86b19 88r27
-X 20 operations.adb
-7i7 RESULT{integer} 15m7 17r28
-8i7 NUM1{integer} 12m27 15r17
-9i7 NUM2{integer} 13m27 15r24
-21i7 RESULT{integer} 27m7 28r28
-22i7 NUM1{integer} 25m27 27r17
-23i7 NUM2{integer} 26m27 27r24
-32i7 RESULT{integer} 38m7 39r28
-33i7 NUM1{integer} 36m27 38r17
-34i7 NUM2{integer} 37m27 38r24
-43i7 RESULT{integer} 49m7 50r28
-44i7 NUM1{integer} 47m27 49r17
-45i7 NUM2{integer} 48m27 49r24
-65i7 VALUE{integer} 67m7 68r28
-74i7 VALUE{integer} 76m27 77r32
-X 21 stack.ads
-2i4 Max_Size{positive} 19|5r38
-3+9 Item 19|5r55
-4*4 Default_Item{3+9} 19|5r72
-6k9*Stack 19|2w6 5r32 20|2w6 21|45e10
-8R9*Stack 19|8r42[5] 9r43[5] 10r46[5] 11r44[5] 12r52[5] 13r51[5] 16r103[5]
-. 20r111[5] 20|6r42[19|5] 20r43[19|5] 31r46[19|5] 42r44[19|5] 53r52[19|5]
-. 58r51[19|5] 64r103[19|5] 73r112[19|5]
-18U14*Push 20|17s20[19|5] 28s20[19|5] 39s20[19|5] 50s20[19|5] 55s20[19|5]
-. 68s20[19|5]
-24U14*Pop 20|12s20[19|5] 13s20[19|5] 25s20[19|5] 26s20[19|5] 36s20[19|5]
-. 37s20[19|5] 47s20[19|5] 48s20[19|5] 60s20[19|5] 76s20[19|5]
-X 39 variablestore.ads
-7K9*VariableStore 19|1w6 16r25 16r56 20r30 20r64 23r31 23r65 25r26 20|1w6
-. 64r25 64r56 67r16 73r30 73r65 77r7 81r31 81r66 83r7 86r23 88r7 39|73e18
-13R9*Variable<18|6R9[11]> 19|16r39 20r44 23r45 20|64r39 73r44 81r45
-15R9*Database 19|16r70 20r78 23r79 25r40 20|64r70 73r79 81r80 86r37 39|53e14
-21V13*Get{integer} 20|67s30
-24U14*Put 20|77s21
-27U14*Remove 20|83s21
-39U14*Print 20|88s21
+X 24 operations.ads
+4K9*Operations 50l5 50e15 25|6b14 97l5 97t15
+5K12*OperandStack[26|7] 8r29 9r13 10r14 10r37 12r30 13r14 14r14 14r37 16r33
+. 17r14 18r14 18r37 20r31 21r14 22r14 22r37 24r39 26r14 26r37 28r38 30r14
+. 30r37 33r90 35r14 35r37 39r98 41r14 41r37 25|8r29 14r7 15r7 19r7 22r30
+. 27r7 28r7 30r7 33r33 38r7 39r7 41r7 44r31 49r7 50r7 53r10 59r39 61r7 64r38
+. 66r7 70r90 74r7 79r99 82r7
+8U14*Plus 8=19 8>49 25|8b14 20l8 20t12
+8r19 S{26|9R9[5]} 9r31 10r32 10r55 25|8b19 14m24 15m24 19m25
+8b49 IsLocked{boolean} 9r43 25|8b49
+12U14*Minus 12=20 12>50 25|22b14 31l8 31t13
+12r20 S{26|9R9[5]} 13r32 14r32 14r55 25|22b20 27m24 28m24 30m25
+12b50 IsLocked{boolean} 13r44 25|22b50
+16U14*Multiply 16=23 16>53 25|33b14 42l8 42t16
+16r23 S{26|9R9[5]} 17r32 18r32 18r55 25|33b23 38m24 39m24 41m25
+16b53 IsLocked{boolean} 17r44 25|33b53
+20U14*Divide 20=21 20>51 25|44b14 57l8 57t14
+20r21 S{26|9R9[5]} 21r32 22r32 22r55 25|44b21 49m24 50m24 53m28
+20b51 IsLocked{boolean} 21r44 25|44b51
+24U14*Push_Operation 24=29 24>59 24>75 25|59b14 62l8 62t22
+24r29 S{26|9R9[5]} 26r32 26r55 25|59b29 61m25
+24i59 I{integer} 25|59b59 61r28
+24b75 IsLocked{boolean} 25r14 25|59b74
+28U14*Pop_Operation 28=28 28<58 28>75 25|64b14 67l8 67t21
+28r28 S{26|9R9[5]} 30r32 30r55 25|64b28 66m24
+28i58 I{integer} 25|64b58 66m27
+28b75 IsLocked{boolean} 29r14 25|64b74
+33U14*Load 33>19 33>49 33=80 33>110 25|70b14 75l8 75t12
+33r19 V{47|13R9} 25|70b19 73r38
+33r49 DB{47|15R9} 25|70b49 73r34
+33r80 S{26|9R9[5]} 35r32 35r55 25|70b80 74m25
+33b110 IsLocked{boolean} 34r14 25|70b110
+39U14*Store 39=20 39=54 39=88 39>118 25|79b14 84l8 84t13
+39r20 V{47|13R9} 25|79b20 83r29
+39r54 DB{47|15R9} 25|79b54 83m25
+39r88 S{26|9R9[5]} 41r32 41r55 25|79b89 82m24
+39b118 IsLocked{boolean} 40r14 25|79b119
+44U14*Remove 44=21 44=55 44>89 25|87b14 90l8 90t14
+44r21 V{47|13R9} 25|87b21 89r32
+44r55 DB{47|15R9} 25|87b55 89m28
+44b89 IsLocked{boolean} 45r14 25|87b90
+47U14*List 47>19 47>50 25|92b14 95l8 95t12
+47r19 DB{47|15R9} 25|92b19 94r27
+47b50 IsLocked{boolean} 48r14 25|92b50
+X 25 operations.adb
+9i7 RESULT{integer} 17m7 19r28
+10i7 NUM1{integer} 14m27 17r17
+11i7 NUM2{integer} 15m27 17r24
+23i7 RESULT{integer} 29m7 30r28
+24i7 NUM1{integer} 27m27 29r17
+25i7 NUM2{integer} 28m27 29r24
+34i7 RESULT{integer} 40m7 41r28
+35i7 NUM1{integer} 38m27 40r17
+36i7 NUM2{integer} 39m27 40r24
+45i7 RESULT{integer} 52m10 53r31
+46i7 NUM1{integer} 49m27 52r20
+47i7 NUM2{integer} 50m27 51r10 52r27
+71i7 VALUE{integer} 73m7 74r28
+80i7 VALUE{integer} 82m27 83r32
+X 26 stack.ads
+3i4 Max_Size{positive} 24|5r38
+4+9 Item 24|5r55
+5*4 Default_Item{4+9} 24|5r72
+7k9*Stack 24|2w6 5r32 25|4w6 26|46e10
+9R9*Stack 24|8r42[5] 12r43[5] 16r46[5] 20r44[5] 24r52[5] 28r51[5] 33r103[5]
+. 39r111[5] 25|8r42[24|5] 22r43[24|5] 33r46[24|5] 44r44[24|5] 59r52[24|5]
+. 64r51[24|5] 70r103[24|5] 79r112[24|5]
+14V13*Size{integer} 24|9s26[5] 10s27[5] 10s50[5] 13s27[5] 14s27[5] 14s50[5]
+. 17s27[5] 18s27[5] 18s50[5] 21s27[5] 22s27[5] 22s50[5] 26s27[5] 26s50[5]
+. 30s27[5] 30s50[5] 35s27[5] 35s50[5] 41s27[5] 41s50[5]
+19U14*Push 25|19s20[24|5] 30s20[24|5] 41s20[24|5] 53s23[24|5] 61s20[24|5]
+. 74s20[24|5]
+25U14*Pop 25|14s20[24|5] 15s20[24|5] 27s20[24|5] 28s20[24|5] 38s20[24|5]
+. 39s20[24|5] 49s20[24|5] 50s20[24|5] 66s20[24|5] 82s20[24|5]
+X 47 variablestore.ads
+7K9*VariableStore 24|1w6 33r25 33r56 39r30 39r64 44r31 44r65 47r26 25|1w6
+. 70r25 70r56 73r16 79r30 79r65 83r7 87r31 87r66 89r7 92r26 94r7 47|73e18
+13R9*Variable<23|6R9[11]> 24|33r39 39r44 44r45 25|70r39 79r44 87r45
+15R9*Database 24|33r70 39r78 44r79 47r40 25|70r70 79r79 87r80 92r40 47|53e14
+21V13*Get{integer} 25|73s30
+24U14*Put 25|83s21
+27U14*Remove 25|89s21
+39U14*Print 25|94s21
 

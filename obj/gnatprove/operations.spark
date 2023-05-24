@@ -5,7 +5,7 @@
       "sloc": [
         {
           "file": "stack.ads",
-          "line": 8
+          "line": 9
         },
         {
           "file": "operations.ads",
@@ -19,7 +19,7 @@
       "sloc": [
         {
           "file": "stack.ads",
-          "line": 13
+          "line": 14
         },
         {
           "file": "operations.ads",
@@ -33,7 +33,7 @@
       "sloc": [
         {
           "file": "stack.ads",
-          "line": 10
+          "line": 11
         },
         {
           "file": "operations.ads",
@@ -47,7 +47,7 @@
       "sloc": [
         {
           "file": "stack.ads",
-          "line": 15
+          "line": 16
         },
         {
           "file": "operations.ads",
@@ -61,7 +61,7 @@
       "sloc": [
         {
           "file": "stack.ads",
-          "line": 18
+          "line": 19
         },
         {
           "file": "operations.ads",
@@ -75,7 +75,7 @@
       "sloc": [
         {
           "file": "stack.ads",
-          "line": 24
+          "line": 25
         },
         {
           "file": "operations.ads",
@@ -99,7 +99,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 9
+          "line": 13
         }
       ],
       "spark": "no"
@@ -109,7 +109,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 10
+          "line": 17
         }
       ],
       "spark": "no"
@@ -119,7 +119,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 11
+          "line": 21
         }
       ],
       "spark": "no"
@@ -129,7 +129,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 12
+          "line": 25
         }
       ],
       "spark": "no"
@@ -139,7 +139,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 13
+          "line": 29
         }
       ],
       "spark": "no"
@@ -149,7 +149,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 16
+          "line": 34
         }
       ],
       "spark": "no"
@@ -159,7 +159,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 20
+          "line": 40
         }
       ],
       "spark": "no"
@@ -169,7 +169,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 23
+          "line": 45
         }
       ],
       "spark": "no"
@@ -179,7 +179,7 @@
       "sloc": [
         {
           "file": "operations.ads",
-          "line": 25
+          "line": 48
         }
       ],
       "spark": "no"
@@ -187,20 +187,19 @@
   ],
   "flow": [
   ],
-  "session_map": {
-  },
   "proof": [
   ],
   "assumptions": [
   ],
   "timings": {
-    "codepeer results": 1.84000000444939E-05,
-    "init_why_sections": 8.59600026160479E-04,
-    "globals (advanced)": 3.96410003304482E-02,
-    "flow analysis": 6.61000012769364E-05,
-    "marking": 2.40699999267235E-04,
-    "translation of standard": 5.06500015035272E-03,
-    "properties (advanced)": 8.28999982331879E-05,
-    "globals (basic)": 2.06973999738693E-02
+    "marking": 1.57750002108514E-03,
+    "globals (basic)": 9.03700012713671E-03,
+    "globals/properties (advanced)": 1.65708009153605E-02,
+    "flow analysis": 4.12599998526275E-04,
+    "codepeer results": 6.40000007479102E-06,
+    "init_why_sections": 3.70199995813891E-04,
+    "translation of standard": 1.78319995757192E-03,
+    "translation of compilation unit": 1.58698000013828E-02,
+    "proof": 1.50000005305628E-06
   }
 }

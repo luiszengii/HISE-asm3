@@ -43,20 +43,19 @@
   ],
   "flow": [
   ],
-  "session_map": {
-  },
   "proof": [
   ],
   "assumptions": [
   ],
   "timings": {
-    "codepeer results": 2.09999998332933E-05,
-    "init_why_sections": 6.55099982395768E-04,
-    "globals (advanced)": 1.16950999945402E-02,
-    "flow analysis": 3.79500008421019E-04,
-    "marking": 9.34999989112839E-05,
-    "translation of standard": 4.37550013884902E-03,
-    "properties (advanced)": 3.50000009348150E-05,
-    "globals (basic)": 9.17129963636398E-03
+    "marking": 1.33199995616451E-04,
+    "globals (basic)": 6.63900002837181E-03,
+    "globals/properties (advanced)": 1.11899003386497E-02,
+    "flow analysis": 2.82799999695271E-04,
+    "codepeer results": 9.20000002224697E-06,
+    "init_why_sections": 4.75999986520037E-04,
+    "translation of standard": 2.67000007443130E-03,
+    "translation of compilation unit": 7.57400004658848E-04,
+    "proof": 1.69999998433923E-06
   }
 }

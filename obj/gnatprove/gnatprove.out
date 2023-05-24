@@ -1,28 +1,26 @@
 Summary of SPARK analysis
 =========================
 
---------------------------------------------------------------------------------------------------------------
-SPARK Analysis results        Total       Flow   CodePeer                       Provers   Justified   Unproved
---------------------------------------------------------------------------------------------------------------
-Data Dependencies                 .          .          .                             .           .          .
-Flow Dependencies                 .          .          .                             .           .          .
-Initialization                   16         16          .                             .           .          .
-Non-Aliasing                      2          2          .                             .           .          .
-Run-time Checks                 137          .          .    137 (CVC4 98%, Trivial 2%)           .          .
-Assertions                       24          .          .                     24 (CVC4)           .          .
-Functional Contracts             39          .          .     39 (CVC4 94%, Trivial 6%)           .          .
-LSP Verification                  .          .          .                             .           .          .
-Termination                       .          .          .                             .           .          .
-Concurrency                       .          .          .                             .           .          .
---------------------------------------------------------------------------------------------------------------
-Total                           218    18 (8%)          .                     200 (92%)           .          .
+---------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   Interval   CodePeer       Provers   Justified   Unproved
+---------------------------------------------------------------------------------------------------------
+Data Dependencies                 .          .          .          .             .           .          .
+Flow Dependencies                 .          .          .          .             .           .          .
+Initialization                   15         15          .          .             .           .          .
+Non-Aliasing                      2          2          .          .             .           .          .
+Run-time Checks                 138          .          .          .    138 (CVC4)           .          .
+Assertions                       24          .          .          .     24 (CVC4)           .          .
+Functional Contracts             51          .          .          .     51 (CVC4)           .          .
+LSP Verification                  .          .          .          .             .           .          .
+---------------------------------------------------------------------------------------------------------
+Total                           230    17 (7%)          .          .     213 (93%)           .          .
 
 
 max steps used for successful proof: 1
 
 Analyzed 7 units
 in unit main, 11 subprograms and packages out of 11 analyzed
-  Main at main.adb:16 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (36 checks)
+  Main at main.adb:16 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (48 checks)
   Main.Lines at main.adb:27 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
   Main.Lines.Equal at mystring.ads:18, instantiated at main.adb:27 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (11 checks)
   Main.Lines.From_String at mystring.ads:12, instantiated at main.adb:27 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (12 checks)
@@ -43,25 +41,25 @@ in unit mystringtokeniser, 3 subprograms and packages out of 3 analyzed
   MyStringTokeniser.Is_Whitespace at mystringtokeniser.ads:12 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
   MyStringTokeniser.Tokenise at mystringtokeniser.ads:16 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (35 checks)
 in unit operations, 1 subprograms and packages out of 16 analyzed
-  Operations.Divide at operations.ads:11 skipped
-  Operations.List at operations.ads:25 skipped
-  Operations.Load at operations.ads:16 skipped
-  Operations.Minus at operations.ads:9 skipped
-  Operations.Multiply at operations.ads:10 skipped
-  Operations.OperandStack.Init at stack.ads:10, instantiated at operations.ads:5 skipped
-  Operations.OperandStack.Pop at stack.ads:24, instantiated at operations.ads:5 skipped
-  Operations.OperandStack.Push at stack.ads:18, instantiated at operations.ads:5 skipped
-  Operations.OperandStack.Size at stack.ads:13, instantiated at operations.ads:5 skipped
-  Operations.OperandStack.Stack at stack.ads:8, instantiated at operations.ads:5 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
-  Operations.OperandStack.Storage at stack.ads:15, instantiated at operations.ads:5 skipped
+  Operations.Divide at operations.ads:21 skipped
+  Operations.List at operations.ads:48 skipped
+  Operations.Load at operations.ads:34 skipped
+  Operations.Minus at operations.ads:13 skipped
+  Operations.Multiply at operations.ads:17 skipped
+  Operations.OperandStack.Init at stack.ads:11, instantiated at operations.ads:5 skipped
+  Operations.OperandStack.Pop at stack.ads:25, instantiated at operations.ads:5 skipped
+  Operations.OperandStack.Push at stack.ads:19, instantiated at operations.ads:5 skipped
+  Operations.OperandStack.Size at stack.ads:14, instantiated at operations.ads:5 skipped
+  Operations.OperandStack.Stack at stack.ads:9, instantiated at operations.ads:5 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
+  Operations.OperandStack.Storage at stack.ads:16, instantiated at operations.ads:5 skipped
   Operations.Plus at operations.ads:8 skipped
-  Operations.Pop_Operation at operations.ads:13 skipped
-  Operations.Push_Operation at operations.ads:12 skipped
-  Operations.Remove at operations.ads:23 skipped
-  Operations.Store at operations.ads:20 skipped
+  Operations.Pop_Operation at operations.ads:29 skipped
+  Operations.Push_Operation at operations.ads:25 skipped
+  Operations.Remove at operations.ads:45 skipped
+  Operations.Store at operations.ads:40 skipped
 in unit pin, 3 subprograms and packages out of 3 analyzed
   PIN at pin.ads:1 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
-  PIN.From_String at pin.ads:5 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (11 checks)
+  PIN.From_String at pin.ads:5 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (12 checks)
   PIN.PIN at pin.ads:3 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
 in unit stringtointeger, 2 subprograms and packages out of 2 analyzed
   StringToInteger at stringtointeger.ads:3 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
