@@ -194,13 +194,13 @@
   "assumptions": [
   ],
   "timings": {
-    "codepeer results": 1.47999999171589E-05,
-    "init_why_sections": 5.78499981202185E-04,
-    "globals (advanced)": 4.36614006757736E-02,
-    "flow analysis": 1.38300005346537E-04,
-    "marking": 2.41200003074482E-04,
-    "translation of standard": 3.20299994200468E-03,
-    "properties (advanced)": 7.11999964551069E-05,
-    "globals (basic)": 2.94196996837854E-02
+    "codepeer results": 1.30999997054460E-05,
+    "init_why_sections": 4.54099994385615E-04,
+    "globals (advanced)": 2.87855993956327E-02,
+    "flow analysis": 1.09200002043508E-04,
+    "marking": 1.98199995793402E-04,
+    "translation of standard": 2.40670004859567E-03,
+    "properties (advanced)": 4.99999987368938E-05,
+    "globals (basic)": 2.02389005571604E-02
   }
 }

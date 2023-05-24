@@ -1,7 +1,7 @@
-20230524101218
+20230524101434
 -c
 -x
 ada
 -gnatA
 -gnatc
--gnates=C:\Users\linzzz\Desktop\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\HISE-asm3-8aed51c04befba82568815e4aab36cb4d51f60b0\obj\gnatprove\aa176a6a.tmp
+-gnates=C:\Users\linzzz\Desktop\HISE-asm3\obj\gnatprove\aa176a6a.tmp

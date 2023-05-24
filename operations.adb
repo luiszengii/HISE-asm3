@@ -4,6 +4,8 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 package body Operations is
+   -- Integer'Fisrt = -2147483648
+   -- Integer'Last = 2147483647
 
    procedure Plus(S: in out OperandStack.Stack; IsLocked: in Boolean) is
       RESULT: Integer;
@@ -26,8 +28,14 @@ package body Operations is
    begin
       OperandStack.Pop(S, NUM1);
       OperandStack.Pop(S, NUM2);
-      RESULT := NUM1 - NUM2;
-      OperandStack.Push(S, RESULT);
+      if NUM1 < Integer'First + NUM2 then
+         Put("Abstracting the second number from first will cause integer overflow, the numbers are pushed back to the stack"); New_Line;
+         OperandStack.Push(S, NUM2);
+         OperandStack.Push(S, NUM1);
+      else
+         RESULT := NUM1 - NUM2;
+         OperandStack.Push(S, RESULT);
+      end if;
    end Minus;
 
    procedure Multiply(S: in out OperandStack.Stack; IsLocked: in Boolean) is
@@ -37,8 +45,16 @@ package body Operations is
    begin
       OperandStack.Pop(S, NUM1);
       OperandStack.Pop(S, NUM2);
-      RESULT := NUM1 * NUM2;
-      OperandStack.Push(S, RESULT);
+      -- Perform overflow check
+      Put(Integer'Last / NUM2);
+      if (NUM1 > Integer'Last / NUM2) or (NUM1 < Integer'First / NUM2) then
+         Put("Multiplying the integers will cause integer overflow, the numbers are pushed back to the stack"); New_Line;
+         OperandStack.Push(S, NUM2);
+         OperandStack.Push(S, NUM1);
+      else
+         RESULT := NUM1 * NUM2;
+         OperandStack.Push(S, RESULT);
+      end if;
    end Multiply;
 
    procedure Divide(S: in out OperandStack.Stack; IsLocked: in Boolean) is
@@ -48,11 +64,18 @@ package body Operations is
    begin
       OperandStack.Pop(S, NUM1);
       OperandStack.Pop(S, NUM2);
-      if NUM2 /= 0 then
+      if NUM2 = 0 then
+         Put("Cannot divide by 0! the numbers are pushed back to the stack");
+         OperandStack.Push(S, NUM2);
+         OperandStack.Push(S, NUM1);
+      elsif NUM1 < NUM2 * Integer'Last then
+         Put("num1 is the smallest integer -2147483648 and num2 is -1, the result is larger than the largest integer 2147483647");
+         New_Line;
+         OperandStack.Push(S, NUM2);
+         OperandStack.Push(S, NUM1);
+      else
          RESULT := NUM1 / NUM2;
          OperandStack.Push(S, RESULT);
-      else
-         Put("Cannot divide by 0!");
       end if;
    end Divide;
 

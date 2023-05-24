@@ -1,0 +1,4 @@
+{"error":
+  "Connection error: client_connect: connection failed: No such file or directory (open,\\\\.\\pipe\\why3server1532450115.sock) (socket_name=why3server1532450115.sock)\n.\n", 
+"internal":
+ true, "results": []}

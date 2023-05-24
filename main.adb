@@ -15,31 +15,33 @@ with Operations;
 
 procedure Main is
    use Operations;
+   
+   -- the init of database, a 
    DB : VariableStore.Database;
    VAR : VariableStore.Variable := VariableStore.From_String("");
-   -- check if the pin entered is equal to this master pin
+   OpStack : OperandStack.Stack;
+   
+   -- The pin of the calculator;
    MASTER_PIN : PIN.PIN;
- 
-   -- record the pin entered by the user
+   
+   -- record the current state of this system: locked/unlocked
+   IsLocked : Boolean := True;
+   
+   -- the whole input line
+   package Lines is new MyString(Max_MyString_Length => 2048);
+   P  : Lines.MyString;
+   
+   -- record the COMMAND of the user input
+   COMMAND : Lines.MyString := Lines.From_String("");
+   
+   -- the value follwing the COMMAND, if the command is "push" and "pop"
+   NUMBER : Integer := 0;
+   
+   -- the pin from input, if the command is "lock" and "unlock"
    ENTER_PIN : PIN.PIN := PIN.From_String("0000");
    ENTER_PIN_STR : String := "0000";
    
-   package Lines is new MyString(Max_MyString_Length => 2048);
-   -- record user input
-   P  : Lines.MyString;
    
-   -- this system only has 2 state: locked/unlocked
-   -- record the current state of this system
-   IsLocked : Boolean := True;
-   
-   -- record the COMMAND of the user input like "+" "-" "*" "/"
-   COMMAND : Lines.MyString := Lines.From_String("");
-   
-   -- the value after command
-   NUMBER : Integer := 0;
-   
-   -- stack with max of 512 integers, default integer is
-   OpStack : OperandStack.Stack;
    
 begin
    -- initialize stack and database

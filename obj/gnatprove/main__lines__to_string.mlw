@@ -257,12 +257,12 @@ module Standard__string
     writes { x }
 end
 
-module Main__lines__mystring__T16b
+module Main__lines__mystring__T14b
   use _gnatprove_standard.Main
   use int.Int
   use int.Int
   
-  type t16b = <range 0 2048>
+  type t14b = <range 0 2048>
   
   val function first : int
     ensures { result = (0 : int) }
@@ -277,36 +277,36 @@ module Main__lines__mystring__T16b
   
   clone export ada__model.Static_Discrete with
     axiom .,
-    type t = t16b,
+    type t = t14b,
     function first = first,
     function last = last,
     predicate in_range = in_range
   
-  type t16b__ref = { mutable t16b__content : t16b }
+  type t14b__ref = { mutable t14b__content : t14b }
   
-  function t16b__ref_t16b__content__projection (a: t16b__ref) : t16b =
-    a.t16b__content
+  function t14b__ref_t14b__content__projection (a: t14b__ref) : t14b =
+    a.t14b__content
   
-  meta "model_projection" function t16b__ref_t16b__content__projection
+  meta "model_projection" function t14b__ref_t14b__content__projection
   
-  meta "inline:no" function t16b__ref_t16b__content__projection
+  meta "inline:no" function t14b__ref_t14b__content__projection
   
-  val t16b__havoc (x: t16b__ref) : unit
+  val t14b__havoc (x: t14b__ref) : unit
     writes { x }
 end
 
-module Main__lines__mystring__T16b__rep
-  use Main__lines__mystring__T16b as Main__lines__mystring__T16b
+module Main__lines__mystring__T14b__rep
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
   use _gnatprove_standard.Main
   use int.Int
   
-  function to_rep (x: Main__lines__mystring__T16b.t16b) : int =
-    Main__lines__mystring__T16b.t16b'int x
+  function to_rep (x: Main__lines__mystring__T14b.t14b) : int =
+    Main__lines__mystring__T14b.t14b'int x
   
   clone export ada__model.Rep_Proj_Int with
     axiom .,
-    type t = Main__lines__mystring__T16b.t16b,
-    predicate in_range = Main__lines__mystring__T16b.in_range,
+    type t = Main__lines__mystring__T14b.t14b,
+    predicate in_range = Main__lines__mystring__T14b.in_range,
     function to_rep = to_rep
   
   meta "model_projection" function to_rep
@@ -341,8 +341,8 @@ end
 module Main__lines__mystring__rep
   use _gnatprove_standard.Main
   use int.Int
-  use Main__lines__mystring__T16b as Main__lines__mystring__T16b
-  use Main__lines__mystring__T16b__rep as Main__lines__mystring__T16b__rep
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
+  use Main__lines__mystring__T14b__rep as Main__lines__mystring__T14b__rep
   use Main__lines__mystringstr as Main__lines__mystringstr
   use Array__Int__Standard__character as Array__Int__Standard__character
   use Array__Int__Standard__character as Array__Int__Standard__character
@@ -351,13 +351,13 @@ module Main__lines__mystring__rep
   
   type __split_fields = {
                        rec__main__lines__mystring__length :
-                         Main__lines__mystring__T16b.t16b;
+                         Main__lines__mystring__T14b.t14b;
                        rec__main__lines__mystring__str :
                          Array__Int__Standard__character.map
                        }
   
   function __split_fields_rec__main__lines__mystring__length__projection (a: __split_fields) : 
-    Main__lines__mystring__T16b.t16b =
+    Main__lines__mystring__T14b.t14b =
     a.rec__main__lines__mystring__length
   
   meta "model_projection" function __split_fields_rec__main__lines__mystring__length__projection
@@ -376,24 +376,24 @@ module Main__lines__mystring__rep
                             mutable __split_fields__content : __split_fields
                             }
   
-  function __split_fields__ref___split_fields__content__2__projection (a: __split_fields__ref) : __split_fields =
+  function __split_fields__ref___split_fields__content__3__projection (a: __split_fields__ref) : __split_fields =
     __split_fields__content a
   
-  meta "model_projection" function __split_fields__ref___split_fields__content__2__projection
+  meta "model_projection" function __split_fields__ref___split_fields__content__3__projection
   
-  meta "inline:no" function __split_fields__ref___split_fields__content__2__projection
+  meta "inline:no" function __split_fields__ref___split_fields__content__3__projection
   
   val __split_fields__havoc (x: __split_fields__ref) : unit
     writes { x }
   
   type __rep = { __split_fields : __split_fields }
   
-  function __rep___split_fields__2__projection (a: __rep) : __split_fields =
+  function __rep___split_fields__3__projection (a: __rep) : __split_fields =
     __split_fields a
   
-  meta "model_projection" function __rep___split_fields__2__projection
+  meta "model_projection" function __rep___split_fields__3__projection
   
-  meta "inline:no" function __rep___split_fields__2__projection
+  meta "inline:no" function __rep___split_fields__3__projection
   
   function to_base (a: __rep) : __rep = a
   
@@ -410,7 +410,7 @@ module Main__lines__mystring__rep
   val main__lines__mystring__length__pred (a: __rep) : bool
     ensures { result <-> (main__lines__mystring__length__pred (a : __rep)) }
   
-  val rec__main__lines__mystring__length_ (a: __rep) : Main__lines__mystring__T16b.t16b
+  val rec__main__lines__mystring__length_ (a: __rep) : Main__lines__mystring__T14b.t14b
     requires { main__lines__mystring__length__pred a }
     ensures { (result
                  = ((__split_fields a).rec__main__lines__mystring__length)) }
@@ -425,9 +425,9 @@ module Main__lines__mystring__rep
     ensures { (result = ((__split_fields a).rec__main__lines__mystring__str)) }
   
   function bool_eq (a: __rep) (b: __rep) : bool =
-    if (((Main__lines__mystring__T16b__rep.to_rep
+    if (((Main__lines__mystring__T14b__rep.to_rep
             ((__split_fields a).rec__main__lines__mystring__length))
-           = (Main__lines__mystring__T16b__rep.to_rep
+           = (Main__lines__mystring__T14b__rep.to_rep
                 ((__split_fields b).rec__main__lines__mystring__length))) /\
           ((Main__lines__mystringstr.bool_eq
               ((__split_fields a).rec__main__lines__mystring__str))
@@ -604,30 +604,30 @@ module Main__lines__mystring___axiom
   use int.Int
   use Main__lines__mystring as Main__lines__mystring
   
-  predicate dynamic_invariant (temp___expr_280: Main__lines__mystring.mystring) (temp___is_init_276: bool) (temp___skip_constant_277: bool) (temp___do_toplevel_278: bool) (temp___do_typ_inv_279: bool) =
+  predicate dynamic_invariant (temp___expr_290: Main__lines__mystring.mystring) (temp___is_init_286: bool) (temp___skip_constant_287: bool) (temp___do_toplevel_288: bool) (temp___do_typ_inv_289: bool) =
     true
   
-  val dynamic_invariant (temp___expr_280: Main__lines__mystring.mystring) (temp___is_init_276: bool) (temp___skip_constant_277: bool) (temp___do_toplevel_278: bool) (temp___do_typ_inv_279: bool) : 
+  val dynamic_invariant (temp___expr_290: Main__lines__mystring.mystring) (temp___is_init_286: bool) (temp___skip_constant_287: bool) (temp___do_toplevel_288: bool) (temp___do_typ_inv_289: bool) : 
     bool
     ensures { result
                 <->
                 (((((dynamic_invariant
-                       (temp___expr_280 : Main__lines__mystring.mystring))
-                      (temp___is_init_276 : bool))
-                     (temp___skip_constant_277 : bool))
-                    (temp___do_toplevel_278 : bool))
-                   (temp___do_typ_inv_279 : bool)) }
+                       (temp___expr_290 : Main__lines__mystring.mystring))
+                      (temp___is_init_286 : bool))
+                     (temp___skip_constant_287 : bool))
+                    (temp___do_toplevel_288 : bool))
+                   (temp___do_typ_inv_289 : bool)) }
   
-  predicate default_initial_assumption (temp___expr_282: Main__lines__mystring.mystring) (temp___skip_top_level_283: bool) =
+  predicate default_initial_assumption (temp___expr_292: Main__lines__mystring.mystring) (temp___skip_top_level_293: bool) =
     true
   
-  val default_initial_assumption (temp___expr_282: Main__lines__mystring.mystring) (temp___skip_top_level_283: bool) : 
+  val default_initial_assumption (temp___expr_292: Main__lines__mystring.mystring) (temp___skip_top_level_293: bool) : 
     bool
     ensures { result
                 <->
                 ((default_initial_assumption
-                    (temp___expr_282 : Main__lines__mystring.mystring))
-                   (temp___skip_top_level_283 : bool)) }
+                    (temp___expr_292 : Main__lines__mystring.mystring))
+                   (temp___skip_top_level_293 : bool)) }
 end
 
 module Main__lines__length___axiom
@@ -638,8 +638,8 @@ module Main__lines__length___axiom
   use Main__lines__mystring as Main__lines__mystring
   use Main__lines__length as Main__lines__length
   use Main__lines__mystring___axiom as Main__lines__mystring___axiom
-  use Main__lines__mystring__T16b as Main__lines__mystring__T16b
-  use Main__lines__mystring__T16b__rep as Main__lines__mystring__T16b__rep
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
+  use Main__lines__mystring__T14b__rep as Main__lines__mystring__T14b__rep
   
   val length (m: Main__lines__mystring.mystring) : int
     requires { true }
@@ -651,10 +651,10 @@ module Main__lines__length___axiom
                       True)
                      True) /\
                     ((result
-                        = (Main__lines__mystring__T16b__rep.to_rep
+                        = (Main__lines__mystring__T14b__rep.to_rep
                              ((Main__lines__mystring.__split_fields m).
                                 Main__lines__mystring.rec__main__lines__mystring__length))) /\
-                       ([@GP_Pretty_Ada:70200] (result <= (2048 : int)))))) }
+                       ([@GP_Pretty_Ada:70178] (result <= (2048 : int)))))) }
   
   axiom length__post_axiom:
     forall m : Main__lines__mystring.mystring [Main__lines__length.length m].
@@ -663,7 +663,7 @@ module Main__lines__length___axiom
           True) ->
          (let result = Main__lines__length.length m in
           if ((Main__lines__length.length__function_guard result) m) then
-            ((([@GP_Pretty_Ada:70200] (result <= (2048 : int))) /\
+            ((([@GP_Pretty_Ada:70178] (result <= (2048 : int))) /\
                 (((((Standard__natural___axiom.dynamic_invariant result) True)
                      False)
                     True)
@@ -677,7 +677,7 @@ module Main__lines__length___axiom
            True)
           True) ->
          ((Main__lines__length.length m)
-            = (Main__lines__mystring__T16b__rep.to_rep
+            = (Main__lines__mystring__T14b__rep.to_rep
                  ((Main__lines__mystring.__split_fields m).Main__lines__mystring.rec__main__lines__mystring__length))))
 end
 
@@ -834,59 +834,59 @@ module Main__lines__to_string__TresultS___axiom
   use int.Int
   use int.Int
   use Main__lines__mystring as Main__lines__mystring
-  use Main__lines__mystring__T16b as Main__lines__mystring__T16b
-  use Main__lines__mystring__T16b__rep as Main__lines__mystring__T16b__rep
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
+  use Main__lines__mystring__T14b__rep as Main__lines__mystring__T14b__rep
   use Main__lines__to_string__TresultS as Main__lines__to_string__TresultS
   
-  predicate dynamic_invariant (temp___expr_311: Main__lines__to_string__TresultS.tresultS) (temp___is_init_307: bool) (temp___skip_constant_308: bool) (temp___do_toplevel_309: bool) (temp___do_typ_inv_310: bool) (Main__lines__to_string__m___m___: 
+  predicate dynamic_invariant (temp___expr_321: Main__lines__to_string__TresultS.tresultS) (temp___is_init_317: bool) (temp___skip_constant_318: bool) (temp___do_toplevel_319: bool) (temp___do_typ_inv_320: bool) (Main__lines__to_string__m___m___: 
     Main__lines__mystring.mystring) =
-    if temp___skip_constant_308 then true
+    if temp___skip_constant_318 then true
     else
       ((((((Main__lines__to_string__TresultS.dynamic_property (1 : int))
-             (Main__lines__mystring__T16b__rep.to_rep
+             (Main__lines__mystring__T14b__rep.to_rep
                 ((Main__lines__mystring.__split_fields
                      Main__lines__to_string__m___m___).Main__lines__mystring.rec__main__lines__mystring__length)))
-            (Main__lines__to_string__TresultS.first temp___expr_311))
-           (Main__lines__to_string__TresultS.last temp___expr_311)) /\
-          ((Main__lines__to_string__TresultS.first temp___expr_311)
+            (Main__lines__to_string__TresultS.first temp___expr_321))
+           (Main__lines__to_string__TresultS.last temp___expr_321)) /\
+          ((Main__lines__to_string__TresultS.first temp___expr_321)
              = (1 : int))) /\
-         ((Main__lines__to_string__TresultS.last temp___expr_311)
-            = (Main__lines__mystring__T16b__rep.to_rep
+         ((Main__lines__to_string__TresultS.last temp___expr_321)
+            = (Main__lines__mystring__T14b__rep.to_rep
                  ((Main__lines__mystring.__split_fields
                       Main__lines__to_string__m___m___).Main__lines__mystring.rec__main__lines__mystring__length))))
   
-  val dynamic_invariant (temp___expr_311: Main__lines__to_string__TresultS.tresultS) (temp___is_init_307: bool) (temp___skip_constant_308: bool) (temp___do_toplevel_309: bool) (temp___do_typ_inv_310: bool) (Main__lines__to_string__m___m___: 
+  val dynamic_invariant (temp___expr_321: Main__lines__to_string__TresultS.tresultS) (temp___is_init_317: bool) (temp___skip_constant_318: bool) (temp___do_toplevel_319: bool) (temp___do_typ_inv_320: bool) (Main__lines__to_string__m___m___: 
     Main__lines__mystring.mystring) : bool
     ensures { result
                 <->
                 ((((((dynamic_invariant
-                        (temp___expr_311 :
+                        (temp___expr_321 :
                            Main__lines__to_string__TresultS.tresultS))
-                       (temp___is_init_307 : bool))
-                      (temp___skip_constant_308 : bool))
-                     (temp___do_toplevel_309 : bool))
-                    (temp___do_typ_inv_310 : bool))
+                       (temp___is_init_317 : bool))
+                      (temp___skip_constant_318 : bool))
+                     (temp___do_toplevel_319 : bool))
+                    (temp___do_typ_inv_320 : bool))
                    (Main__lines__to_string__m___m___ :
                       Main__lines__mystring.mystring)) }
   
-  predicate default_initial_assumption (temp___expr_313: Main__lines__to_string__TresultS.tresultS) (temp___skip_top_level_314: bool) (Main__lines__to_string__m___m___: 
+  predicate default_initial_assumption (temp___expr_323: Main__lines__to_string__TresultS.tresultS) (temp___skip_top_level_324: bool) (Main__lines__to_string__m___m___: 
     Main__lines__mystring.mystring) =
     ((true /\
-        ((Main__lines__to_string__TresultS.first temp___expr_313)
+        ((Main__lines__to_string__TresultS.first temp___expr_323)
            = (1 : int))) /\
-       ((Main__lines__to_string__TresultS.last temp___expr_313)
-          = (Main__lines__mystring__T16b__rep.to_rep
+       ((Main__lines__to_string__TresultS.last temp___expr_323)
+          = (Main__lines__mystring__T14b__rep.to_rep
                ((Main__lines__mystring.__split_fields
                     Main__lines__to_string__m___m___).Main__lines__mystring.rec__main__lines__mystring__length))))
   
-  val default_initial_assumption (temp___expr_313: Main__lines__to_string__TresultS.tresultS) (temp___skip_top_level_314: bool) (Main__lines__to_string__m___m___: 
+  val default_initial_assumption (temp___expr_323: Main__lines__to_string__TresultS.tresultS) (temp___skip_top_level_324: bool) (Main__lines__to_string__m___m___: 
     Main__lines__mystring.mystring) : bool
     ensures { result
                 <->
                 (((default_initial_assumption
-                     (temp___expr_313 :
+                     (temp___expr_323 :
                         Main__lines__to_string__TresultS.tresultS))
-                    (temp___skip_top_level_314 : bool))
+                    (temp___skip_top_level_324 : bool))
                    (Main__lines__to_string__m___m___ :
                       Main__lines__mystring.mystring)) }
 end
@@ -1028,30 +1028,30 @@ module Main__lines__mystringstr___axiom
   use Array__Int__Standard__character as Array__Int__Standard__character
   use Array__Int__Standard__character as Array__Int__Standard__character
   
-  predicate dynamic_invariant (temp___expr_270: Array__Int__Standard__character.map) (temp___is_init_266: bool) (temp___skip_constant_267: bool) (temp___do_toplevel_268: bool) (temp___do_typ_inv_269: bool) =
+  predicate dynamic_invariant (temp___expr_280: Array__Int__Standard__character.map) (temp___is_init_276: bool) (temp___skip_constant_277: bool) (temp___do_toplevel_278: bool) (temp___do_typ_inv_279: bool) =
     true
   
-  val dynamic_invariant (temp___expr_270: Array__Int__Standard__character.map) (temp___is_init_266: bool) (temp___skip_constant_267: bool) (temp___do_toplevel_268: bool) (temp___do_typ_inv_269: bool) : 
+  val dynamic_invariant (temp___expr_280: Array__Int__Standard__character.map) (temp___is_init_276: bool) (temp___skip_constant_277: bool) (temp___do_toplevel_278: bool) (temp___do_typ_inv_279: bool) : 
     bool
     ensures { result
                 <->
                 (((((dynamic_invariant
-                       (temp___expr_270 : Array__Int__Standard__character.map))
-                      (temp___is_init_266 : bool))
-                     (temp___skip_constant_267 : bool))
-                    (temp___do_toplevel_268 : bool))
-                   (temp___do_typ_inv_269 : bool)) }
+                       (temp___expr_280 : Array__Int__Standard__character.map))
+                      (temp___is_init_276 : bool))
+                     (temp___skip_constant_277 : bool))
+                    (temp___do_toplevel_278 : bool))
+                   (temp___do_typ_inv_279 : bool)) }
   
-  predicate default_initial_assumption (temp___expr_272: Array__Int__Standard__character.map) (temp___skip_top_level_273: bool) =
+  predicate default_initial_assumption (temp___expr_282: Array__Int__Standard__character.map) (temp___skip_top_level_283: bool) =
     true
   
-  val default_initial_assumption (temp___expr_272: Array__Int__Standard__character.map) (temp___skip_top_level_273: bool) : 
+  val default_initial_assumption (temp___expr_282: Array__Int__Standard__character.map) (temp___skip_top_level_283: bool) : 
     bool
     ensures { result
                 <->
                 ((default_initial_assumption
-                    (temp___expr_272 : Array__Int__Standard__character.map))
-                   (temp___skip_top_level_273 : bool)) }
+                    (temp___expr_282 : Array__Int__Standard__character.map))
+                   (temp___skip_top_level_283 : bool)) }
 end
 
 module Main__lines__to_string__m___axiom
@@ -1064,7 +1064,7 @@ module Main__lines__TmystringstrD1___axiom
   use int.Int
 end
 
-module Main__lines__mystring__T16b___axiom
+module Main__lines__mystring__T14b___axiom
   use _gnatprove_standard.Main
   use int.Int
 end
@@ -1096,8 +1096,8 @@ module Main__lines__to_string__subprogram_def
   use Main__lines__mystring___axiom as Main__lines__mystring___axiom
   use Array__Int__Standard__character as Array__Int__Standard__character
   use Main__lines__to_string__result as Main__lines__to_string__result
-  use Main__lines__mystring__T16b as Main__lines__mystring__T16b
-  use Main__lines__mystring__T16b__rep as Main__lines__mystring__T16b__rep
+  use Main__lines__mystring__T14b as Main__lines__mystring__T14b
+  use Main__lines__mystring__T14b__rep as Main__lines__mystring__T14b__rep
   use Main__lines__TmystringstrD1 as Main__lines__TmystringstrD1
   use Main__lines__to_string__TresultS as Main__lines__to_string__TresultS
   use Main__lines__to_string__T69b as Main__lines__to_string__T69b
@@ -1120,7 +1120,7 @@ module Main__lines__to_string__subprogram_def
   use Main__lines__to_string__m___axiom as Main__lines__to_string__m___axiom
   use Main__lines__length___axiom as Main__lines__length___axiom
   use Main__lines__TmystringstrD1___axiom as Main__lines__TmystringstrD1___axiom
-  use Main__lines__mystring__T16b___axiom as Main__lines__mystring__T16b___axiom
+  use Main__lines__mystring__T14b___axiom as Main__lines__mystring__T14b___axiom
   use Main__lines__to_string__result___axiom as Main__lines__to_string__result___axiom
   use Main__lines__to_string__TresultS___axiom as Main__lines__to_string__TresultS___axiom
   use Main__lines__to_string__T69b___axiom as Main__lines__to_string__T69b___axiom
@@ -1131,14 +1131,14 @@ module Main__lines__to_string__subprogram_def
     requires { [#"mystring.ads" 8 0 0] true }
     ensures { [#"mystring.ads" 8 0 0]
               [#"mystring.ads" 9 0 0]
+              [@GP_Sloc:mystring.ads:9:14:instantiated:main.adb:31:4]
               [@GP_Reason:VC_POSTCONDITION]
-              [@comment:     Post => To_String'Result'Length = Length(M) and              ^ mystring.ads:9:14:instantiated:main.adb:27:4:VC_POSTCONDITION]
-              [@GP_Sloc:mystring.ads:9:14:instantiated:main.adb:27:4]
+              [@comment:     Post => To_String'Result'Length = Length(M) and              ^ mystring.ads:9:14:instantiated:main.adb:31:4:VC_POSTCONDITION]
               [@model_vc_post]
               [@GP_Shape:pragargs__and]
               [@GP_Id:55]
-              ((([@GP_Sloc:mystring.ads:9:14:instantiated:main.adb:27:4]
-                 [@GP_Pretty_Ada:69918]
+              ((([@GP_Sloc:mystring.ads:9:14:instantiated:main.adb:31:4]
+                 [@GP_Pretty_Ada:69896]
                  ((Standard__string.length
                      (main__lines__to_string__result.Standard__string.string____content))
                     = (epsilon temp___result_626: int.
@@ -1148,13 +1148,13 @@ module Main__lines__to_string__subprogram_def
                             ((Main__lines__length.length__function_guard
                                 temp___result_626)
                                Main__lines__to_string__m.m))))) /\
-                  ([@GP_Pretty_Ada:69925]
-                   [@GP_Sloc:mystring.ads:10:14:instantiated:main.adb:27:4]
+                  ([@GP_Sloc:mystring.ads:10:14:instantiated:main.adb:31:4]
+                   [@GP_Pretty_Ada:69903]
                    ((Standard__string.first
                        (main__lines__to_string__result.Standard__string.string____content))
                       = (1 : int)))) /\
-                 ([@GP_Sloc:mystring.ads:10:45:instantiated:main.adb:27:4]
-                  [@GP_Pretty_Ada:69930]
+                 ([@GP_Sloc:mystring.ads:10:45:instantiated:main.adb:31:4]
+                  [@GP_Pretty_Ada:69908]
                   ((Standard__string.last
                       (main__lines__to_string__result.Standard__string.string____content))
                      = (epsilon temp___result_627: int.
@@ -1165,7 +1165,7 @@ module Main__lines__to_string__subprogram_def
                                  temp___result_627)
                                 Main__lines__to_string__m.m)))))) }
   = [@vc:divergent]
-    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram mystring.ads:8 instantiated at main.adb:27]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram mystring.ads:8 instantiated at main.adb:31]
       ());
      assume {
        ((((Main__lines__mystring___axiom.dynamic_invariant
@@ -1174,11 +1174,11 @@ module Main__lines__to_string__subprogram_def
            False)
           True)
          True };
-     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram mystring.ads:8 instantiated at main.adb:27]
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram mystring.ads:8 instantiated at main.adb:31]
       ());
-     ([@GNAT-comment:Check for RTE in the Pre of the subprogram mystring.ads:8 instantiated at main.adb:27]
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram mystring.ads:8 instantiated at main.adb:31]
       ());
-     ([@GNAT-comment:Assume Pre of the subprogram mystring.ads:8 instantiated at main.adb:27]
+     ([@GNAT-comment:Assume Pre of the subprogram mystring.ads:8 instantiated at main.adb:31]
       ());
      (try
         ([#"mystring.adb" 6 0 0]
@@ -1187,7 +1187,7 @@ module Main__lines__to_string__subprogram_def
               ensures { true }
               let _ =
                 let _ =
-                  Main__lines__mystring__T16b__rep.to_rep
+                  Main__lines__mystring__T14b__rep.to_rep
                     ((Main__lines__mystring.__split_fields
                          Main__lines__to_string__m.m).Main__lines__mystring.rec__main__lines__mystring__length) in
                 () in
@@ -1196,19 +1196,19 @@ module Main__lines__to_string__subprogram_def
           ([#"mystring.adb" 6 0 0]
            [#"mystring.adb" 6 0 0]
            (val _f : unit
-              requires { [@GP_Sloc:mystring.adb:6:7:instantiated:main.adb:27:4]
+              requires { [@comment:      Result : String(1..M.Length);       ^ mystring.adb:6:7:instantiated:main.adb:31:4:VC_RANGE_CHECK]
                          [@vc:annotation]
                          [@GP_Id:49]
-                         [@comment:      Result : String(1..M.Length);       ^ mystring.adb:6:7:instantiated:main.adb:27:4:VC_RANGE_CHECK]
                          [@GP_Reason:VC_RANGE_CHECK]
+                         [@GP_Sloc:mystring.adb:6:7:instantiated:main.adb:31:4]
                          [#"mystring.adb" 6 0 0]
                          (((1 : int)
-                             <= (Main__lines__mystring__T16b__rep.to_rep
+                             <= (Main__lines__mystring__T14b__rep.to_rep
                                    ((Main__lines__mystring.__split_fields
                                         Main__lines__to_string__m.m).
                                       Main__lines__mystring.rec__main__lines__mystring__length))) ->
                             (((1 : int) >= Standard__positive.first) /\
-                               ((Main__lines__mystring__T16b__rep.to_rep
+                               ((Main__lines__mystring__T14b__rep.to_rep
                                    ((Main__lines__mystring.__split_fields
                                         Main__lines__to_string__m.m).
                                       Main__lines__mystring.rec__main__lines__mystring__length))
@@ -1244,9 +1244,9 @@ module Main__lines__to_string__subprogram_def
                   True)
                  True)
                 Main__lines__to_string__m.m) })));
-        ([@GP_Sloc:mystring.adb:8:7:instantiated:main.adb:27:4]
+        ([@GP_Sloc:mystring.adb:8:7:instantiated:main.adb:31:4]
          [#"mystring.adb" 8 0 0] ());
-        ([@GP_Sloc:mystring.adb:8:14:instantiated:main.adb:27:4]
+        ([@GP_Sloc:mystring.adb:8:14:instantiated:main.adb:31:4]
          [#"mystring.adb" 8 0 0]
          [#"mystring.adb" 8 0 0]
          (Main__lines__to_string__result.result__.Array__Int__Standard__character.map__content <-
@@ -1255,7 +1255,7 @@ module Main__lines__to_string__subprogram_def
                   let temp___620 =
                     let temp___618 =
                       let temp___616 =
-                        Main__lines__mystring__T16b__rep.to_rep
+                        Main__lines__mystring__T14b__rep.to_rep
                           ((Main__lines__mystring.__split_fields
                                Main__lines__to_string__m.m).Main__lines__mystring.rec__main__lines__mystring__length) in
                       let temp___615 = 1 : int in
@@ -1268,10 +1268,10 @@ module Main__lines__to_string__subprogram_def
                               [#"mystring.adb" 8 0 0]
                               [#"mystring.adb" 8 0 0]
                               [@vc:annotation]
+                              [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:31:4:VC_RANGE_CHECK]
+                              [@GP_Sloc:mystring.adb:8:25:instantiated:main.adb:31:4]
                               [@GP_Reason:VC_RANGE_CHECK]
                               [@GP_Shape:result_assign__typeconv__slice]
-                              [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:27:4:VC_RANGE_CHECK]
-                              [@GP_Sloc:mystring.adb:8:25:instantiated:main.adb:27:4]
                               [@GP_Id:50]
                               ((temp___615 <= temp___616) ->
                                  (((Main__lines__TmystringstrD1.first
@@ -1290,10 +1290,10 @@ module Main__lines__to_string__subprogram_def
                     assert {
                       [#"mystring.adb" 8 0 0]
                       [@vc:annotation]
+                      [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:31:4:VC_RANGE_CHECK]
+                      [@GP_Sloc:mystring.adb:8:25:instantiated:main.adb:31:4]
                       [@GP_Reason:VC_RANGE_CHECK]
                       [@GP_Shape:result_assign__typeconv__slice]
-                      [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:27:4:VC_RANGE_CHECK]
-                      [@GP_Sloc:mystring.adb:8:25:instantiated:main.adb:27:4]
                       [@GP_Id:51]
                       ((((Standard__string.dynamic_property
                             Standard__positive.first)
@@ -1310,35 +1310,35 @@ module Main__lines__to_string__subprogram_def
                       (1 : int) in
                   assert {
                     [#"mystring.adb" 8 0 0]
-                    [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                 ^ mystring.adb:8:17:instantiated:main.adb:27:4:VC_LENGTH_CHECK]
+                    [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                 ^ mystring.adb:8:17:instantiated:main.adb:31:4:VC_LENGTH_CHECK]
                     [@vc:annotation]
+                    [@GP_Sloc:mystring.adb:8:17:instantiated:main.adb:31:4]
                     [@GP_Shape:result_assign__typeconv]
                     [@GP_Id:52]
                     [@GP_Reason:VC_LENGTH_CHECK]
-                    [@GP_Sloc:mystring.adb:8:17:instantiated:main.adb:27:4]
                     (true /\
                        (if ((Standard__string.first temp___620)
                               <= (Standard__string.last temp___620)) then
                           (((1 : int)
-                              <= (Main__lines__mystring__T16b__rep.to_rep
+                              <= (Main__lines__mystring__T14b__rep.to_rep
                                     ((Main__lines__mystring.__split_fields
                                          Main__lines__to_string__m.m).
                                        Main__lines__mystring.rec__main__lines__mystring__length))) /\
                              (((Standard__string.last temp___620)
                                  - (Standard__string.first temp___620))
-                                = ((Main__lines__mystring__T16b__rep.to_rep
+                                = ((Main__lines__mystring__T14b__rep.to_rep
                                       ((Main__lines__mystring.__split_fields
                                            Main__lines__to_string__m.m).
                                          Main__lines__mystring.rec__main__lines__mystring__length))
                                      - (1 : int))))
                         else
-                          ((Main__lines__mystring__T16b__rep.to_rep
+                          ((Main__lines__mystring__T14b__rep.to_rep
                               ((Main__lines__mystring.__split_fields
                                    Main__lines__to_string__m.m).Main__lines__mystring.rec__main__lines__mystring__length))
                              < (1 : int)))) };
                   (((Main__lines__to_string__TresultS.of_array temp___621)
                       (1 : int))
-                     (Main__lines__mystring__T16b__rep.to_rep
+                     (Main__lines__mystring__T14b__rep.to_rep
                         ((Main__lines__mystring.__split_fields
                              Main__lines__to_string__m.m).Main__lines__mystring.rec__main__lines__mystring__length))) in
                 let temp___623 =
@@ -1351,9 +1351,9 @@ module Main__lines__to_string__subprogram_def
                 assert {
                   [#"mystring.adb" 8 0 0]
                   [@vc:annotation]
+                  [@GP_Sloc:mystring.adb:8:14:instantiated:main.adb:31:4]
                   [@GP_Shape:result_assign]
-                  [@GP_Sloc:mystring.adb:8:14:instantiated:main.adb:27:4]
-                  [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;              ^ mystring.adb:8:14:instantiated:main.adb:27:4:VC_LENGTH_CHECK]
+                  [@comment:      Result := String(M.Str(M.Str'First..M.Length)) ;              ^ mystring.adb:8:14:instantiated:main.adb:31:4:VC_LENGTH_CHECK]
                   [@GP_Id:53]
                   [@GP_Reason:VC_LENGTH_CHECK]
                   (true /\
@@ -1376,9 +1376,9 @@ module Main__lines__to_string__subprogram_def
                            < (Main__lines__to_string__TresultS.first
                                 temp___623)))) };
                 temp___622))));
-        ([@GP_Sloc:mystring.adb:9:14:instantiated:main.adb:27:4]
+        ([@GP_Sloc:mystring.adb:9:14:instantiated:main.adb:31:4]
          [#"mystring.adb" 9 0 0] ());
-        ([@GP_Sloc:mystring.adb:9:7:instantiated:main.adb:27:4]
+        ([@GP_Sloc:mystring.adb:9:7:instantiated:main.adb:31:4]
          [#"mystring.adb" 9 0 0]
          (([#"mystring.adb" 9 0 0]
            (main__lines__to_string__result.Standard__string.string____content <-
@@ -1407,9 +1407,9 @@ module Main__lines__to_string__subprogram_def
                    (([#"mystring.ads" 9 0 0]
                      [@GP_Shape:pragargs__and__and__cmp__typeconv__length_ref]
                      [@vc:annotation]
+                     [@comment:     Post => To_String'Result'Length = Length(M) and                              ^ mystring.ads:9:30:instantiated:main.adb:31:4:VC_RANGE_CHECK]
                      [@GP_Reason:VC_RANGE_CHECK]
-                     [@comment:     Post => To_String'Result'Length = Length(M) and                              ^ mystring.ads:9:30:instantiated:main.adb:27:4:VC_RANGE_CHECK]
-                     [@GP_Sloc:mystring.ads:9:30:instantiated:main.adb:27:4]
+                     [@GP_Sloc:mystring.ads:9:30:instantiated:main.adb:31:4]
                      [@GP_Id:54]
                      (Standard__integer.range_check_
                         (([#"mystring.ads" 9 0 0]

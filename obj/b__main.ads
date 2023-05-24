@@ -40,7 +40,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#dda7cbb1#;
+   u00001 : constant Version_32 := 16#d3ab24f8#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#2e11c0b1#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -332,7 +332,7 @@ package ada_main is
    pragma Export (C, u00145, "mystringtokeniserB");
    u00146 : constant Version_32 := 16#fd8d8b9c#;
    pragma Export (C, u00146, "mystringtokeniserS");
-   u00147 : constant Version_32 := 16#17afd4e8#;
+   u00147 : constant Version_32 := 16#ec93c5ac#;
    pragma Export (C, u00147, "operationsB");
    u00148 : constant Version_32 := 16#44dd6ff9#;
    pragma Export (C, u00148, "operationsS");

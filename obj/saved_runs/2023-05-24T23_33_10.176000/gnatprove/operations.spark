@@ -1,0 +1,206 @@
+{
+  "spark": [
+    {
+      "name": "Operations.OperandStack.Stack",
+      "sloc": [
+        {
+          "file": "stack.ads",
+          "line": 8
+        },
+        {
+          "file": "operations.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Operations.OperandStack.Size",
+      "sloc": [
+        {
+          "file": "stack.ads",
+          "line": 13
+        },
+        {
+          "file": "operations.ads",
+          "line": 5
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.OperandStack.Init",
+      "sloc": [
+        {
+          "file": "stack.ads",
+          "line": 10
+        },
+        {
+          "file": "operations.ads",
+          "line": 5
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.OperandStack.Storage",
+      "sloc": [
+        {
+          "file": "stack.ads",
+          "line": 15
+        },
+        {
+          "file": "operations.ads",
+          "line": 5
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.OperandStack.Push",
+      "sloc": [
+        {
+          "file": "stack.ads",
+          "line": 18
+        },
+        {
+          "file": "operations.ads",
+          "line": 5
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.OperandStack.Pop",
+      "sloc": [
+        {
+          "file": "stack.ads",
+          "line": 24
+        },
+        {
+          "file": "operations.ads",
+          "line": 5
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Plus",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 8
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Minus",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 12
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Multiply",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 16
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Divide",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 20
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Push_Operation",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 24
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Pop_Operation",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 28
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Load",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 33
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Store",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 39
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.Remove",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 44
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "Operations.List",
+      "sloc": [
+        {
+          "file": "operations.ads",
+          "line": 47
+        }
+      ],
+      "spark": "no"
+    }
+  ],
+  "flow": [
+  ],
+  "session_map": {
+  },
+  "proof": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "codepeer results": 1.30999997054460E-05,
+    "init_why_sections": 4.54099994385615E-04,
+    "globals (advanced)": 2.87855993956327E-02,
+    "flow analysis": 1.09200002043508E-04,
+    "marking": 1.98199995793402E-04,
+    "translation of standard": 2.40670004859567E-03,
+    "properties (advanced)": 4.99999987368938E-05,
+    "globals (basic)": 2.02389005571604E-02
+  }
+}

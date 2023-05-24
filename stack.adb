@@ -18,4 +18,5 @@ package body Stack with SPARK_Mode is
       S.size := S.size - 1;
    end Pop;
 
+
 end Stack;

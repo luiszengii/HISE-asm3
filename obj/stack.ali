@@ -13,7 +13,7 @@ U stack%b		stack.adb		26067577 NE OO PK GE
 U stack%s		stack.ads		a6086384 BN EE NE OO PK GE
 
 D stack.ads		20230524090544 a6086384 stack%s
-D stack.adb		20230524090544 800e16f3 stack%b
+D stack.adb		20230524131442 800e16f3 stack%b
 D system.ads		20210520051136 2ffa5114 system%s
 G a e
 G c Z s b [stack standard 6 9 none]
@@ -21,7 +21,7 @@ X 1 stack.ads
 2i4 Max_Size{positive} 16r33 19r24 28r23 32r49 35r31
 3+9 Item 4r19 15r60 18r44 24r44 32r62 42r60 2|9r44 15r44
 4*4 Default_Item{3+9} 2|6r31
-6k9*Stack 2z4 3z9 4z4 32E9 45l5 45e10 2|1b14 21l5 21t10
+6k9*Stack 2z4 3z9 4z4 32E9 45l5 45e10 2|1b14 22l5 22t10
 8R9*Stack 10r27 13r25 15r28 18r30 24r29 34c9 37e14 39r25 42r28 2|3r27 9r30
 . 15r29
 10U14*Init 10<19 2|3b14 7l8 7t12

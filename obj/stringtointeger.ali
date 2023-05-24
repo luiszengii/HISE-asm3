@@ -14,20 +14,20 @@ U stringtointeger%b	stringtointeger.adb	f3a38af4 NE OO PK
 U stringtointeger%s	stringtointeger.ads	37c4f5b6 EE NE OO PK
 
 D stringtointeger.ads	20230524090544 37c4f5b6 stringtointeger%s
-D stringtointeger.adb	20230524090544 c4677f42 stringtointeger%b
+D stringtointeger.adb	20230524142538 c4677f42 stringtointeger%b
 D system.ads		20210520051136 2ffa5114 system%s
 G a e
 G c Z s b [from_string stringtointeger 6 13 none]
 X 1 stringtointeger.ads
-3K9*StringToInteger 8l5 8e20 2|2b14 61l5 61t20
-6V13*From_String{integer} 6>25 2|3b13 59l8 59t19
-6a25 S{string} 2|3b25 9r10 12r14 13r10 15r13 18r17 22r20 23r40 23r59 33r13
-. 33r31 34r32 51r20
+3K9*StringToInteger 8l5 8e20 2|2b14 73l5 73t20
+6V13*From_String{integer} 6>25 2|3b13 71l8 71t19
+6a25 S{string} 2|3b25 10r10 15r14 18r10 21r13 24r17 28r20 31r40 31r59 45r13
+. 45r31 46r32 63r20
 X 2 stringtointeger.adb
-4i7 Result{integer} 24r49 24r66 26r33 29r34 32m10 32r20 36r39 39m19 39r29
-. 42r38 45m19 45r29 54r20 58r14
-5i7 C{integer} 34m13 36r35 39r38 42r34 45r38
-6b7 Negate{boolean} 14m10 24r37 35r16
-7i7 Pos{integer} 12m7 13r12 18m10 22r13 23r33 23r52 33r15 33r33 34r34 51r14
-. 52m13 52r20
+4i7 Result{integer} 32r49 32r66 35r33 39r34 44m10 44r20 48r39 51m19 51r29
+. 54r38 57m19 57r29 66r20 70r14
+5i7 C{integer} 46m13 48r35 51r38 54r34 57r38
+6b7 Negate{boolean} 19m10 32r37 47r16
+7i7 Pos{integer} 15m7 18r12 24m10 28r13 31r33 31r52 45r15 45r33 46r34 63r14
+. 64m13 64r20
 

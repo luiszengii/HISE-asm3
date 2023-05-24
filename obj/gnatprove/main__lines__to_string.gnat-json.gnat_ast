@@ -226,14 +226,14 @@ module Standard__string
 
 end
 
-(* Module for axiomatizing type "T16b" defined at mystring.ads:38 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
-module Main__lines__mystring__T16b
+(* Module for axiomatizing type "T14b" defined at mystring.ads:38 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
+module Main__lines__mystring__T14b
   
   use import _gnatprove_standard.Main
   use import int.Int
   use import int.Int
   
-  type t16b  = <range 0 2048>
+  type t14b  = <range 0 2048>
   
   function   first () requires { True } ensures  { True } returns int = 0
   
@@ -242,36 +242,36 @@ module Main__lines__mystring__T16b
   function   in_range (x : int) requires { True } ensures  { True } returns
      = ((first <= x) /\ (x <= last))
   
-  clone export ada__model.Static_Discrete with axiom . type t = t16b,
+  clone export ada__model.Static_Discrete with axiom . type t = t14b,
     function first = first, function last = last,
     predicate in_range = in_range
   
-  type t16b__ref  = { mutable t16b__content : t16b }
+  type t14b__ref  = { mutable t14b__content : t14b }
   
-  function   t16b__ref_t16b__content__projection (a : t16b__ref) requires
-    {  } ensures  {  } returns t16b = a.t16b__content
+  function   t14b__ref_t14b__content__projection (a : t14b__ref) requires
+    {  } ensures  {  } returns t14b = a.t14b__content
   
-  meta model_projection function t16b__ref_t16b__content__projection
+  meta model_projection function t14b__ref_t14b__content__projection
   
-  meta inline:no function t16b__ref_t16b__content__projection
+  meta inline:no function t14b__ref_t14b__content__projection
   
-  function   t16b__havoc (x : t16b__ref) requires {  } ensures  {  } returns
+  function   t14b__havoc (x : t14b__ref) requires {  } ensures  {  } returns
     unit
 
 end
 
-(* Module defining to_rep/of_rep for type "T16b" defined at mystring.ads:38 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
-module Main__lines__mystring__T16b__rep
+(* Module defining to_rep/of_rep for type "T14b" defined at mystring.ads:38 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
+module Main__lines__mystring__T14b__rep
   
-  use        Main__lines__mystring__T16b
+  use        Main__lines__mystring__T14b
   use import _gnatprove_standard.Main
   use import int.Int
   
-  function   to_rep (x : Main__lines__mystring__T16b.t16b) requires { True }
-    ensures  { True } returns int = (Main__lines__mystring__T16b.t16b'int x)
+  function   to_rep (x : Main__lines__mystring__T14b.t14b) requires { True }
+    ensures  { True } returns int = (Main__lines__mystring__T14b.t14b'int x)
   
-  clone export ada__model.Rep_Proj_Int with axiom . type t = Main__lines__mystring__T16b.t16b,
-    predicate in_range = Main__lines__mystring__T16b.in_range,
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Main__lines__mystring__T14b.t14b,
+    predicate in_range = Main__lines__mystring__T14b.in_range,
     function to_rep = to_rep
   
   meta model_projection function to_rep
@@ -280,7 +280,7 @@ module Main__lines__mystring__T16b__rep
 
 end
 
-(* Module for axiomatizing type "mystringstr" defined at mystring.ads:36 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "mystringstr" defined at mystring.ads:36 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
 module Main__lines__mystringstr
   
   use import _gnatprove_standard.Main
@@ -301,34 +301,34 @@ module Main__lines__mystringstr
 
 end
 
-(* Module for axiomatizing the record theory associated to type "mystring" defined at mystring.ads:37 instantiated at main.adb:27, created in Why.Gen.Records.Create_Rep_Record_Theory_If_Needed *)
+(* Module for axiomatizing the record theory associated to type "mystring" defined at mystring.ads:37 instantiated at main.adb:31, created in Why.Gen.Records.Create_Rep_Record_Theory_If_Needed *)
 module Main__lines__mystring__rep
   
   use import _gnatprove_standard.Main
   use import int.Int
-  use        Main__lines__mystring__T16b
-  use        Main__lines__mystring__T16b__rep
+  use        Main__lines__mystring__T14b
+  use        Main__lines__mystring__T14b__rep
   use        Main__lines__mystringstr
   use        Array__Int__Standard__character
   use        Array__Int__Standard__character
   use        Array__Int__Standard__character
   use        Array__Int__Standard__character
   
-  type __split_fields  = { [name:Length]
-                           [model_trace:.69878]rec__main__lines__mystring__length : Main__lines__mystring__T16b.t16b;
-                           [model_trace:.69882]
-                           [name:Str]rec__main__lines__mystring__str : Array__Int__Standard__character.map }
+  type __split_fields  = { [model_trace:.69856]
+                           [name:Length]rec__main__lines__mystring__length : Main__lines__mystring__T14b.t14b;
+                           [name:Str]
+                           [model_trace:.69860]rec__main__lines__mystring__str : Array__Int__Standard__character.map }
   
-  function [name:Length] [model_trace:.69878] 
+  function [model_trace:.69856] [name:Length] 
     __split_fields_rec__main__lines__mystring__length__projection
     (a : __split_fields) requires {  } ensures  {  } returns
-    Main__lines__mystring__T16b.t16b = a.rec__main__lines__mystring__length
+    Main__lines__mystring__T14b.t14b = a.rec__main__lines__mystring__length
   
   meta model_projection function __split_fields_rec__main__lines__mystring__length__projection
   
   meta inline:no function __split_fields_rec__main__lines__mystring__length__projection
   
-  function [model_trace:.69882] [name:Str] 
+  function [name:Str] [model_trace:.69860] 
     __split_fields_rec__main__lines__mystring__str__projection
     (a : __split_fields) requires {  } ensures  {  } returns
     Array__Int__Standard__character.map = a.rec__main__lines__mystring__str
@@ -339,25 +339,25 @@ module Main__lines__mystring__rep
   
   type __split_fields__ref  = { mutable __split_fields__content : __split_fields }
   
-  function   __split_fields__ref___split_fields__content__2__projection
+  function   __split_fields__ref___split_fields__content__3__projection
     (a : __split_fields__ref) requires {  } ensures  {  } returns
     __split_fields = a.__split_fields__content
   
-  meta model_projection function __split_fields__ref___split_fields__content__2__projection
+  meta model_projection function __split_fields__ref___split_fields__content__3__projection
   
-  meta inline:no function __split_fields__ref___split_fields__content__2__projection
+  meta inline:no function __split_fields__ref___split_fields__content__3__projection
   
   function   __split_fields__havoc (x : __split_fields__ref) requires {  }
     ensures  {  } returns unit
   
   type __rep  = { __split_fields : __split_fields }
   
-  function   __rep___split_fields__2__projection (a : __rep) requires {  }
+  function   __rep___split_fields__3__projection (a : __rep) requires {  }
     ensures  {  } returns __split_fields = a.__split_fields
   
-  meta model_projection function __rep___split_fields__2__projection
+  meta model_projection function __rep___split_fields__3__projection
   
-  meta inline:no function __rep___split_fields__2__projection
+  meta inline:no function __rep___split_fields__3__projection
   
   function   to_base (a : __rep) requires { True } ensures  { True } returns
     __rep = a
@@ -371,7 +371,7 @@ module Main__lines__mystring__rep
   function   rec__main__lines__mystring__length_ (a : __rep) requires
     { (main__lines__mystring__length__pred a) } ensures 
     { (result = a.__split_fields.rec__main__lines__mystring__length) }
-    returns Main__lines__mystring__T16b.t16b
+    returns Main__lines__mystring__T14b.t14b
   
   function   main__lines__mystring__str__pred (a : __rep) requires { True }
     ensures  { True } returns  = True
@@ -384,9 +384,9 @@ module Main__lines__mystring__rep
   function   bool_eq (a : __rep b : __rep) requires { True } ensures 
     { True } returns
     bool = (if
-           (((Main__lines__mystring__T16b__rep.to_rep
+           (((Main__lines__mystring__T14b__rep.to_rep
                 a.__split_fields.rec__main__lines__mystring__length)
-               = (Main__lines__mystring__T16b__rep.to_rep
+               = (Main__lines__mystring__T14b__rep.to_rep
                     b.__split_fields.rec__main__lines__mystring__length)) /\
               (Main__lines__mystringstr.bool_eq
                  a.__split_fields.rec__main__lines__mystring__str
@@ -395,7 +395,7 @@ module Main__lines__mystring__rep
 
 end
 
-(* Module for axiomatizing type "mystring" defined at mystring.ads:37 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "mystring" defined at mystring.ads:37 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
 module Main__lines__mystring
   
   use export Main__lines__mystring__rep
@@ -477,20 +477,20 @@ module Main__lines__mystring
 
 end
 
-(* Module for defining the constant "m" defined at mystring.ads:8 instantiated at main.adb:27, created in Gnat2Why.Decls.Translate_Constant *)
+(* Module for defining the constant "m" defined at mystring.ads:8 instantiated at main.adb:31, created in Gnat2Why.Decls.Translate_Constant *)
 module Main__lines__to_string__m
   
   use import _gnatprove_standard.Main
   use import int.Int
   use        Main__lines__mystring
   
-  function [model_projected] [model_trace:69941] [name:M]
+  function [model_projected] [model_trace:69919] [name:M]
     [sloc:mystring.ads:8] m () requires {  } ensures  {  } returns
     Main__lines__mystring.mystring
 
 end
 
-(* Module for possibly declaring a logic function for "length" defined at mystring.ads:23 instantiated at main.adb:27, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "length" defined at mystring.ads:23 instantiated at main.adb:31, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Main__lines__length
   
   use import _gnatprove_standard.Main
@@ -573,7 +573,7 @@ module Standard__natural___axiom
 
 end
 
-(* Module giving axioms for type "mystring" defined at mystring.ads:37 instantiated at main.adb:27, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "mystring" defined at mystring.ads:37 instantiated at main.adb:31, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Main__lines__mystring___axiom
   
   use import _gnatprove_standard.Main
@@ -582,22 +582,22 @@ module Main__lines__mystring___axiom
   
   function   dynamic_invariant
     (([mlw:proxy_symbol]
-    [introduced] temp___expr_280) : Main__lines__mystring.mystring
-    ([mlw:proxy_symbol] [introduced] temp___is_init_276) : bool
-    ([mlw:proxy_symbol] [introduced] temp___skip_constant_277) : bool
-    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_278) : bool
-    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_279) : bool) requires
+    [introduced] temp___expr_290) : Main__lines__mystring.mystring
+    ([mlw:proxy_symbol] [introduced] temp___is_init_286) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_287) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_288) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_289) : bool) requires
     { True } ensures  { True } returns  = True
   
   function   default_initial_assumption
     (([mlw:proxy_symbol]
-    [introduced] temp___expr_282) : Main__lines__mystring.mystring
-    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_283) : bool)
+    [introduced] temp___expr_292) : Main__lines__mystring.mystring
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_293) : bool)
     requires { True } ensures  { True } returns  = True
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "length" defined at mystring.ads:23 instantiated at main.adb:27, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module giving a program function and a defining axiom for the expression function "length" defined at mystring.ads:23 instantiated at main.adb:31, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
 module Main__lines__length___axiom
   
   use import _gnatprove_standard.Main
@@ -607,8 +607,8 @@ module Main__lines__length___axiom
   use        Main__lines__mystring
   use        Main__lines__length
   use        Main__lines__mystring___axiom
-  use        Main__lines__mystring__T16b
-  use        Main__lines__mystring__T16b__rep
+  use        Main__lines__mystring__T14b
+  use        Main__lines__mystring__T14b__rep
   
   function   length (m : Main__lines__mystring.mystring) requires { True }
     ensures 
@@ -617,9 +617,9 @@ module Main__lines__length___axiom
          ((Standard__natural___axiom.dynamic_invariant result True False True
              True) /\
             ((result
-                = ( (Main__lines__mystring__T16b__rep.to_rep
+                = ( (Main__lines__mystring__T14b__rep.to_rep
                        ( m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)))
-               /\ ([GP_Pretty_Ada:70200] (result <= 2048))))) } returns int
+               /\ ([GP_Pretty_Ada:70178] (result <= 2048))))) } returns int
   
   axiom length__post_axiom : --pp_universal_quantif NOT IMPLEMENTED
   
@@ -627,7 +627,7 @@ module Main__lines__length___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "result" defined at mystring.adb:6 instantiated at main.adb:27, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "result" defined at mystring.adb:6 instantiated at main.adb:31, created in Gnat2Why.Decls.Translate_Variable *)
 module Main__lines__to_string__result
   
   use import _gnatprove_standard.Main
@@ -648,7 +648,7 @@ module Main__lines__to_string__result
 
 end
 
-(* Module for axiomatizing type "TmystringstrD1" defined at mystring.ads:36 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "TmystringstrD1" defined at mystring.ads:36 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
 module Main__lines__TmystringstrD1
   
   use import _gnatprove_standard.Main
@@ -683,7 +683,7 @@ module Main__lines__TmystringstrD1
 
 end
 
-(* Module for axiomatizing type "TresultS" defined at mystring.adb:6 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "TresultS" defined at mystring.adb:6 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
 module Main__lines__to_string__TresultS
   
   use export Standard__string
@@ -706,7 +706,7 @@ module Main__lines__to_string__TresultS
 
 end
 
-(* Module for axiomatizing type "TmystringstrB" defined at mystring.ads:36 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "TmystringstrB" defined at mystring.ads:36 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
 module Main__lines__TmystringstrB
   
   use import _gnatprove_standard.Main
@@ -762,7 +762,7 @@ module Main__lines__TmystringstrB
 
 end
 
-(* Module for axiomatizing type "T69b" defined at mystring.adb:8 instantiated at main.adb:27, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "T69b" defined at mystring.adb:8 instantiated at main.adb:31, created in Gnat2Why.Types.Translate_Type *)
 module Main__lines__to_string__T69b
   
   use export Main__lines__TmystringstrB
@@ -785,54 +785,54 @@ module Main__lines__to_string__T69b
 
 end
 
-(* Module giving axioms for type "TresultS" defined at mystring.adb:6 instantiated at main.adb:27, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "TresultS" defined at mystring.adb:6 instantiated at main.adb:31, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Main__lines__to_string__TresultS___axiom
   
   use import _gnatprove_standard.Main
   use import int.Int
   use import int.Int
   use        Main__lines__mystring
-  use        Main__lines__mystring__T16b
-  use        Main__lines__mystring__T16b__rep
+  use        Main__lines__mystring__T14b
+  use        Main__lines__mystring__T14b__rep
   use        Main__lines__to_string__TresultS
   
   function   dynamic_invariant
     (([mlw:proxy_symbol]
-    [introduced] temp___expr_311) : Main__lines__to_string__TresultS.tresultS
-    ([mlw:proxy_symbol] [introduced] temp___is_init_307) : bool
-    ([mlw:proxy_symbol] [introduced] temp___skip_constant_308) : bool
-    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_309) : bool
-    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_310) : bool
+    [introduced] temp___expr_321) : Main__lines__to_string__TresultS.tresultS
+    ([mlw:proxy_symbol] [introduced] temp___is_init_317) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_318) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_319) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_320) : bool
     Main__lines__to_string__m___m___ : Main__lines__mystring.mystring)
     requires { True } ensures  { True } returns
-     = (if ([mlw:proxy_symbol] [introduced] temp___skip_constant_308) then
+     = (if ([mlw:proxy_symbol] [introduced] temp___skip_constant_318) then
        True  else
        (((Main__lines__to_string__TresultS.dynamic_property 1
-            (Main__lines__mystring__T16b__rep.to_rep
+            (Main__lines__mystring__T14b__rep.to_rep
                ( Main__lines__to_string__m___m___).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)
             (Main__lines__to_string__TresultS.first ([mlw:proxy_symbol]
-               [introduced] temp___expr_311))
+               [introduced] temp___expr_321))
             (Main__lines__to_string__TresultS.last ([mlw:proxy_symbol]
-               [introduced] temp___expr_311))) /\
+               [introduced] temp___expr_321))) /\
            ((Main__lines__to_string__TresultS.first ([mlw:proxy_symbol]
-               [introduced] temp___expr_311)) = 1)) /\
+               [introduced] temp___expr_321)) = 1)) /\
           ((Main__lines__to_string__TresultS.last ([mlw:proxy_symbol]
-              [introduced] temp___expr_311))
-             = (Main__lines__mystring__T16b__rep.to_rep
+              [introduced] temp___expr_321))
+             = (Main__lines__mystring__T14b__rep.to_rep
                   ( Main__lines__to_string__m___m___).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length))))
   
   function   default_initial_assumption
     (([mlw:proxy_symbol]
-    [introduced] temp___expr_313) : Main__lines__to_string__TresultS.tresultS
-    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_314) : bool
+    [introduced] temp___expr_323) : Main__lines__to_string__TresultS.tresultS
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_324) : bool
     Main__lines__to_string__m___m___ : Main__lines__mystring.mystring)
     requires { True } ensures  { True } returns
      = (True /\
           ((Main__lines__to_string__TresultS.first ([mlw:proxy_symbol]
-              [introduced] temp___expr_313)) = 1) /\
+              [introduced] temp___expr_323)) = 1) /\
           ((Main__lines__to_string__TresultS.last ([mlw:proxy_symbol]
-              [introduced] temp___expr_313))
-             = (Main__lines__mystring__T16b__rep.to_rep
+              [introduced] temp___expr_323))
+             = (Main__lines__mystring__T14b__rep.to_rep
                   ( Main__lines__to_string__m___m___).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)))
 
 end
@@ -957,7 +957,7 @@ module Standard__integer___axiom
 
 end
 
-(* Module giving axioms for type "mystringstr" defined at mystring.ads:36 instantiated at main.adb:27, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "mystringstr" defined at mystring.ads:36 instantiated at main.adb:31, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Main__lines__mystringstr___axiom
   
   use import _gnatprove_standard.Main
@@ -967,22 +967,22 @@ module Main__lines__mystringstr___axiom
   
   function   dynamic_invariant
     (([mlw:proxy_symbol]
-    [introduced] temp___expr_270) : Array__Int__Standard__character.map
-    ([mlw:proxy_symbol] [introduced] temp___is_init_266) : bool
-    ([mlw:proxy_symbol] [introduced] temp___skip_constant_267) : bool
-    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_268) : bool
-    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_269) : bool) requires
+    [introduced] temp___expr_280) : Array__Int__Standard__character.map
+    ([mlw:proxy_symbol] [introduced] temp___is_init_276) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_277) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_278) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_279) : bool) requires
     { True } ensures  { True } returns  = True
   
   function   default_initial_assumption
     (([mlw:proxy_symbol]
-    [introduced] temp___expr_272) : Array__Int__Standard__character.map
-    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_273) : bool)
+    [introduced] temp___expr_282) : Array__Int__Standard__character.map
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_283) : bool)
     requires { True } ensures  { True } returns  = True
 
 end
 
-(* Module giving an empty axiom for the entity "m" defined at mystring.ads:8 instantiated at main.adb:27, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "m" defined at mystring.ads:8 instantiated at main.adb:31, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Main__lines__to_string__m___axiom
   
   use import _gnatprove_standard.Main
@@ -992,7 +992,7 @@ module Main__lines__to_string__m___axiom
 
 end
 
-(* Module giving axioms for type "TmystringstrD1" defined at mystring.ads:36 instantiated at main.adb:27, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "TmystringstrD1" defined at mystring.ads:36 instantiated at main.adb:31, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Main__lines__TmystringstrD1___axiom
   
   use import _gnatprove_standard.Main
@@ -1002,8 +1002,8 @@ module Main__lines__TmystringstrD1___axiom
 
 end
 
-(* Module giving axioms for type "T16b" defined at mystring.ads:38 instantiated at main.adb:27, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Main__lines__mystring__T16b___axiom
+(* Module giving axioms for type "T14b" defined at mystring.ads:38 instantiated at main.adb:31, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Main__lines__mystring__T14b___axiom
   
   use import _gnatprove_standard.Main
   use import int.Int
@@ -1012,7 +1012,7 @@ module Main__lines__mystring__T16b___axiom
 
 end
 
-(* Module giving an empty axiom for the entity "result" defined at mystring.adb:6 instantiated at main.adb:27, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "result" defined at mystring.adb:6 instantiated at main.adb:31, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Main__lines__to_string__result___axiom
   
   use import _gnatprove_standard.Main
@@ -1022,7 +1022,7 @@ module Main__lines__to_string__result___axiom
 
 end
 
-(* Module giving axioms for type "T69b" defined at mystring.adb:8 instantiated at main.adb:27, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "T69b" defined at mystring.adb:8 instantiated at main.adb:31, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Main__lines__to_string__T69b___axiom
   
   use import _gnatprove_standard.Main
@@ -1032,7 +1032,7 @@ module Main__lines__to_string__T69b___axiom
 
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "to_string" defined at mystring.ads:8 instantiated at main.adb:27, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "to_string" defined at mystring.ads:8 instantiated at main.adb:31, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Main__lines__to_string__subprogram_def
   
   use import _gnatprove_standard.Main
@@ -1051,8 +1051,8 @@ module Main__lines__to_string__subprogram_def
   use        Main__lines__mystring___axiom
   use        Array__Int__Standard__character
   use        Main__lines__to_string__result
-  use        Main__lines__mystring__T16b
-  use        Main__lines__mystring__T16b__rep
+  use        Main__lines__mystring__T14b
+  use        Main__lines__mystring__T14b__rep
   use        Main__lines__TmystringstrD1
   use        Main__lines__to_string__TresultS
   use        Main__lines__to_string__T69b
@@ -1075,23 +1075,22 @@ module Main__lines__to_string__subprogram_def
   use        Main__lines__to_string__m___axiom
   use        Main__lines__length___axiom
   use        Main__lines__TmystringstrD1___axiom
-  use        Main__lines__mystring__T16b___axiom
+  use        Main__lines__mystring__T14b___axiom
   use        Main__lines__to_string__result___axiom
   use        Main__lines__to_string__TresultS___axiom
   use        Main__lines__to_string__T69b___axiom
   
-  val main__lines__to_string__result [model_trace:69939@result]
-  [name:To_String]
-  [model_projected] : Standard__string.string__
+  val main__lines__to_string__result [name:To_String] [model_projected]
+  [model_trace:69917@result] : Standard__string.string__
   
   function [GP_Subp:mystring.ads:8] [sloc:mystring.ads:8] def
     (__void_param : unit) requires { True } ensures 
-    { ([sloc:mystring.ads:9] ([GP_Reason:VC_POSTCONDITION]
-                             [comment:     Post => To_String'Result'Length = Length(M) and              ^ mystring.ads:9:14:instantiated:main.adb:27:4:VC_POSTCONDITION]
-                             [GP_Sloc:mystring.ads:9:14:instantiated:main.adb:27:4]
+    { ([sloc:mystring.ads:9] ([GP_Sloc:mystring.ads:9:14:instantiated:main.adb:31:4]
+                             [GP_Reason:VC_POSTCONDITION]
+                             [comment:     Post => To_String'Result'Length = Length(M) and              ^ mystring.ads:9:14:instantiated:main.adb:31:4:VC_POSTCONDITION]
                              [model_vc_post] [GP_Shape:pragargs__and]
-                             [GP_Id:55] ((([GP_Sloc:mystring.ads:9:14:instantiated:main.adb:27:4]
-                                          [GP_Pretty_Ada:69918] ((Standard__string.length
+                             [GP_Id:55] ((([GP_Sloc:mystring.ads:9:14:instantiated:main.adb:31:4]
+                                          [GP_Pretty_Ada:69896] ((Standard__string.length
                                                                     !main__lines__to_string__result)
                                                                    = 
                                                                    (epsilon ([mlw:proxy_symbol]
@@ -1106,13 +1105,12 @@ module Main__lines__to_string__subprogram_def
                                                                     [introduced] temp___result_626)
                                                                     ( Main__lines__to_string__m.m)))})))
                                             /\
-                                            ([GP_Pretty_Ada:69925]
-                                            [GP_Sloc:mystring.ads:10:14:instantiated:main.adb:27:4] (
-                                            (Standard__string.first
-                                               !main__lines__to_string__result)
-                                              = 1))) /\
-                                           ([GP_Sloc:mystring.ads:10:45:instantiated:main.adb:27:4]
-                                           [GP_Pretty_Ada:69930] ((Standard__string.last
+                                            ([GP_Sloc:mystring.ads:10:14:instantiated:main.adb:31:4]
+                                            [GP_Pretty_Ada:69903] ((Standard__string.first
+                                                                    !main__lines__to_string__result)
+                                                                    = 1))) /\
+                                           ([GP_Sloc:mystring.ads:10:45:instantiated:main.adb:31:4]
+                                           [GP_Pretty_Ada:69908] ((Standard__string.last
                                                                     !main__lines__to_string__result)
                                                                     = 
                                                                     (epsilon ([mlw:proxy_symbol]
@@ -1128,32 +1126,33 @@ module Main__lines__to_string__subprogram_def
                                                                     [introduced] temp___result_627)
                                                                     ( Main__lines__to_string__m.m)))})))))) }
     returns
-     = (* Assume dynamic invariants of inputs of the subprogram mystring.ads:8 instantiated at main.adb:27 *);
+     = (* Assume dynamic invariants of inputs of the subprogram mystring.ads:8 instantiated at main.adb:31 *);
         assume
         { (Main__lines__mystring___axiom.dynamic_invariant
              Main__lines__to_string__m.m True False True True) };
-        (* Assume moved pointers in outputs of the subprogram mystring.ads:8 instantiated at main.adb:27 *);
-        (* Check for RTE in the Pre of the subprogram mystring.ads:8 instantiated at main.adb:27 *);
+        (* Assume moved pointers in outputs of the subprogram mystring.ads:8 instantiated at main.adb:31 *);
+        (* Check for RTE in the Pre of the subprogram mystring.ads:8 instantiated at main.adb:31 *);
         abstract ensures
         { True } begin  (let _ = True in ())  end;
-        (* Assume Pre of the subprogram mystring.ads:8 instantiated at main.adb:27 *);
+        (* Assume Pre of the subprogram mystring.ads:8 instantiated at main.adb:31 *);
         (try
         ();
           ([sloc:mystring.adb:6] abstract ensures
           { True } begin  (let _ =
-                         (Main__lines__mystring__T16b__rep.to_rep
+                         (Main__lines__mystring__T14b__rep.to_rep
                             ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)
                          in ())  end;
-          ([sloc:mystring.adb:6] ([GP_Sloc:mystring.adb:6:7:instantiated:main.adb:27:4]
+          ([sloc:mystring.adb:6] ([comment:      Result : String(1..M.Length);       ^ mystring.adb:6:7:instantiated:main.adb:31:4:VC_RANGE_CHECK]
                                     [vc:annotation] [GP_Id:49]
-                                    [comment:      Result : String(1..M.Length);       ^ mystring.adb:6:7:instantiated:main.adb:27:4:VC_RANGE_CHECK]
-                                    [GP_Reason:VC_RANGE_CHECK] any  pre
+                                    [GP_Reason:VC_RANGE_CHECK]
+                                    [GP_Sloc:mystring.adb:6:7:instantiated:main.adb:31:4] any
+                                     pre
                                     {((1
-                                         <= (Main__lines__mystring__T16b__rep.to_rep
+                                         <= (Main__lines__mystring__T14b__rep.to_rep
                                                ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length))
                                         ->
                                         ((1 >= Standard__positive.first) /\
-                                           ((Main__lines__mystring__T16b__rep.to_rep
+                                           ((Main__lines__mystring__T14b__rep.to_rep
                                                ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)
                                               <= Standard__positive.last)))}
           post {True} return unit)));
@@ -1176,8 +1175,8 @@ module Main__lines__to_string__subprogram_def
                    Main__lines__to_string__result.result____last)) False
              False True True Main__lines__to_string__m.m) });
         ();
-        ([GP_Sloc:mystring.adb:8:7:instantiated:main.adb:27:4] ([sloc:mystring.adb:8] ()));
-        ([GP_Sloc:mystring.adb:8:14:instantiated:main.adb:27:4] ([sloc:mystring.adb:8] (
+        ([GP_Sloc:mystring.adb:8:7:instantiated:main.adb:31:4] ([sloc:mystring.adb:8] ()));
+        ([GP_Sloc:mystring.adb:8:14:instantiated:main.adb:31:4] ([sloc:mystring.adb:8] (
                                                                 Main__lines__to_string__result.result__
                                                                 :=
                                                                 (Main__lines__to_string__TresultS.to_array
@@ -1193,7 +1192,7 @@ module Main__lines__to_string__subprogram_def
                                                                     (let ([mlw:proxy_symbol]
                                                                     [introduced] temp___616)
                                                                     =
-                                                                    (Main__lines__mystring__T16b__rep.to_rep
+                                                                    (Main__lines__mystring__T14b__rep.to_rep
                                                                     ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)
                                                                     in
                                                                     (let ([mlw:proxy_symbol]
@@ -1208,10 +1207,10 @@ module Main__lines__to_string__subprogram_def
                                                                     assert
                                                                     { ([sloc:mystring.adb:8] 
                                                                     ([vc:annotation]
+                                                                    [comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:31:4:VC_RANGE_CHECK]
+                                                                    [GP_Sloc:mystring.adb:8:25:instantiated:main.adb:31:4]
                                                                     [GP_Reason:VC_RANGE_CHECK]
                                                                     [GP_Shape:result_assign__typeconv__slice]
-                                                                    [comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:27:4:VC_RANGE_CHECK]
-                                                                    [GP_Sloc:mystring.adb:8:25:instantiated:main.adb:27:4]
                                                                     [GP_Id:50] (
                                                                     (([mlw:proxy_symbol]
                                                                     [introduced] temp___615)
@@ -1250,10 +1249,10 @@ module Main__lines__to_string__subprogram_def
                                                                     in assert
                                                                     { ([sloc:mystring.adb:8] 
                                                                     ([vc:annotation]
+                                                                    [comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:31:4:VC_RANGE_CHECK]
+                                                                    [GP_Sloc:mystring.adb:8:25:instantiated:main.adb:31:4]
                                                                     [GP_Reason:VC_RANGE_CHECK]
                                                                     [GP_Shape:result_assign__typeconv__slice]
-                                                                    [comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                         ^ mystring.adb:8:25:instantiated:main.adb:27:4:VC_RANGE_CHECK]
-                                                                    [GP_Sloc:mystring.adb:8:25:instantiated:main.adb:27:4]
                                                                     [GP_Id:51] (
                                                                     Standard__string.dynamic_property
                                                                     Standard__positive.first
@@ -1288,12 +1287,12 @@ module Main__lines__to_string__subprogram_def
                                                                     1)) in
                                                                     assert
                                                                     { ([sloc:mystring.adb:8] 
-                                                                    ([comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                 ^ mystring.adb:8:17:instantiated:main.adb:27:4:VC_LENGTH_CHECK]
+                                                                    ([comment:      Result := String(M.Str(M.Str'First..M.Length)) ;                 ^ mystring.adb:8:17:instantiated:main.adb:31:4:VC_LENGTH_CHECK]
                                                                     [vc:annotation]
+                                                                    [GP_Sloc:mystring.adb:8:17:instantiated:main.adb:31:4]
                                                                     [GP_Shape:result_assign__typeconv]
                                                                     [GP_Id:52]
-                                                                    [GP_Reason:VC_LENGTH_CHECK]
-                                                                    [GP_Sloc:mystring.adb:8:17:instantiated:main.adb:27:4] (
+                                                                    [GP_Reason:VC_LENGTH_CHECK] (
                                                                     True /\
                                                                     (if
                                                                     (
@@ -1308,7 +1307,7 @@ module Main__lines__to_string__subprogram_def
                                                                     (
                                                                     (1
                                                                     <= (
-                                                                    Main__lines__mystring__T16b__rep.to_rep
+                                                                    Main__lines__mystring__T14b__rep.to_rep
                                                                     ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length))
                                                                     /\
                                                                     (((Standard__string.last
@@ -1317,19 +1316,19 @@ module Main__lines__to_string__subprogram_def
                                                                     - (Standard__string.first
                                                                     ([mlw:proxy_symbol]
                                                                     [introduced] temp___620)))
-                                                                    = ((Main__lines__mystring__T16b__rep.to_rep
+                                                                    = ((Main__lines__mystring__T14b__rep.to_rep
                                                                     ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)
                                                                     - 1))) 
                                                                     else
                                                                     (
-                                                                    (Main__lines__mystring__T16b__rep.to_rep
+                                                                    (Main__lines__mystring__T14b__rep.to_rep
                                                                     ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length)
                                                                     < 1))))) };
                                                                     (Main__lines__to_string__TresultS.of_array
                                                                     ([mlw:proxy_symbol]
                                                                     [introduced] temp___621)
                                                                     1
-                                                                    (Main__lines__mystring__T16b__rep.to_rep
+                                                                    (Main__lines__mystring__T14b__rep.to_rep
                                                                     ( Main__lines__to_string__m.m).Main__lines__mystring.__split_fields.Main__lines__mystring.rec__main__lines__mystring__length))))
                                                                    in
                                                                    (let ([mlw:proxy_symbol]
@@ -1344,9 +1343,9 @@ module Main__lines__to_string__subprogram_def
                                                                    in assert
                                                                    { ([sloc:mystring.adb:8] 
                                                                     ([vc:annotation]
+                                                                    [GP_Sloc:mystring.adb:8:14:instantiated:main.adb:31:4]
                                                                     [GP_Shape:result_assign]
-                                                                    [GP_Sloc:mystring.adb:8:14:instantiated:main.adb:27:4]
-                                                                    [comment:      Result := String(M.Str(M.Str'First..M.Length)) ;              ^ mystring.adb:8:14:instantiated:main.adb:27:4:VC_LENGTH_CHECK]
+                                                                    [comment:      Result := String(M.Str(M.Str'First..M.Length)) ;              ^ mystring.adb:8:14:instantiated:main.adb:31:4:VC_LENGTH_CHECK]
                                                                     [GP_Id:53]
                                                                     [GP_Reason:VC_LENGTH_CHECK] (
                                                                     True /\
@@ -1392,8 +1391,8 @@ module Main__lines__to_string__subprogram_def
                                                                     [introduced] temp___623))))))) };
                                                                    ([mlw:proxy_symbol]
                                                                    [introduced] temp___622)))))));
-        ([GP_Sloc:mystring.adb:9:14:instantiated:main.adb:27:4] ([sloc:mystring.adb:9] ()));
-        ([GP_Sloc:mystring.adb:9:7:instantiated:main.adb:27:4] ([sloc:mystring.adb:9] (
+        ([GP_Sloc:mystring.adb:9:14:instantiated:main.adb:31:4] ([sloc:mystring.adb:9] ()));
+        ([GP_Sloc:mystring.adb:9:7:instantiated:main.adb:31:4] ([sloc:mystring.adb:9] (
                                                                main__lines__to_string__result
                                                                :=
                                                                (let ([mlw:proxy_symbol]
@@ -1434,9 +1433,9 @@ module Main__lines__to_string__subprogram_def
                       (_gnatprove_standard.Boolean.andb
                          (([sloc:mystring.ads:9] ([GP_Shape:pragargs__and__and__cmp__typeconv__length_ref]
                                                  [vc:annotation]
+                                                 [comment:     Post => To_String'Result'Length = Length(M) and                              ^ mystring.ads:9:30:instantiated:main.adb:31:4:VC_RANGE_CHECK]
                                                  [GP_Reason:VC_RANGE_CHECK]
-                                                 [comment:     Post => To_String'Result'Length = Length(M) and                              ^ mystring.ads:9:30:instantiated:main.adb:27:4:VC_RANGE_CHECK]
-                                                 [GP_Sloc:mystring.ads:9:30:instantiated:main.adb:27:4]
+                                                 [GP_Sloc:mystring.ads:9:30:instantiated:main.adb:31:4]
                                                  [GP_Id:54] (Standard__integer.range_check_
                                                                abstract
                                                                ensures
