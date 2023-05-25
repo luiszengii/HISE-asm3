@@ -7,9 +7,10 @@ P SS ZX
 RN
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U operations%b		operations.adb		a51f3797 NE OO PK
+U operations%b		operations.adb		ba68f31d NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
@@ -17,7 +18,7 @@ W ada.text_io%s		a-textio.adb		a-textio.ali
 W stack%s		stack.adb		stack.ali  ED
 W variablestore%s	variablestore.adb	variablestore.ali
 
-U operations%s		operations.ads		135a5c71 EE NE OO PK
+U operations%s		operations.ads		3b7750f4 EE NE OO PK
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W pin%s			pin.adb			pin.ali
 W stack%s		stack.adb		stack.ali
@@ -46,8 +47,8 @@ D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D mystring.ads		20230524090544 ce083c8f mystring%s
-D operations.ads	20230525080430 d8373e02 operations%s
-D operations.adb	20230525080406 bbc6b11c operations%b
+D operations.ads	20230525093624 f01a3287 operations%s
+D operations.adb	20230525093632 8c9c7913 operations%b
 D pin.ads		20230524090544 553c8633 pin%s
 D stack.ads		20230524090544 a6086384 stack%s
 D stack.adb		20230524131442 800e16f3 stack%b
@@ -92,11 +93,13 @@ G c Z s b [load operations 42 14 none]
 G c Z s b [store operations 48 14 none]
 G c Z s b [remove operations 53 14 none]
 G c Z s b [list operations 56 14 none]
+G c Z s b [setmasterpin operations 59 14 none]
 G r i none [s operations 5 1 none] [stack standard 6 9 none]
 G r c none [load operations 42 14 none] [get variablestore 21 13 none]
 G r c none [store operations 48 14 none] [put variablestore 24 14 none]
 G r c none [remove operations 53 14 none] [remove variablestore 27 14 none]
 G r c none [list operations 56 14 none] [print variablestore 39 14 none]
+G r c none [setmasterpin operations 59 14 none] [from_string pin 5 13 none]
 X 1 ada.ads
 16K9*Ada 20e8 25|2r6 2r23 3r6 3r31
 X 3 a-cforma.ads
@@ -116,7 +119,7 @@ X 18 a-textio.ads
 X 23 mystring.ads
 6R9*MyString
 X 24 operations.ads
-5K9*Operations 59l5 59e15 25|6b14 170l5 170t15
+5K9*Operations 62l5 62e15 25|6b14 176l5 176t15
 6K12*OperandStack[27|6] 16r29 17r14 17r44 18r15 18r38 21r30 22r14 22r44 23r15
 . 23r38 25r33 26r14 26r44 27r15 27r38 29r31 30r14 30r44 31r15 31r38 33r39
 . 34r35 35r15 35r38 37r38 38r35 39r15 39r38 42r90 43r35 44r15 44r38 48r98
@@ -173,6 +176,10 @@ X 24 operations.ads
 56U14*List 56>19 56>50 25|165b14 168l8 168t12
 56r19 DB{48|15R9} 25|165b19 167r27
 56b50 IsLocked{boolean} 57r14 25|165b50
+59U14*SetMasterPin 59<27 59>53 25|171b14 174l8 174t20
+59i27 MASTER_PIN{26|3I9} 25|171b27 173m7
+59a53 ENTER_PIN_STR{string} 60r13 60r56 25|171b53 173r37
+60e51 I{character} 60r73 60r86
 X 25 operations.adb
 24i7 RESULT{integer} 43m10 44r31
 25i7 NUM1{integer} 28m27 31r37 34r34 37r38 40r34 43r20
@@ -191,8 +198,11 @@ X 25 operations.adb
 144i7 VALUE{integer} 146m7 147r28
 153i7 VALUE{integer} 155m27 156r32
 X 26 pin.ads
-1K9*PIN 24|3w6 9r64 9r91 13r62 13r85 25|8r65 8r92 14r63 14r86 16r10 26|13e8
-3I9*PIN<integer> 24|9r68 9r95 13r66 13r89 25|8r69 8r96 14r67 14r90
+1K9*PIN 24|3w6 9r64 9r91 13r62 13r85 59r44 25|8r65 8r92 14r63 14r86 16r10
+. 171r44 173r21 26|13e8
+3I9*PIN<integer> 24|9r68 9r95 13r66 13r89 59r48 25|8r69 8r96 14r67 14r90
+. 171r48
+5V13*From_String{3I9} 25|173s25
 X 27 stack.ads
 2i4 Max_Size{positive} 24|6r38
 3+9 Item 24|6r55

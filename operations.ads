@@ -56,4 +56,7 @@ package Operations is
    procedure List(DB: in VariableStore.Database; IsLocked: in Boolean) with
       Pre => IsLocked = False;
 
+   procedure SetMasterPin(MASTER_PIN : out PIN.PIN; ENTER_PIN_STR : in String) with
+     Pre => ENTER_PIN_STR'Length = 4 and (for all I of ENTER_PIN_STR => I >= '0' and I <= '9');
+
 end Operations;

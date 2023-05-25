@@ -8,7 +8,9 @@ with MyStringTokeniser;
 with PIN;
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
-
+with Ada.Strings; use Ada.Strings;
+with Ada.Strings.Fixed; use Ada.Strings.Fixed;
+  
 with Ada.Long_Long_Integer_Text_IO;
 with Stack;
 with Operations;
@@ -23,12 +25,14 @@ procedure Main is
    MASTER_PIN : PIN.PIN;
  
    -- record the pin entered by the user
-   ENTER_PIN : PIN.PIN := PIN.From_String("0000");
-   ENTER_PIN_STR : String := "0000";
+   ENTER_PIN : PIN.PIN;
+   
    
    package Lines is new MyString(Max_MyString_Length => 2048);
    -- record user input
    P  : Lines.MyString;
+   -- record the pin entered by the user
+   ENTER_PIN_STR : Lines.MyString;
    
    -- this system only has 2 state: locked/unlocked
    -- record the current state of this system
@@ -53,7 +57,7 @@ begin
       -- the pin should be from 0000-9999
       if(MyCommandLine.Argument(1)' Length = 4 and
            (for all I of MyCommandLine.Argument(1) => I >= '0' and I <= '9')) then
-         MASTER_PIN := PIN.From_String(MyCommandLine.Argument(1));
+         Operations.SetMasterPin(MASTER_PIN, MyCommandLine.Argument(1));
       else
          Put_Line("Format is invalid!");
          return;
@@ -70,6 +74,8 @@ begin
       while IsLocked=True loop
          Put("locked>   ");
          Lines.Get_Line(P);
+         -- used to clear the whitespaces may cause the system requires the user to give input forever
+         P:=Lines.From_String(Trim(Lines.To_String(P), Ada.Strings.Right));
          declare
             T : MyStringTokeniser.TokenArray(1..3) := (others => (Start => 1, Length => 0));
             NumTokens : Natural;
@@ -93,11 +99,11 @@ begin
                         if(TokStr'Length = 4 and
                              (for all I of TokStr => I >= '0' and I <= '9')) then
                            -- get the entered pin
-                           ENTER_PIN_STR := TokStr;
+                           ENTER_PIN_STR := Lines.From_String(TokStr);
                            -- only locked state can use 'unlock 1234' otherwise do nothing 
-                           if Lines.Equal(COMMAND,Lines.From_String("unlock")) and IsLocked and ENTER_PIN_STR'Length = 4 and
-                             (for all I of ENTER_PIN_STR => I >= '0' and I <= '9') then
-                              ENTER_PIN := PIN.From_String(ENTER_PIN_STR);
+                           if Lines.Equal(COMMAND,Lines.From_String("unlock")) and IsLocked and Lines.To_String(ENTER_PIN_STR)'Length = 4 and
+                             (for all I of Lines.To_String(ENTER_PIN_STR) => I >= '0' and I <= '9') then
+                              ENTER_PIN := PIN.From_String(Lines.To_String(ENTER_PIN_STR));
                               -- if the pin entered equals to the master pin, change the state to unlocked
                               if PIN."="(MASTER_PIN,ENTER_PIN) then
                                  IsLocked := False;
@@ -116,8 +122,6 @@ begin
                
             end if;
          end;
-   
-         
       end loop;
 
       ---------------input commands phase------------------------
@@ -126,10 +130,11 @@ begin
          pragma Loop_Invariant(OperandStack.Size(OpStack)>=0 and OperandStack.Size(OpStack)<= 512);
          Put("unlocked> ");
          Lines.Get_Line(P);
+         -- used to clear the whitespaces may cause the system requires the user to give input forever
+         P:=Lines.From_String(Trim(Lines.To_String(P), Ada.Strings.Right));
          declare
             T : MyStringTokeniser.TokenArray(1..3) := (others => (Start => 1, Length => 0));
             NumTokens : Natural;
-            
          begin
             MyStringTokeniser.Tokenise(Lines.To_String(P),T,NumTokens);
             -- check if the entered format "unlock 1234" is legal
@@ -156,21 +161,17 @@ begin
                            Put_Line("The length of variable exceeds the max variable length(1024)");
                            return;
                         end if;
-
                      end if;
                   end;
                end loop;
                
                -- Check the length and format of the entered pin, will only be used when the COMMAND is lock
-               if Lines.Equal(COMMAND,Lines.From_String("lock")) then
+               if Lines.Equal(COMMAND,Lines.From_String("lock")) and (IsLocked = False) then
                   if(VariableStore.To_String(VAR)'Length = 4 and
                      (for all I of VariableStore.To_String(VAR) => I >= '0' and I <= '9')) then
-                              -- get the entered pin
+                     -- get the entered pin
                      ENTER_PIN := PIN.From_String(VariableStore.To_String(VAR));
-                              
-                     if (IsLocked = False) then
-                        Operations.Lock(IsLocked,MASTER_PIN,ENTER_PIN);
-                     end if;
+                     Operations.Lock(IsLocked,MASTER_PIN,ENTER_PIN);
                   else
                      Put_Line("The length of the entered pin is not 4 OR the format is invalid!");
                   end if;

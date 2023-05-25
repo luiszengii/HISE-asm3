@@ -167,4 +167,10 @@ package body Operations is
       VariableStore.Print(DB);
    end List;
 
+
+   procedure SetMasterPin(MASTER_PIN : out PIN.PIN; ENTER_PIN_STR : in String) is
+   begin
+      MASTER_PIN := PIN.From_String(ENTER_PIN_STR);
+   end SetMasterPin;
+
 end Operations;

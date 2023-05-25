@@ -31,14 +31,14 @@ package body ada_main is
    E119 : Short_Integer; pragma Import (Ada, E119, "ada__finalization_E");
    E118 : Short_Integer; pragma Import (Ada, E118, "system__file_io_E");
    E094 : Short_Integer; pragma Import (Ada, E094, "ada__text_io_E");
-   E140 : Short_Integer; pragma Import (Ada, E140, "mycommandline_E");
-   E144 : Short_Integer; pragma Import (Ada, E144, "mystring_E");
-   E146 : Short_Integer; pragma Import (Ada, E146, "mystringtokeniser_E");
-   E166 : Short_Integer; pragma Import (Ada, E166, "pin_E");
-   E150 : Short_Integer; pragma Import (Ada, E150, "stack_E");
-   E169 : Short_Integer; pragma Import (Ada, E169, "stringtointeger_E");
-   E152 : Short_Integer; pragma Import (Ada, E152, "variablestore_E");
-   E148 : Short_Integer; pragma Import (Ada, E148, "operations_E");
+   E144 : Short_Integer; pragma Import (Ada, E144, "mycommandline_E");
+   E148 : Short_Integer; pragma Import (Ada, E148, "mystring_E");
+   E150 : Short_Integer; pragma Import (Ada, E150, "mystringtokeniser_E");
+   E170 : Short_Integer; pragma Import (Ada, E170, "pin_E");
+   E154 : Short_Integer; pragma Import (Ada, E154, "stack_E");
+   E173 : Short_Integer; pragma Import (Ada, E173, "stringtointeger_E");
+   E156 : Short_Integer; pragma Import (Ada, E156, "variablestore_E");
+   E152 : Short_Integer; pragma Import (Ada, E152, "operations_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -49,7 +49,7 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E152 := E152 - 1;
+      E156 := E156 - 1;
       declare
          procedure F1;
          pragma Import (Ada, F1, "variablestore__finalize_spec");
@@ -223,15 +223,15 @@ package body ada_main is
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E094 := E094 + 1;
-      E140 := E140 + 1;
       E144 := E144 + 1;
-      E146 := E146 + 1;
-      E166 := E166 + 1;
-      E150 := E150 + 1;
-      E169 := E169 + 1;
-      Variablestore'Elab_Spec;
-      E152 := E152 + 1;
       E148 := E148 + 1;
+      E150 := E150 + 1;
+      E170 := E170 + 1;
+      E154 := E154 + 1;
+      E173 := E173 + 1;
+      Variablestore'Elab_Spec;
+      E156 := E156 + 1;
+      E152 := E152 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
