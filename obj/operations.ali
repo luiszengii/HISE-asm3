@@ -9,7 +9,7 @@ RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U operations%b		operations.adb		ec93c5ac NE OO PK
+U operations%b		operations.adb		a51f3797 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
@@ -17,8 +17,9 @@ W ada.text_io%s		a-textio.adb		a-textio.ali
 W stack%s		stack.adb		stack.ali  ED
 W variablestore%s	variablestore.adb	variablestore.ali
 
-U operations%s		operations.ads		44dd6ff9 EE NE OO PK
+U operations%s		operations.ads		135a5c71 EE NE OO PK
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W pin%s			pin.adb			pin.ali
 W stack%s		stack.adb		stack.ali
 W variablestore%s	variablestore.adb	variablestore.ali
 
@@ -45,8 +46,9 @@ D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D mystring.ads		20230524090544 ce083c8f mystring%s
-D operations.ads	20230524142538 da8c8bb9 operations%s
-D operations.adb	20230524150816 f0f1f69c operations%b
+D operations.ads	20230525080430 d8373e02 operations%s
+D operations.adb	20230525080406 bbc6b11c operations%b
+D pin.ads		20230524090544 553c8633 pin%s
 D stack.ads		20230524090544 a6086384 stack%s
 D stack.adb		20230524131442 800e16f3 stack%b
 D system.ads		20210520051136 2ffa5114 system%s
@@ -70,31 +72,33 @@ D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 D variablestore.ads	20230524090544 385987c4 variablestore%s
 G a e
-G c s s s [s operations 4 1 none]
-G c Z s s [init operations__operandstack 10 14 5_4]
-G c Z s s [size operations__operandstack 13 13 5_4]
-G c Z s s [storage operations__operandstack 15 13 5_4]
-G c Z s s [push operations__operandstack 18 14 5_4]
-G c Z s s [pop operations__operandstack 24 14 5_4]
-G c Z s s [TstoragearrayBIP operations__operandstack 32 4 5_4]
-G c Z s s [stackIP operations__operandstack 34 9 5_4]
-G c Z s b [plus operations 8 14 none]
-G c Z s b [minus operations 12 14 none]
-G c Z s b [multiply operations 16 14 none]
-G c Z s b [divide operations 20 14 none]
-G c Z s b [push_operation operations 24 14 none]
-G c Z s b [pop_operation operations 28 14 none]
-G c Z s b [load operations 33 14 none]
-G c Z s b [store operations 39 14 none]
-G c Z s b [remove operations 44 14 none]
-G c Z s b [list operations 47 14 none]
-G r i none [s operations 4 1 none] [stack standard 6 9 none]
-G r c none [load operations 33 14 none] [get variablestore 21 13 none]
-G r c none [store operations 39 14 none] [put variablestore 24 14 none]
-G r c none [remove operations 44 14 none] [remove variablestore 27 14 none]
-G r c none [list operations 47 14 none] [print variablestore 39 14 none]
+G c s s s [s operations 5 1 none]
+G c Z s s [init operations__operandstack 10 14 6_4]
+G c Z s s [size operations__operandstack 13 13 6_4]
+G c Z s s [storage operations__operandstack 15 13 6_4]
+G c Z s s [push operations__operandstack 18 14 6_4]
+G c Z s s [pop operations__operandstack 24 14 6_4]
+G c Z s s [TstoragearrayBIP operations__operandstack 32 4 6_4]
+G c Z s s [stackIP operations__operandstack 34 9 6_4]
+G c Z s b [lock operations 9 14 none]
+G c Z s b [unlock operations 13 14 none]
+G c Z s b [plus operations 16 14 none]
+G c Z s b [minus operations 21 14 none]
+G c Z s b [multiply operations 25 14 none]
+G c Z s b [divide operations 29 14 none]
+G c Z s b [push_operation operations 33 14 none]
+G c Z s b [pop_operation operations 37 14 none]
+G c Z s b [load operations 42 14 none]
+G c Z s b [store operations 48 14 none]
+G c Z s b [remove operations 53 14 none]
+G c Z s b [list operations 56 14 none]
+G r i none [s operations 5 1 none] [stack standard 6 9 none]
+G r c none [load operations 42 14 none] [get variablestore 21 13 none]
+G r c none [store operations 48 14 none] [put variablestore 24 14 none]
+G r c none [remove operations 53 14 none] [remove variablestore 27 14 none]
+G r c none [list operations 56 14 none] [print variablestore 39 14 none]
 X 1 ada.ads
-16K9*Ada 20e8 25|3r6 3r23 4r6 4r31
+16K9*Ada 20e8 25|2r6 2r23 3r6 3r31
 X 3 a-cforma.ads
 61V19 "="{boolean} 4|43i19 5|42i19
 X 5 a-cofuma.ads
@@ -103,100 +107,119 @@ X 5 a-cofuma.ads
 X 6 a-cofuve.ads
 41V19 "="{boolean} 4|43i19
 X 11 a-inteio.ads
-18K13*Integer_Text_IO[19|46] 25|4w10 4r35
+18K13*Integer_Text_IO[19|46] 25|3w10 3r35
 X 18 a-textio.ads
-58K13*Text_IO 725e16 25|3w10 3r27
-262U14*New_Line 25|32s129 51s113
-463U14*Put 25|32s10 51s10 68s10 72s10
-X 19 a-tiinio.ads
-80U14*Put 25|49s7[11|18]
+58K13*Text_IO 725e16 25|2w10 2r27
+262U14*New_Line 25|123s10
+506U14*Put_Line 25|19s10 32s13 38s13 57s13 63s13 82s13 88s13 94s13 100s13
+. 118s10 122s10
 X 23 mystring.ads
 6R9*MyString
 X 24 operations.ads
-4K9*Operations 50l5 50e15 25|6b14 119l5 119t15
-5K12*OperandStack[26|6] 8r29 9r13 10r14 10r37 12r30 13r14 14r14 14r37 16r33
-. 17r14 18r14 18r37 20r31 21r14 22r14 22r37 24r39 26r14 26r37 28r38 30r14
-. 30r37 33r90 35r14 35r37 39r98 41r14 41r37 25|10r29 16r7 17r7 21r7 24r30
-. 29r7 30r7 33r10 34r10 37r10 41r33 46r7 47r7 52r10 53r10 56r10 60r31 65r7
-. 66r7 69r10 70r10 73r10 74r10 77r10 81r39 83r7 86r38 88r7 92r90 96r7 101r99
-. 104r7
-8U14*Plus 8=19 8>49 25|10b14 22l8 22t12
-8r19 S{26|8R9[5]} 9r31 10r32 10r55 25|10b19 16m24 17m24 21m25
-8b49 IsLocked{boolean} 9r43 25|10b49
-12U14*Minus 12=20 12>50 25|24b14 39l8 39t13
-12r20 S{26|8R9[5]} 13r32 14r32 14r55 25|24b20 29m24 30m24 33m28 34m28 37m28
-12b50 IsLocked{boolean} 13r44 25|24b50
-16U14*Multiply 16=23 16>53 25|41b14 58l8 58t16
-16r23 S{26|8R9[5]} 17r32 18r32 18r55 25|41b23 46m24 47m24 52m28 53m28 56m28
-16b53 IsLocked{boolean} 17r44 25|41b53
-20U14*Divide 20=21 20>51 25|60b14 79l8 79t14
-20r21 S{26|8R9[5]} 21r32 22r32 22r55 25|60b21 65m24 66m24 69m28 70m28 73m28
-. 74m28 77m28
-20b51 IsLocked{boolean} 21r44 25|60b51
-24U14*Push_Operation 24=29 24>59 24>75 25|81b14 84l8 84t22
-24r29 S{26|8R9[5]} 26r32 26r55 25|81b29 83m25
-24i59 I{integer} 25|81b59 83r28
-24b75 IsLocked{boolean} 25r14 25|81b74
-28U14*Pop_Operation 28=28 28<58 28>75 25|86b14 89l8 89t21
-28r28 S{26|8R9[5]} 30r32 30r55 25|86b28 88m24
-28i58 I{integer} 25|86b58 88m27
-28b75 IsLocked{boolean} 29r14 25|86b74
-33U14*Load 33>19 33>49 33=80 33>110 25|92b14 97l8 97t12
-33r19 V{47|13R9} 25|92b19 95r38
-33r49 DB{47|15R9} 25|92b49 95r34
-33r80 S{26|8R9[5]} 35r32 35r55 25|92b80 96m25
-33b110 IsLocked{boolean} 34r14 25|92b110
-39U14*Store 39=20 39=54 39=88 39>118 25|101b14 106l8 106t13
-39r20 V{47|13R9} 25|101b20 105r29
-39r54 DB{47|15R9} 25|101b54 105m25
-39r88 S{26|8R9[5]} 41r32 41r55 25|101b89 104m24
-39b118 IsLocked{boolean} 40r14 25|101b119
-44U14*Remove 44=21 44=55 44>89 25|109b14 112l8 112t14
-44r21 V{47|13R9} 25|109b21 111r32
-44r55 DB{47|15R9} 25|109b55 111m28
-44b89 IsLocked{boolean} 45r14 25|109b90
-47U14*List 47>19 47>50 25|114b14 117l8 117t12
-47r19 DB{47|15R9} 25|114b19 116r27
-47b50 IsLocked{boolean} 48r14 25|114b50
+5K9*Operations 59l5 59e15 25|6b14 170l5 170t15
+6K12*OperandStack[27|6] 16r29 17r14 17r44 18r15 18r38 21r30 22r14 22r44 23r15
+. 23r38 25r33 26r14 26r44 27r15 27r38 29r31 30r14 30r44 31r15 31r38 33r39
+. 34r35 35r15 35r38 37r38 38r35 39r15 39r38 42r90 43r35 44r15 44r38 48r98
+. 49r35 50r15 50r38 25|23r29 28r7 29r7 33r13 34r13 39r13 40r13 44r10 48r30
+. 53r7 54r7 58r13 59r13 64r13 65r13 69r10 73r33 78r7 79r7 83r13 84r13 89r13
+. 90r13 95r13 96r13 101r13 102r13 106r10 110r31 115r7 116r7 119r10 120r10
+. 124r10 125r10 128r10 132r39 134r7 137r38 139r7 143r90 147r7 152r99 155r7
+9U14*Lock 9=19 9=45 9=73 25|8b14 12l8 12t12
+9b19 IsLocked{boolean} 10r14 11r14 25|8b20 10m7
+9i45 MASTER_PIN{26|3I9} 25|8b46 11m7
+9i73 ENTER_PIN{26|3I9} 25|8b74 11r21
+13U14*Unlock 13=21 13>47 13>71 25|14b14 21l8 21t14
+13b21 IsLocked{boolean} 14r14 25|14b22 17m10
+13i47 MASTER_PIN{26|3I9} 25|14b48 16r18
+13i71 ENTER_PIN{26|3I9} 25|14b72 16r29
+16U14*Plus 16=19 16>49 25|23b14 46l8 46t12
+16r19 S{27|8R9[6]} 17r32 17r62 18r33 18r56 25|23b19 28m24 29m24 33m31 34m31
+. 39m31 40m31 44m28
+16b49 IsLocked{boolean} 17r76 25|23b49
+21U14*Minus 21=20 21>50 25|48b14 71l8 71t13
+21r20 S{27|8R9[6]} 22r32 22r62 23r33 23r56 25|48b20 53m24 54m24 58m31 59m31
+. 64m31 65m31 69m28
+21b50 IsLocked{boolean} 22r76 25|48b50
+25U14*Multiply 25=23 25>53 25|73b14 108l8 108t16
+25r23 S{27|8R9[6]} 26r32 26r62 27r33 27r56 25|73b23 78m24 79m24 83m31 84m31
+. 89m31 90m31 95m31 96m31 101m31 102m31 106m28
+25b53 IsLocked{boolean} 26r76 25|73b53
+29U14*Divide 29=21 29>51 25|110b14 130l8 130t14
+29r21 S{27|8R9[6]} 30r32 30r62 31r33 31r56 25|110b21 115m24 116m24 119m28
+. 120m28 124m28 125m28 128m28
+29b51 IsLocked{boolean} 30r76 25|110b51
+33U14*Push_Operation 33=29 33>59 33>75 25|132b14 135l8 135t22
+33r29 S{27|8R9[6]} 34r53 35r33 35r56 25|132b29 134m25
+33i59 I{integer} 25|132b59 134r28
+33b75 IsLocked{boolean} 34r14 25|132b74
+37U14*Pop_Operation 37=28 37<58 37>75 25|137b14 140l8 140t21
+37r28 S{27|8R9[6]} 38r53 39r33 39r56 25|137b28 139m24
+37i58 I{integer} 25|137b58 139m27
+37b75 IsLocked{boolean} 38r14 25|137b74
+42U14*Load 42>19 42>49 42=80 42>110 25|143b14 148l8 148t12
+42r19 V{48|13R9} 25|143b19 146r38
+42r49 DB{48|15R9} 25|143b49 146r34
+42r80 S{27|8R9[6]} 43r53 44r33 44r56 25|143b80 147m25
+42b110 IsLocked{boolean} 43r14 25|143b110
+48U14*Store 48=20 48=54 48=88 48>118 25|152b14 157l8 157t13
+48r20 V{48|13R9} 25|152b20 156r29
+48r54 DB{48|15R9} 25|152b54 156m25
+48r88 S{27|8R9[6]} 49r53 50r33 50r56 25|152b89 155m24
+48b118 IsLocked{boolean} 49r14 25|152b119
+53U14*Remove 53=21 53=55 53>89 25|160b14 163l8 163t14
+53r21 V{48|13R9} 25|160b21 162r32
+53r55 DB{48|15R9} 25|160b55 162m28
+53b89 IsLocked{boolean} 54r14 25|160b90
+56U14*List 56>19 56>50 25|165b14 168l8 168t12
+56r19 DB{48|15R9} 25|165b19 167r27
+56b50 IsLocked{boolean} 57r14 25|165b50
 X 25 operations.adb
-11i7 RESULT{integer} 19m7 21r28
-12i7 NUM1{integer} 16m27 19r17
-13i7 NUM2{integer} 17m27 19r24
-25i7 RESULT{integer} 36m10 37r31
-26i7 NUM1{integer} 29m27 31r10 34r31 36r20
-27i7 NUM2{integer} 30m27 31r33 33r31 36r27
-42i7 RESULT{integer} 55m10 56r31
-43i7 NUM1{integer} 46m27 50r11 50r43 53r31 55r20
-44i7 NUM2{integer} 47m27 49r26 50r33 50r66 52r31 55r27
-61i7 RESULT{integer} 76m10 77r31
-62i7 NUM1{integer} 65m27 70r31 71r13 74r31 76r20
-63i7 NUM2{integer} 66m27 67r10 69r31 71r20 73r31 76r27
-93i7 VALUE{integer} 95m7 96r28
-102i7 VALUE{integer} 104m27 105r32
-X 26 stack.ads
-2i4 Max_Size{positive} 24|5r38
-3+9 Item 24|5r55
-4*4 Default_Item{3+9} 24|5r72
-6k9*Stack 24|2w6 5r32 25|2w6 26|45e10
-8R9*Stack 24|8r42[5] 12r43[5] 16r46[5] 20r44[5] 24r52[5] 28r51[5] 33r103[5]
-. 39r111[5] 25|10r42[24|5] 24r43[24|5] 41r46[24|5] 60r44[24|5] 81r52[24|5]
-. 86r51[24|5] 92r103[24|5] 101r112[24|5]
-13V13*Size{integer} 24|9s26[5] 10s27[5] 10s50[5] 13s27[5] 14s27[5] 14s50[5]
-. 17s27[5] 18s27[5] 18s50[5] 21s27[5] 22s27[5] 22s50[5] 26s27[5] 26s50[5]
-. 30s27[5] 30s50[5] 35s27[5] 35s50[5] 41s27[5] 41s50[5]
-18U14*Push 25|21s20[24|5] 33s23[24|5] 34s23[24|5] 37s23[24|5] 52s23[24|5]
-. 53s23[24|5] 56s23[24|5] 69s23[24|5] 70s23[24|5] 73s23[24|5] 74s23[24|5]
-. 77s23[24|5] 83s20[24|5] 96s20[24|5]
-24U14*Pop 25|16s20[24|5] 17s20[24|5] 29s20[24|5] 30s20[24|5] 46s20[24|5]
-. 47s20[24|5] 65s20[24|5] 66s20[24|5] 88s20[24|5] 104s20[24|5]
-X 47 variablestore.ads
-7K9*VariableStore 24|1w6 33r25 33r56 39r30 39r64 44r31 44r65 47r26 25|1w6
-. 92r25 92r56 95r16 101r30 101r65 105r7 109r31 109r66 111r7 114r26 116r7
-. 47|73e18
-13R9*Variable<23|6R9[11]> 24|33r39 39r44 44r45 25|92r39 101r44 109r45
-15R9*Database 24|33r70 39r78 44r79 47r40 25|92r70 101r79 109r80 114r40 47|53e14
-21V13*Get{integer} 25|95s30
-24U14*Put 25|105s21
-27U14*Remove 25|111s21
-39U14*Print 25|116s21
+24i7 RESULT{integer} 43m10 44r31
+25i7 NUM1{integer} 28m27 31r37 34r34 37r38 40r34 43r20
+26i7 NUM2{integer} 29m27 30r10 31r29 33r34 36r13 37r30 39r34 43r27
+49i7 RESULT{integer} 68m10 69r31
+50i7 NUM1{integer} 53m27 56r38 59r34 62r37 65r34 68r20
+51i7 NUM2{integer} 54m27 55r10 56r30 58r34 61r13 62r29 64r34 68r27
+74i7 RESULT{integer} 105m10 106r31
+75i7 NUM1{integer} 78m27 80r23 81r37 84r34 86r13 87r30 90r34 92r13 93r38
+. 96r34 98r26 99r37 102r34 105r20
+76i7 NUM2{integer} 79m27 80r10 81r29 83r34 86r26 87r38 89r34 92r26 93r30
+. 95r34 98r13 99r29 101r34 105r27
+111i7 RESULT{integer} 127m10 128r31
+112i7 NUM1{integer} 115m27 120r31 121r13 125r31 127r20
+113i7 NUM2{integer} 116m27 117r10 119r31 121r38 124r31 127r27
+144i7 VALUE{integer} 146m7 147r28
+153i7 VALUE{integer} 155m27 156r32
+X 26 pin.ads
+1K9*PIN 24|3w6 9r64 9r91 13r62 13r85 25|8r65 8r92 14r63 14r86 16r10 26|13e8
+3I9*PIN<integer> 24|9r68 9r95 13r66 13r89 25|8r69 8r96 14r67 14r90
+X 27 stack.ads
+2i4 Max_Size{positive} 24|6r38
+3+9 Item 24|6r55
+4*4 Default_Item{3+9} 24|6r72
+6k9*Stack 24|2w6 6r32 25|4w6 27|45e10
+8R9*Stack 24|16r42[6] 21r43[6] 25r46[6] 29r44[6] 33r52[6] 37r51[6] 42r103[6]
+. 48r111[6] 25|23r42[24|6] 48r43[24|6] 73r46[24|6] 110r44[24|6] 132r52[24|6]
+. 137r51[24|6] 143r103[24|6] 152r112[24|6]
+13V13*Size{integer} 24|17s27[6] 17s57[6] 18s28[6] 18s51[6] 22s27[6] 22s57[6]
+. 23s28[6] 23s51[6] 26s27[6] 26s57[6] 27s28[6] 27s51[6] 30s27[6] 30s57[6]
+. 31s28[6] 31s51[6] 34s48[6] 35s28[6] 35s51[6] 38s48[6] 39s28[6] 39s51[6]
+. 43s48[6] 44s28[6] 44s51[6] 49s48[6] 50s28[6] 50s51[6]
+18U14*Push 25|33s26[24|6] 34s26[24|6] 39s26[24|6] 40s26[24|6] 44s23[24|6]
+. 58s26[24|6] 59s26[24|6] 64s26[24|6] 65s26[24|6] 69s23[24|6] 83s26[24|6]
+. 84s26[24|6] 89s26[24|6] 90s26[24|6] 95s26[24|6] 96s26[24|6] 101s26[24|6]
+. 102s26[24|6] 106s23[24|6] 119s23[24|6] 120s23[24|6] 124s23[24|6] 125s23[24|6]
+. 128s23[24|6] 134s20[24|6] 147s20[24|6]
+24U14*Pop 25|28s20[24|6] 29s20[24|6] 53s20[24|6] 54s20[24|6] 78s20[24|6]
+. 79s20[24|6] 115s20[24|6] 116s20[24|6] 139s20[24|6] 155s20[24|6]
+X 48 variablestore.ads
+7K9*VariableStore 24|1w6 42r25 42r56 48r30 48r64 53r31 53r65 56r26 25|1w6
+. 143r25 143r56 146r16 152r30 152r65 156r7 160r31 160r66 162r7 165r26 167r7
+. 48|73e18
+13R9*Variable<23|6R9[11]> 24|42r39 48r44 53r45 25|143r39 152r44 160r45
+15R9*Database 24|42r70 48r78 53r79 56r40 25|143r70 152r79 160r80 165r40 48|53e14
+21V13*Get{integer} 25|146s30
+24U14*Put 25|156s21
+27U14*Remove 25|162s21
+39U14*Print 25|167s21
 
